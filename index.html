@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanya Interior</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .selection\:bg-\[\#FFBFA3\]::selection { background-color: #FFBFA3; }
+        .selection\:text-\[\#2C1A38\]::selection { color: #2C1A38; }
+    </style>
+</head>
+<body class="font-sans text-[#2C1A38] bg-white">
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/254757373025" class="fixed bottom-24 sm:bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform" target="_blank">
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+    </a>
+
+    <!-- Mobile Sticky Call -->
+    <div class="sm:hidden fixed bottom-0 left-0 w-full z-40 bg-[#2C1A38] text-white flex">
+        <a href="tel:254757373025" class="flex-1 py-4 flex justify-center items-center gap-2 font-bold bg-[#FFBFA3] text-[#2C1A38]">
+            <i data-lucide="phone" class="w-5 h-5"></i> Call Now
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-md border-b border-[#F2EBF4]">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black tracking-tighter">KANYA <span class="text-[#FFBFA3]">INTERIOR</span></a>
+            <div class="hidden md:flex gap-8 font-medium text-sm uppercase">
+                <a href="#about" class="hover:text-[#FFBFA3]">About</a>
+                <a href="#services" class="hover:text-[#FFBFA3]">Services</a>
+                <a href="#contact" class="hover:text-[#FFBFA3]">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="h-screen flex items-center justify-center pt-20 bg-gray-900 text-center px-4">
+        <div class="space-y-8">
+            <h1 class="text-5xl md:text-7xl font-black text-white uppercase">Kanya Interior</h1>
+            <p class="text-lg md:text-2xl text-[#FFBFA3]">Delivering the desired interior transformation for your space</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:254757373025" class="bg-[#FFBFA3] text-[#2C1A38] px-8 py-4 font-bold uppercase hover:bg-[#FFD1BE]">Call Now</a>
+                <a href="https://wa.me/254757373025" class="bg-white px-8 py-4 font-bold uppercase hover:bg-gray-100 flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-5 h-5 text-[#25D366]"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#2C1A38] text-white py-12 pb-24 text-center">
+        <p>© Kanya Interior. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

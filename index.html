@@ -47,12 +47,15 @@
 </head>
 <body class="font-sans text-purpleBrand bg-greyLight selection:bg-purpleAccent selection:text-white">
 
-    <!-- Floating WhatsApp Widget -->
+    <!-- Floating WhatsApp Widget styled as a premium circular brand badge -->
     <a href="https://wa.me/254757373025?text=Hello%20Kanya%20Interior,%20I'm%2520interested%2520in%2520your%2520design%2520and%2520renovation%2520services." 
-       class="fixed bottom-24 sm:bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group" 
+       class="fixed bottom-24 sm:bottom-6 right-6 z-50 hover:scale-110 transition-transform flex items-center justify-center group" 
        target="_blank" rel="noopener noreferrer">
-        <i data-lucide="message-circle" class="w-8 h-8"></i>
-        <span class="absolute right-14 bg-purpleBrand text-purpleAccent text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-purpleAccent/30 shadow-lg">
+        <svg class="w-16 h-16 shadow-2xl rounded-full" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" fill="#25D366"/>
+            <path d="M20 10c-5.5 0-10 4.5-10 10 0 1.8.5 3.5 1.4 5L10 30l5.1-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S25.5 10 20 10zm4.2 13.8c-.2.4-.8.8-1.3.9-.3.1-.7.1-2.1-.4-1.7-.7-3.1-2.4-4-3.5-.1-.1-.1-.2-.2-.2-.2-.3-.4-.6-.6-1-.8-1.1-.9-2-.4-2.5l.4-.4c.2-.2.3-.2.4-.2h.3c.1 0 .3 0 .4.2l.8 1.9c.1.2.1.3-.1.5l-.4.5c-.1.1-.2.2-.1.4.4.8.9 1.4 1.5 2 .6.6 1.3 1.1 2.1 1.4.2.1.3.1.4-.1l.5-.6c.1-.1.3-.2.4-.1l1.9.9c.2.1.3.2.3.4v.8c0 .3-.1.6-.3.9z" fill="white"/>
+        </svg>
+        <span class="absolute right-18 bg-purpleBrand text-purpleAccent text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-purpleAccent/30 shadow-lg">
             Chat 24/7 on WhatsApp
         </span>
     </a>
@@ -154,7 +157,12 @@
                 <a href="https://wa.me/254757373025?text=Hi%20Kanya%20Interior!%20I'm%20looking%20for%20a%20quote%20for%20a%20new%20interior%20project." 
                    target="_blank" rel="noopener noreferrer" 
                    class="bg-white/10 backdrop-blur-md text-white border border-white/30 hover:border-white px-10 py-5 font-black uppercase tracking-widest transition-all hover:scale-105 flex items-center justify-center gap-3 shadow-2xl">
-                    <i data-lucide="message-circle" class="w-5 h-5 text-[#25D366]"></i> Get Quote On WhatsApp
+                    <!-- Standard circular WhatsApp inline badge on Hero CTA -->
+                    <svg class="w-5 h-5" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="20" fill="#25D366"/>
+                        <path d="M20 10c-5.5 0-10 4.5-10 10 0 1.8.5 3.5 1.4 5L10 30l5.1-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S25.5 10 20 10zm4.2 13.8c-.2.4-.8.8-1.3.9-.3.1-.7.1-2.1-.4-1.7-.7-3.1-2.4-4-3.5-.1-.1-.1-.2-.2-.2-.2-.3-.4-.6-.6-1-.8-1.1-.9-2-.4-2.5l.4-.4c.2-.2.3-.2.4-.2h.3c.1 0 .3 0 .4.2l.8 1.9c.1.2.1.3-.1.5l-.4.5c-.1.1-.2.2-.1.4.4.8.9 1.4 1.5 2 .6.6 1.3 1.1 2.1 1.4.2.1.3.1.4-.1l.5-.6c.1-.1.3-.2.4-.1l1.9.9c.2.1.3.2.3.4v.8c0 .3-.1.6-.3.9z" fill="white"/>
+                    </svg>
+                    Get Quote On WhatsApp
                 </a>
             </div>
         </div>
@@ -234,6 +242,9 @@
                 <p class="text-gray-700">
                     Highly engineered wall preparation, decorative architectural layouts, flooring finishes, and custom cabinetry setups executed with precision.
                 </p>
+                <div class="inline-block bg-purpleAccent/10 border border-purpleAccent/30 text-purpleBrand text-xs font-bold px-4 py-2 rounded-full mt-2 uppercase tracking-wide">
+                    ⚠️ All pricing packages are 100% negotiable to fit your budget!
+                </div>
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -335,6 +346,17 @@
                         Classic and contemporary custom solid wood moldings and symmetrical panels providing elegant structural visual highlights.
                     </p>
                 </div>
+
+                <!-- Service 10 -->
+                <div class="bg-greyLight p-8 rounded-2xl border border-gray-200 hover:bg-purpleBrand hover:text-white transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-purpleAccent mb-6 group-hover:bg-purpleAccent group-hover:text-white transition-colors">
+                        <i data-lucide="door-closed" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Frames & Door Installation</h3>
+                    <p class="text-xs text-gray-600 group-hover:text-purple-200/90 leading-relaxed">
+                        Precision mounting of high-grade wooden/metal door frames, elegant architraves, hinges, locksets, and flush or panel doors with seamless alignment.
+                    </p>
+                </div>
             </div>
 
         </div>
@@ -427,7 +449,7 @@
         </div>
     </section>
 
-    <!-- 5. Interactive Cost Estimator (Addition for High Conversion) -->
+    <!-- 5. Interactive Cost Estimator -->
     <section id="estimator" class="py-24 bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -437,6 +459,10 @@
                 <p class="text-gray-700">
                     Configure your required space parameters, check the boxes, and calculate a baseline pricing range instantly.
                 </p>
+                <div class="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/30 text-yellow-800 text-xs font-bold px-4 py-2 rounded-lg mt-2">
+                    <i data-lucide="percent" class="w-4 h-4 text-yellow-600"></i>
+                    <span>NOTICE: Estimates are guide-only. <strong>All pricing is fully negotiable!</strong></span>
+                </div>
             </div>
 
             <div class="bg-greyLight rounded-3xl p-6 sm:p-10 border border-gray-200 max-w-5xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
@@ -480,13 +506,16 @@
                 <!-- Right Column: Outputs -->
                 <div class="lg:col-span-5 bg-white border border-gray-200 p-8 rounded-2xl flex flex-col justify-center text-center space-y-6">
                     <div class="space-y-1">
-                        <p class="text-xs font-bold uppercase tracking-widest text-purpleAccent">Estimate Base (KES)</p>
+                        <p class="text-xs font-bold uppercase tracking-widest text-purpleAccent">Baseline Estimate (KES)</p>
                         <h3 id="estDisplay" class="text-3xl sm:text-4xl font-black text-purpleBrand">KES 0</h3>
-                        <p class="text-[10px] text-gray-500">Based on standard Kenyan materials & labor coefficients.</p>
+                        <p class="text-xs font-bold text-green-600 mt-1 uppercase tracking-wide flex items-center justify-center gap-1">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i> 100% Negotiable Pricing
+                        </p>
+                        <p class="text-[10px] text-gray-500 pt-2">Baseline estimation guide to help plan material and labor scope. Let's negotiate custom deals over WhatsApp!</p>
                     </div>
 
                     <button onclick="sendEstimatorToWhatsApp()" class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-black uppercase tracking-widest py-4 rounded-xl flex items-center justify-center gap-2 transition shadow-xl shadow-[#25D366]/20">
-                        <i data-lucide="message-circle" class="w-5 h-5"></i> Send Quote On WhatsApp
+                        <i data-lucide="message-circle" class="w-5 h-5"></i> Negotiate on WhatsApp
                     </button>
                 </div>
 
@@ -534,17 +563,47 @@
                     </div>
                 </div>
 
-                <!-- Direct Social Widgets -->
+                <!-- Direct Social Widgets matching the uploaded template exactly -->
                 <div class="space-y-4 pt-4 border-t border-gray-200">
                     <h4 class="font-bold text-purpleBrand text-sm uppercase tracking-wider">Social Channels:</h4>
-                    <div class="flex gap-3">
-                        <a href="https://www.facebook.com/profile.php?id=100091783191705" target="_blank" rel="noopener noreferrer" class="bg-white hover:bg-purpleBrand text-purpleBrand hover:text-white p-3 border border-gray-200 shadow-sm rounded-xl transition flex items-center gap-2 text-xs font-bold uppercase tracking-wider">
-                            <i data-lucide="facebook" class="w-4 h-4"></i> Facebook
+                    <div class="flex items-center gap-4 flex-wrap">
+                        
+                        <!-- WhatsApp Link with Circular Badge -->
+                        <a href="https://wa.me/254757373025?text=Hello%20Kanya%20Interior" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 bg-white hover:bg-slate-50 border border-gray-200 rounded-full p-2 pr-4 transition-all shadow-sm">
+                            <svg class="w-10 h-10 group-hover:scale-110 transition-transform rounded-full shadow" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="20" fill="#25D366"/>
+                                <path d="M20 10c-5.5 0-10 4.5-10 10 0 1.8.5 3.5 1.4 5L10 30l5.1-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S25.5 10 20 10zm4.2 13.8c-.2.4-.8.8-1.3.9-.3.1-.7.1-2.1-.4-1.7-.7-3.1-2.4-4-3.5-.1-.1-.1-.2-.2-.2-.2-.3-.4-.6-.6-1-.8-1.1-.9-2-.4-2.5l.4-.4c.2-.2.3-.2.4-.2h.3c.1 0 .3 0 .4.2l.8 1.9c.1.2.1.3-.1.5l-.4.5c-.1.1-.2.2-.1.4.4.8.9 1.4 1.5 2 .6.6 1.3 1.1 2.1 1.4.2.1.3.1.4-.1l.5-.6c.1-.1.3-.2.4-.1l1.9.9c.2.1.3.2.3.4v.8c0 .3-.1.6-.3.9z" fill="white"/>
+                            </svg>
+                            <div class="text-left">
+                                <p class="text-[9px] text-gray-500 font-bold uppercase tracking-wider leading-none">Chat Now</p>
+                                <p class="text-xs font-black text-purpleBrand">WhatsApp</p>
+                            </div>
                         </a>
-                        <a href="https://tiktok.com/@briankanyangala" target="_blank" rel="noopener noreferrer" class="bg-white hover:bg-purpleBrand text-purpleBrand hover:text-white p-3 border border-gray-200 shadow-sm rounded-xl transition flex items-center gap-2 text-xs font-bold uppercase tracking-wider">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.01.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.23-1.13 4.48-2.91 5.81-1.78 1.34-4.22 1.79-6.4 1.25-2.19-.53-4.08-1.95-5.11-3.95-1.03-2-1.2-4.39-.46-6.49.74-2.11 2.45-3.85 4.58-4.63 2.13-.78 4.54-.62 6.57.45v4.24c-1.74-1.04-4.04-1.1-5.74-.16-1.7.94-2.73 2.89-2.51 4.84.22 1.95 1.63 3.59 3.51 4.07 1.88.48 3.98-.12 5.25-1.54 1.27-1.42 1.84-3.41 1.72-5.35V2.71c-.01-.9-.02-1.8-.02-2.69z"/></svg>
-                            TikTok
+
+                        <!-- Facebook Link with Circular Badge -->
+                        <a href="https://www.facebook.com/profile.php?id=100091783191705" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 bg-white hover:bg-slate-50 border border-gray-200 rounded-full p-2 pr-4 transition-all shadow-sm">
+                            <svg class="w-10 h-10 group-hover:scale-110 transition-transform rounded-full shadow" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="20" fill="#1877F2"/>
+                                <path d="M24 20h-3v8h-3.5v-8h-2v-3.5h2v-2c0-2.8 1.2-4.5 4.5-4.5h3v3.5h-2c-1.1 0-1.5.5-1.5 1.5v1.5h3.5L24 20z" fill="white"/>
+                            </svg>
+                            <div class="text-left">
+                                <p class="text-[9px] text-gray-500 font-bold uppercase tracking-wider leading-none">Connect</p>
+                                <p class="text-xs font-black text-purpleBrand">Facebook</p>
+                            </div>
                         </a>
+
+                        <!-- TikTok Link with Circular Badge -->
+                        <a href="https://tiktok.com/@briankanyangala" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 bg-white hover:bg-slate-50 border border-gray-200 rounded-full p-2 pr-4 transition-all shadow-sm">
+                            <svg class="w-10 h-10 group-hover:scale-110 transition-transform rounded-full shadow" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="20" fill="#000000"/>
+                                <path d="M25.5 16.5a4.95 4.95 0 0 1-3.5-3.5v9.5a5 5 0 1 1-5-5c.3 0 .5 0 .8.1v3.1a2 2 0 1 0-1.8 1.8c.1 0 .2 0 .2-.1V11h3.5a4.95 4.95 0 0 0 4.95 4.95l.85.55" fill="white"/>
+                            </svg>
+                            <div class="text-left">
+                                <p class="text-[9px] text-gray-500 font-bold uppercase tracking-wider leading-none">Watch Videos</p>
+                                <p class="text-xs font-black text-purpleBrand">TikTok</p>
+                            </div>
+                        </a>
+
                     </div>
                 </div>
 
@@ -585,7 +644,7 @@
         <p id="lightboxCaption" class="absolute bottom-6 text-purpleAccent font-bold tracking-widest uppercase text-xs sm:text-sm"></p>
     </div>
 
-    <!-- 7. Footer (Charcoal Grey background with Purple Accent Border) -->
+    <!-- 7. Footer -->
     <footer class="bg-greyFooter text-white py-12 pb-24 sm:pb-12 border-t-4 border-purpleAccent">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           
@@ -631,7 +690,7 @@
             { id: 2, file: 'images/2.jpeg', title: 'Contemporary Side Elevation', category: 'Exterior', accent: 'Architectural Glazing', desc: 'Stunning structural glass layout reflecting Nairobi ambient light.' },
             { id: 3, file: 'images/3.jpeg', title: 'Grand Elevation Perspective', category: 'Exterior', accent: 'Parapet Detailing', desc: 'High-altitude daylight shot outlining beautiful balcony railings.' },
             { id: 4, file: 'images/4.jpeg', title: 'Structure Under-Construction Scaffold', category: 'Ceilings', accent: 'Gypsum Framework', desc: 'Precision framework alignment for modern interior false ceiling designs.' },
-            { id: id = 5, file: 'images/5.jpeg', title: 'Luxury Wainscoting Panel Art Wall', category: 'Wainscoting', accent: 'Wainscoting Panels', desc: 'Warm LED downlight showcasing premium geometric wood molding details.' },
+            { id: 5, file: 'images/5.jpeg', title: 'Luxury Wainscoting Panel Art Wall', category: 'Wainscoting', accent: 'Wainscoting Panels', desc: 'Warm LED downlight showcasing premium geometric wood molding details.' },
             { id: 6, file: 'images/6.jpeg', title: 'Floating Staircase Warm Illuminations', category: 'Lighting', accent: 'Stairway Lights', desc: 'Elegant staircase steps accented with concealed golden LED light strips.' },
             { id: 7, file: 'images/7.jpeg', title: 'Cascade Bubble Chandelier', category: 'Lighting', accent: 'Pendant Installation', desc: 'Glass bubble lights flowing beautifully down the double-height staircase void.' },
             { id: 8, file: 'images/8.jpeg', title: 'Wainscoting Preps & Primer Coating', category: 'Wainscoting', accent: 'Craftsmanship', desc: 'Craftsmen meticulously leveling modern wallboard panels.' },
@@ -659,7 +718,7 @@
         let playInterval = null;
         let isAutoplay = true;
 
-        // Service List with Rates for Interactive Estimator
+        // Service List with Rates for Interactive Estimator (Estimates are baseline, negotiable)
         const estimatorServices = [
             { id: 'skimming', title: 'Skimming & Prep', rate: 150 },
             { id: 'painting', title: 'Premium Painting', rate: 120 },
@@ -669,7 +728,8 @@
             { id: 'spc', title: 'SPC Wood Floors', rate: 400 },
             { id: 'cabinets', title: 'Kitchen Cabinets', rate: 15000, flat: true },
             { id: 'wardrobes', title: 'Bespoke Wardrobes', rate: 12000, flat: true },
-            { id: 'wainscoting', title: 'Elegant Wainscoting', rate: 250 }
+            { id: 'wainscoting', title: 'Elegant Wainscoting', rate: 250 },
+            { id: 'doors', title: 'Frames & Doors', rate: 3500, flat: true }
         ];
 
         let selectedServices = [];
@@ -697,7 +757,6 @@
             const slide = filteredPool[currentSlideIndex];
             
             const img = document.getElementById('slideshowImg');
-            // Reset safe error checks for new image
             delete img.dataset.triedFallback;
             img.src = slide.file;
 
@@ -741,20 +800,20 @@
             }
         }
 
+        // Jump to slide
+        function jumpToSlide(idx) {
+            currentSlideIndex = idx;
+            updateSlide();
+            if (isAutoplay) {
+                startAutoplayTimer();
+            }
+        }
+
         function prevSlide() {
             currentSlideIndex = (currentSlideIndex - 1 + filteredPool.length) % filteredPool.length;
             updateSlide();
             if (isAutoplay) {
                 startAutoplayTimer(); // Reset autoplay timer on manual trigger
-            }
-        }
-
-        // Jump to target slide index (handles dots & thumbnails navigation seamlessly)
-        function jumpToSlide(idx) {
-            currentSlideIndex = idx;
-            updateSlide();
-            if (isAutoplay) {
-                startAutoplayTimer(); // Reset autoplay timer on user selection
             }
         }
 
@@ -851,6 +910,7 @@
             modal.classList.add('flex');
         }
 
+        // Close lightbox
         function closeLightbox() {
             const modal = document.getElementById('lightbox');
             modal.classList.remove('flex');
@@ -945,7 +1005,7 @@
             const servicesText = selectedServices.map(id => estimatorServices.find(s => s.id === id).title).join(', ');
             const price = document.getElementById('estDisplay').textContent;
 
-            const text = `Hello Kanya Interior, I'm ${name} from ${location}.%0A%0A📐 *Project Size:* ${area} sq ft%0A🛠 *Services Needed:* ${servicesText}%0A%0A*Estimated Projection:* ${price}%0A%0APlease schedule a formal inspection site visit.`;
+            const text = `Hello Kanya Interior, I'm ${name} from ${location}.%0A%0A📐 *Project Size:* ${area} sq ft%0A🛠 *Services Needed:* ${servicesText}%0A%0A*Estimated Projection:* ${price}%0A%0A(I understand these prices are baseline guidelines and fully negotiable. Let's discuss a custom quote!)`;
             window.open(`https://wa.me/254757373025?text=${text}`, '_blank');
         }
 

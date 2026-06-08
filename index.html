@@ -3,62 +3,953 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanya Interior</title>
+    <title>Kanya Interior | Premium Design & Construction</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        purpleBrand: '#2C1A38',
+                        peachBrand: '#FFBFA3',
+                        peachHover: '#FFD1BE',
+                        brandCream: '#FAF8FA',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        .selection\:bg-\[\#FFBFA3\]::selection { background-color: #FFBFA3; }
-        .selection\:text-\[\#2C1A38\]::selection { color: #2C1A38; }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #F2EBF4;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #FFBFA3;
+            border-radius: 3px;
+        }
+        .hero-bg {
+            background-color: #2C1A38;
+            background-image: radial-gradient(#FFBFA3 0.5px, transparent 0.5px), radial-gradient(#FFBFA3 0.5px, #2C1A38 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.95;
+        }
     </style>
 </head>
-<body class="font-sans text-[#2C1A38] bg-white">
+<body class="font-sans text-[#2C1A38] bg-[#FAF8FA] selection:bg-[#FFBFA3] selection:text-[#2C1A38]">
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/254757373025" class="fixed bottom-24 sm:bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform" target="_blank">
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/254757373025?text=Hello%20Kanya%20Interior,%20I'm%2520interested%2520in%2520your%2520design%2520and%2520renovation%2520services." 
+       class="fixed bottom-24 sm:bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group" 
+       target="_blank" rel="noopener noreferrer">
         <i data-lucide="message-circle" class="w-8 h-8"></i>
+        <span class="absolute right-14 bg-[#2C1A38] text-[#FFBFA3] text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-[#FFBFA3]/30 shadow-lg">
+            Chat 24/7 on WhatsApp
+        </span>
     </a>
 
-    <!-- Mobile Sticky Call -->
-    <div class="sm:hidden fixed bottom-0 left-0 w-full z-40 bg-[#2C1A38] text-white flex">
-        <a href="tel:254757373025" class="flex-1 py-4 flex justify-center items-center gap-2 font-bold bg-[#FFBFA3] text-[#2C1A38]">
-            <i data-lucide="phone" class="w-5 h-5"></i> Call Now
+    <!-- Mobile-First Sticky Action Bar -->
+    <div class="sm:hidden fixed bottom-0 left-0 w-full z-40 bg-[#2C1A38] border-t border-[#FFBFA3]/30 text-white flex divide-x divide-[#FFBFA3]/20 shadow-2xl">
+        <a href="tel:0757373025" class="flex-1 py-4 flex flex-col justify-center items-center gap-1 font-bold text-xs bg-[#2C1A38] text-[#FFBFA3] hover:bg-[#3d254e] transition-colors">
+            <i data-lucide="phone" class="w-4 h-4"></i> Call 0757373025
+        </a>
+        <a href="tel:0715257929" class="flex-1 py-4 flex flex-col justify-center items-center gap-1 font-bold text-xs bg-[#2C1A38] text-white hover:bg-[#3d254e] transition-colors">
+            <i data-lucide="phone" class="w-4 h-4"></i> Call 0715257929
+        </a>
+        <a href="#estimator" class="flex-1 py-4 flex flex-col justify-center items-center gap-1 font-bold text-xs bg-[#FFBFA3] text-[#2C1A38] hover:bg-white transition-colors">
+            <i data-lucide="calculator" class="w-4 h-4"></i> Free Estimate
         </a>
     </div>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-md border-b border-[#F2EBF4]">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
-            <a href="#" class="text-2xl font-black tracking-tighter">KANYA <span class="text-[#FFBFA3]">INTERIOR</span></a>
-            <div class="hidden md:flex gap-8 font-medium text-sm uppercase">
-                <a href="#about" class="hover:text-[#FFBFA3]">About</a>
-                <a href="#services" class="hover:text-[#FFBFA3]">Services</a>
-                <a href="#contact" class="hover:text-[#FFBFA3]">Contact</a>
+    <!-- Navigation Header -->
+    <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-md border-b border-[#F2EBF4] shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between h-20 items-center">
+            
+            <!-- Brand Logo Space -->
+            <a href="#" class="flex items-center gap-3">
+                <img src="images/logo.jpg" alt="Logo" class="h-12 w-12 object-cover rounded-lg border border-[#FFBFA3]" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22 viewBox=%220%200%2024%2024%22 fill=%22none%22 stroke=%22%232C1A38%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 class=%22lucide%20lucide-home%22><path d=%22m3%209%209-7%209%207v11a2%202%200%200%201-2%202H5a2%202%200%200%201-2-2z%22/><polyline points=%229%2022%209%2012%2015%2012%2015%2022%22/></svg>'">
+                <div class="flex flex-col">
+                    <span class="text-xl font-black tracking-tight leading-none text-[#2C1A38]">KANYA</span>
+                    <span class="text-[10px] font-bold tracking-widest text-[#FF9E79] uppercase">Interior</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Nav Items -->
+            <div class="hidden md:flex gap-8 font-bold text-xs tracking-widest uppercase items-center">
+              <a href="#about" class="hover:text-[#FFBFA3] transition-colors">About</a>
+              <a href="#services" class="hover:text-[#FFBFA3] transition-colors">Services</a>
+              <a href="#gallery" class="hover:text-[#FFBFA3] transition-colors">Work Gallery</a>
+              <a href="#estimator" class="hover:text-[#FFBFA3] transition-colors">Estimator</a>
+              <a href="#contact" class="hover:text-[#FFBFA3] transition-colors">Contact</a>
+            </div>
+
+            <!-- Direct Quick Call Header Button -->
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="tel:0757373025" class="bg-[#2C1A38] text-white border border-[#FFBFA3]/50 hover:border-[#FFBFA3] px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider flex items-center gap-2 transition-all">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-[#FFBFA3]"></i>
+                    0757373025
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden">
+              <button id="menuBtn" class="p-2 text-[#2C1A38] focus:outline-none">
+                <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Expandable Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-[#F2EBF4] px-6 py-6 space-y-4 font-bold text-center text-sm uppercase">
+            <a href="#about" class="block py-2 hover:text-[#FF9E79]" onclick="toggleMobileMenu()">About</a>
+            <a href="#services" class="block py-2 hover:text-[#FF9E79]" onclick="toggleMobileMenu()">Services</a>
+            <a href="#gallery" class="block py-2 hover:text-[#FF9E79]" onclick="toggleMobileMenu()">Work Gallery</a>
+            <a href="#estimator" class="block py-2 hover:text-[#FF9E79]" onclick="toggleMobileMenu()">Estimator</a>
+            <a href="#contact" class="block py-2 hover:text-[#FF9E79]" onclick="toggleMobileMenu()">Contact</a>
+            <div class="pt-4 border-t border-gray-100 flex flex-col gap-2">
+                <a href="tel:0757373025" class="text-xs bg-[#2C1A38] text-white py-3 rounded-lg flex items-center justify-center gap-2">
+                    <i data-lucide="phone" class="w-4 h-4 text-[#FFBFA3]"></i> Call 0757 373 025
+                </a>
+                <a href="tel:0715257929" class="text-xs bg-[#FAF8FA] text-[#2C1A38] border border-gray-200 py-3 rounded-lg flex items-center justify-center gap-2">
+                    <i data-lucide="phone" class="w-4 h-4"></i> Call 0715 257 929
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="h-screen flex items-center justify-center pt-20 bg-gray-900 text-center px-4">
-        <div class="space-y-8">
-            <h1 class="text-5xl md:text-7xl font-black text-white uppercase">Kanya Interior</h1>
-            <p class="text-lg md:text-2xl text-[#FFBFA3]">Delivering the desired interior transformation for your space</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:254757373025" class="bg-[#FFBFA3] text-[#2C1A38] px-8 py-4 font-bold uppercase hover:bg-[#FFD1BE]">Call Now</a>
-                <a href="https://wa.me/254757373025" class="bg-white px-8 py-4 font-bold uppercase hover:bg-gray-100 flex items-center gap-2">
-                    <i data-lucide="message-circle" class="w-5 h-5 text-[#25D366]"></i> WhatsApp
+    <!-- 1. Hero Section -->
+    <section class="relative h-screen flex items-center justify-center pt-20 hero-bg overflow-hidden">
+        <!-- Interactive modern ambient background -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#2C1A38]/40 to-[#2C1A38] z-0"></div>
+        
+        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto space-y-8">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-xs text-[#FFBFA3] font-bold uppercase tracking-widest shadow-md">
+                <i data-lucide="zap" class="w-3.5 h-3.5 text-[#FFBFA3] animate-pulse"></i>
+                Direct Mobile Service • Nairobi & Nation-wide
+            </div>
+            
+            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black text-white tracking-tighter uppercase leading-none drop-shadow-2xl">
+                Kanya <br class="sm:hidden"/> <span class="text-[#FFBFA3]">Interior</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl lg:text-2xl text-[#EAE2EE] font-light max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+                “Kanya Interior delivers the desired vision for every client.” From luxury wainscoting and modern gypsum lighting ceilings to weather-resistant Wallmaster finishes.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+                <a href="tel:0757373025" class="bg-[#FFBFA3] text-[#2C1A38] hover:bg-white transition-all px-10 py-5 font-black uppercase tracking-widest shadow-2xl hover:scale-105 flex items-center justify-center gap-3">
+                    <i data-lucide="phone" class="w-5 h-5"></i> Call Now
                 </a>
+                <a href="https://wa.me/254757373025?text=Hi%20Kanya%20Interior!%20I'm%20looking%20for%20a%20quote%20for%20a%20new%20interior%20project." 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="bg-white/10 backdrop-blur-md text-white border border-white/30 hover:border-white px-10 py-5 font-black uppercase tracking-widest transition-all hover:scale-105 flex items-center justify-center gap-3 shadow-2xl">
+                    <i data-lucide="message-circle" class="w-5 h-5 text-[#25D366]"></i> Get Quote On WhatsApp
+                </a>
+            </div>
+        </div>
+        
+        <!-- Subtle bottom scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce hidden sm:block">
+            <a href="#about" class="text-white/50 hover:text-[#FFBFA3]">
+                <i data-lucide="chevron-down" class="w-8 h-8"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. About Section -->
+    <section id="about" class="py-24 bg-[#FAF8FA] border-b border-[#F2EBF4]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
+                
+                <!-- Graphic Highlight Left -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="relative bg-[#2C1A38] text-white p-8 sm:p-12 rounded-3xl overflow-hidden shadow-2xl border border-[#FFBFA3]/20">
+                        <div class="absolute -right-16 -bottom-16 w-48 h-48 bg-[#FFBFA3]/10 rounded-full blur-3xl"></div>
+                        <i data-lucide="compass" class="w-12 h-12 text-[#FFBFA3] mb-6"></i>
+                        <h3 class="text-2xl font-black uppercase tracking-tight text-[#FFBFA3]">Our Operational Model</h3>
+                        <p class="text-[#EAE2EE] text-sm leading-relaxed mt-4">
+                            We work without expensive brick-and-mortar showrooms, allowing us to source and install top-tier materials while passing 100% of the cost-savings directly to our clients.
+                        </p>
+                        <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#FFBFA3]">
+                            <span>Status: Active 24/7</span>
+                            <span>Direct Response</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content Right -->
+                <div class="lg:col-span-7 space-y-8">
+                    <span class="text-xs font-black tracking-widest uppercase text-[#FF9E79]">01 / Operational Overview</span>
+                    <h2 class="text-4xl sm:text-5xl font-black text-[#2C1A38] tracking-tight uppercase leading-none">
+                        Flexible Mobile Architecture.
+                    </h2>
+                    <div class="w-20 h-1 bg-[#FFBFA3]"></div>
+                    
+                    <p class="text-[#594B66] text-lg leading-relaxed">
+                        Kanya Interior is a premier mobile design, finish, and construction group based in Nairobi, operating country-wide across Kenya. We specialize in transforming residential villas, corporate offices, commercial centers, and residential apartments into highly functional and aesthetically pleasing environments.
+                    </p>
+
+                    <div class="grid sm:grid-cols-3 gap-6 pt-6">
+                        <div class="bg-white p-6 rounded-2xl border border-[#F2EBF4] shadow-sm space-y-2">
+                            <i data-lucide="clock" class="w-6 h-6 text-[#FF9E79]"></i>
+                            <h4 class="font-bold text-sm uppercase text-[#2C1A38]">24/7 Service</h4>
+                            <p class="text-xs text-[#594B66]">Ready when your project demands.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-[#F2EBF4] shadow-sm space-y-2">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-[#FF9E79]"></i>
+                            <h4 class="font-bold text-sm uppercase text-[#2C1A38]">Nairobi Based</h4>
+                            <p class="text-xs text-[#594B66]">Deploying units countrywide daily.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-[#F2EBF4] shadow-sm space-y-2">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-[#FF9E79]"></i>
+                            <h4 class="font-bold text-sm uppercase text-[#2C1A38]">Mobile Team</h4>
+                            <p class="text-xs text-[#594B66]">Zero overhead, maximum savings.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#2C1A38] text-white py-12 pb-24 text-center">
-        <p>© Kanya Interior. All rights reserved.</p>
+    <!-- 3. Services Section -->
+    <section id="services" class="py-24 bg-white border-b border-[#F2EBF4]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-20">
+                <span class="text-xs font-black tracking-widest uppercase text-[#FF9E79]">02 / Services Directory</span>
+                <h2 class="text-4xl font-black uppercase tracking-tight text-[#2C1A38]">Our Technical Specialties</h2>
+                <div class="w-16 h-1 bg-[#FFBFA3] mx-auto"></div>
+                <p class="text-[#594B66]">
+                    Highly engineered wall preparation, decorative architectural layouts, flooring finishes, and custom cabinetry setups executed with precision.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-[#FAF8FA] p-8 rounded-2xl border border-[#F2EBF4] hover:bg-[#2C1A38] hover:text-white transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#FF9E79] mb-6 group-hover:bg-[#FFBFA3] group-hover:text-[#2C1A38] transition-colors">
+                        <i data-lucide="paintbrush" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Skimming & Wall Finishing</h3>
+                    <p class="text-xs text-[#594B66] group-hover:text-purple-200/90 leading-relaxed">
+                        Precision multi-layered undercoats to achieve zero-defect smooth walls, preparing surfaces perfectly for luxury paint or architectural wainscoting.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-[#FAF8FA] p-8 rounded-2xl border border-[#F2EBF4] hover:bg-[#2C1A38] hover:text-white transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#FF9E79] mb-6 group-hover:bg-[#FFBFA3] group-hover:text-[#2C1A38] transition-colors">
+                        <i data-lucide="paintbrush" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Painting Services</h3>
+                    <p class="text-xs text-[#594B66] group-hover:text-purple-200/90 leading-relaxed">
+                        Premium interior and exterior coatings utilizing professional-grade, long-lasting emulsions with beautiful color-matching expertise.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-[#FAF8FA] p-8 rounded-2xl border border-[#F2EBF4] hover:bg-[#2C1A38] hover:text-white transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#FF9E79] mb-6 group-hover:bg-[#FFBFA3] group-hover:text-[#2C1A38] transition-colors">
+                        <i data-lucide="layers" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Wallmaster Installations</h3>
+                    <p class="text-xs text-[#594B66] group-hover:text-purple-200/90 leading-relaxed">
+                        Highly resilient, weather-proof textured cladding designed to defend external facades while offering modern visual elements.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-[#FAF8FA] p-8 rounded-2xl border border-[#F2EBF4] hover:bg-[#2C1A38] hover:text-white transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#FF9E79] mb-6 group-hover:bg-[#FFBFA3] group-hover:text-[#2C1A38] transition-colors">
+                        <i data-lucide="grid" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Gypsum Installation</h3>
+                    <p class="text-xs text-[#594B66] group-hover:text-purple-200/90 leading-relaxed">
+                        State-of-the-art false ceilings, double-tiered bulkhead channels, integrated LED ambient voids, and flawless plaster boards.
+                    </p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-[#FAF8FA] p-8 rounded-2xl border border-[#F2EBF4] hover:bg-[#2C1A38] hover:text-white transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#FF9E79] mb-6 group-hover:bg-[#FFBFA3] group-hover:text-[#2C1A38] transition-colors">
+                        <i data-lucide="grid" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Tile Installation</h3>
+                    <p class="text-xs text-[#594B66] group-hover:text-purple-200/90 leading-relaxed">
+                        Precision porcelain, ceramic, and marble flooring tiling alignment with clean waterproofing and premium epoxy grouting.
+                    </p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-[#FAF8FA] p-8 rounded-2xl border border-[#F2EBF4] hover:bg-[#2C1A38] hover:text-white transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#FF9E79] mb-6 group-hover:bg-[#FFBFA3] group-hover:text-[#2C1A38] transition-colors">
+                        <i data-lucide="layers" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-tight mb-2">SPC Flooring</h3>
+                    <p class="text-xs text-[#594B66] group-hover:text-purple-200/90 leading-relaxed">
+                        Premium Stone Plastic Composite waterproof floorboards laid elegantly across your space with protective sound barriers.
+                    </p>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="bg-[#FAF8FA] p-8 rounded-2xl border border-[#F2EBF4] hover:bg-[#2C1A38] hover:text-white transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#FF9E79] mb-6 group-hover:bg-[#FFBFA3] group-hover:text-[#2C1A38] transition-colors">
+                        <i data-lucide="hammer" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Kitchen Cabinet Design</h3>
+                    <p class="text-xs text-[#594B66] group-hover:text-purple-200/90 leading-relaxed">
+                        Highly customizable modern kitchen cabinetry layout including silent soft-close hinges, quartz worktops, and modular space efficiency.
+                    </p>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="bg-[#FAF8FA] p-8 rounded-2xl border border-[#F2EBF4] hover:bg-[#2C1A38] hover:text-white transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#FF9E79] mb-6 group-hover:bg-[#FFBFA3] group-hover:text-[#2C1A38] transition-colors">
+                        <i data-lucide="home" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Bespoke Wardrobes</h3>
+                    <p class="text-xs text-[#594B66] group-hover:text-purple-200/90 leading-relaxed">
+                        Tailor-made floor-to-ceiling sliding or hinged wardrobes, optimizing internal configurations to support complete organization.
+                    </p>
+                </div>
+
+                <!-- Service 9 -->
+                <div class="bg-[#FAF8FA] p-8 rounded-2xl border border-[#F2EBF4] hover:bg-[#2C1A38] hover:text-white transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#FF9E79] mb-6 group-hover:bg-[#FFBFA3] group-hover:text-[#2C1A38] transition-colors">
+                        <i data-lucide="layers" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Wainscoting & Panels</h3>
+                    <p class="text-xs text-[#594B66] group-hover:text-purple-200/90 leading-relaxed">
+                        Classic and contemporary custom solid wood moldings and symmetrical panels providing elegant structural visual highlights.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. Interactive Work Gallery (39 Images Slideshow Catalog) -->
+    <section id="gallery" class="py-24 bg-[#F9F6FA] border-b border-[#F2EBF4]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div class="space-y-3 text-left">
+                    <span class="text-xs font-black tracking-widest uppercase text-[#FF9E79]">03 / Project Catalog</span>
+                    <h2 class="text-4xl font-black uppercase text-[#2C1A38]">Our Masterpieces</h2>
+                    <div class="w-16 h-1 bg-[#FFBFA3]"></div>
+                </div>
+                
+                <!-- Category Selectors -->
+                <div class="flex flex-wrap gap-2 text-xs font-bold uppercase tracking-wider">
+                    <button onclick="filterGallery('All')" class="category-tab px-4 py-2 border border-[#2C1A38] bg-[#2C1A38] text-white transition-all rounded-lg shadow-sm" data-category="All">All Projects</button>
+                    <button onclick="filterGallery('Exterior')" class="category-tab px-4 py-2 border border-[#F2EBF4] bg-white text-[#2C1A38] hover:bg-[#F2EBF4] transition-all rounded-lg" data-category="Exterior">Exteriors</button>
+                    <button onclick="filterGallery('Ceilings')" class="category-tab px-4 py-2 border border-[#F2EBF4] bg-white text-[#2C1A38] hover:bg-[#F2EBF4] transition-all rounded-lg" data-category="Ceilings">Ceilings & Gypsum</button>
+                    <button onclick="filterGallery('Flooring')" class="category-tab px-4 py-2 border border-[#F2EBF4] bg-white text-[#2C1A38] hover:bg-[#F2EBF4] transition-all rounded-lg" data-category="Flooring">Flooring / SPC</button>
+                    <button onclick="filterGallery('Wainscoting')" class="category-tab px-4 py-2 border border-[#F2EBF4] bg-white text-[#2C1A38] hover:bg-[#F2EBF4] transition-all rounded-lg" data-category="Wainscoting">Wainscoting</button>
+                </div>
+            </div>
+
+            <!-- Slideshow Container -->
+            <div class="bg-white rounded-3xl p-6 border border-[#F2EBF4] shadow-xl max-w-5xl mx-auto space-y-6">
+                
+                <!-- Main Slideshow Window -->
+                <div class="relative aspect-[16/10] sm:aspect-video w-full bg-[#2C1A38] rounded-2xl overflow-hidden group border border-[#F2EBF4]">
+                    <!-- Current Image Block -->
+                    <img id="slideshowImg" src="images/1.jpeg" alt="Slideshow Art" class="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#2C1A38]/95 via-transparent to-black/35 z-10 pointer-events-none"></div>
+
+                    <!-- Slide Controls -->
+                    <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-[#2C1A38]/85 hover:bg-[#FFBFA3] text-white hover:text-[#2C1A38] rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 shadow-lg">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-[#2C1A38]/85 hover:bg-[#FFBFA3] text-white hover:text-[#2C1A38] rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 shadow-lg">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+
+                    <!-- Overlay Detail Panel -->
+                    <div class="absolute bottom-6 left-6 right-6 z-20 text-white space-y-2 text-left pointer-events-auto">
+                        <span id="slideCategory" class="bg-[#FFBFA3] text-[#2C1A38] text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded">Exterior</span>
+                        <h3 id="slideTitle" class="text-lg sm:text-2xl font-black uppercase">Modern Mansion Exterior</h3>
+                        <p id="slideDesc" class="text-xs sm:text-sm text-gray-200 line-clamp-2 leading-relaxed">High-definition triple-story exterior finishing and Wallmaster installation in Nairobi.</p>
+                        
+                        <div class="pt-3 flex gap-3">
+                            <button onclick="launchLightbox()" class="bg-white/15 hover:bg-white/30 backdrop-blur-md text-white text-xs font-bold px-4 py-2 rounded-xl transition-all">Inspect Full Image</button>
+                            <a id="slideQuoteBtn" href="#" target="_blank" class="bg-[#25D366] text-white text-xs font-bold px-4 py-2 rounded-xl transition-all flex items-center gap-1.5 shadow">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i> Inquire This Design
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Indicator Counter -->
+                    <div class="absolute top-6 right-6 z-20 bg-[#2C1A38]/85 text-white border border-[#FFBFA3]/30 px-3 py-1.5 rounded-full text-xs font-mono backdrop-blur-sm">
+                        <span id="slideIndex">1</span> / <span id="slideTotal">39</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Toolbar -->
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-4 bg-[#FAF8FA] p-4 rounded-xl border border-[#F2EBF4]">
+                    <!-- Autoplay Trigger -->
+                    <button onclick="toggleSlideshowPlayback()" class="flex items-center gap-2 text-xs font-bold text-[#594B66] hover:text-[#2C1A38] transition-all">
+                        <span id="playIcon" class="p-1.5 bg-[#2C1A38] rounded text-[#FFBFA3]"><i data-lucide="pause" class="w-3.5 h-3.5"></i></span>
+                        <span id="playText">Autoplay: On</span>
+                    </button>
+
+                    <!-- Dot indicators -->
+                    <div id="slideDots" class="flex gap-1.5 max-w-[250px] overflow-x-auto py-1 custom-scrollbar">
+                        <!-- Populated dynamically -->
+                    </div>
+
+                    <span class="text-[10px] uppercase tracking-widest text-[#594B66] font-bold">Labeled slides 1-39 .jpeg</span>
+                </div>
+
+                <!-- Horizontal clickable thumbnail index -->
+                <div class="space-y-2">
+                    <p class="text-xs font-black uppercase tracking-wider text-[#594B66] text-left">Index Thumbnails:</p>
+                    <div id="slideThumbs" class="flex gap-2 overflow-x-auto py-2 custom-scrollbar">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. Interactive Cost Estimator (Addition for High Conversion) -->
+    <section id="estimator" class="py-24 bg-white border-b border-[#F2EBF4]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-xs font-black tracking-widest uppercase text-[#FF9E79]">04 / Design Estimator</span>
+                <h2 class="text-4xl font-black uppercase tracking-tight text-[#2C1A38]">Budget Projection Matrix</h2>
+                <div class="w-16 h-1 bg-[#FFBFA3] mx-auto"></div>
+                <p class="text-[#594B66]">
+                    Configure your required space parameters, check the boxes, and calculate a baseline pricing range instantly.
+                </p>
+            </div>
+
+            <div class="bg-[#F9F6FA] rounded-3xl p-6 sm:p-10 border border-[#F2EBF4] max-w-5xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Inputs -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="space-y-3">
+                        <label class="block text-sm font-bold text-[#2C1A38] uppercase tracking-wider">Select Required Services:</label>
+                        <div class="grid grid-cols-2 gap-2" id="servicesChecklist">
+                            <!-- Injected dynamically in Javascript -->
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-sm font-bold">
+                            <span class="uppercase tracking-wider">Approx Space Dimension:</span>
+                            <span id="dimensionLabel" class="bg-[#FFBFA3] text-[#2C1A38] px-3 py-1 rounded font-mono text-xs">150 sq ft</span>
+                        </div>
+                        <input id="dimensionSlider" type="range" min="50" max="2500" step="50" value="150" oninput="updateEstimateCalculations()" class="w-full h-1.5 bg-[#2C1A38] rounded-lg appearance-none cursor-pointer accent-[#FFBFA3]">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-[#594B66] mb-1">Your Name</label>
+                            <input id="estName" type="text" placeholder="Your Name" class="w-full bg-white border border-[#F2EBF4] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#FFBFA3]">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-[#594B66] mb-1">County/Location</label>
+                            <select id="estLocation" class="w-full bg-white border border-[#F2EBF4] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#FFBFA3]">
+                                <option value="Nairobi">Nairobi Region</option>
+                                <option value="Kiambu">Kiambu</option>
+                                <option value="Mombasa">Mombasa</option>
+                                <option value="Nakuru">Nakuru</option>
+                                <option value="Eldoret">Eldoret</option>
+                                <option value="Other county">Other County (Country-wide)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Outputs -->
+                <div class="lg:col-span-5 bg-white border border-[#F2EBF4] p-8 rounded-2xl flex flex-col justify-center text-center space-y-6">
+                    <div class="space-y-1">
+                        <p class="text-xs font-bold uppercase tracking-widest text-[#FF9E79]">Estimate Base (KES)</p>
+                        <h3 id="estDisplay" class="text-3xl sm:text-4xl font-black text-[#2C1A38]">KES 0</h3>
+                        <p class="text-[10px] text-gray-500">Based on standard Kenyan materials & labor coefficients.</p>
+                    </div>
+
+                    <button onclick="sendEstimatorToWhatsApp()" class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-black uppercase tracking-widest py-4 rounded-xl flex items-center justify-center gap-2 transition shadow-xl shadow-[#25D366]/20">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i> Send Quote On WhatsApp
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Contact & Social Section -->
+    <section id="contact" class="py-24 bg-[#FAF8FA] border-b border-[#F2EBF4]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-16">
+            
+            <!-- Contact Details Left Column -->
+            <div class="lg:col-span-5 space-y-10">
+                <div class="space-y-4">
+                    <span class="text-xs font-black tracking-widest uppercase text-[#FF9E79]">05 / Communication</span>
+                    <h2 class="text-4xl font-black uppercase tracking-tight text-[#2C1A38]">Let's Build Together</h2>
+                    <div class="w-16 h-1 bg-[#FFBFA3]"></div>
+                    <p class="text-[#594B66] leading-relaxed">
+                        Have a residential or corporate interior transformation project? Reach out to our mobile team anytime. We deploy country-wide from our Nairobi hub.
+                    </p>
+                </div>
+
+                <!-- Mobile Operation Notice Block -->
+                <div class="bg-[#2C1A38] text-white p-6 border-l-4 border-[#FFBFA3] space-y-2 rounded-r-xl shadow-lg">
+                    <p class="font-bold uppercase tracking-widest text-[#FFBFA3] text-xs flex items-center gap-1.5">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-[#FFBFA3]"></i>
+                        Operational Policy
+                    </p>
+                    <p class="text-xs text-[#E9E1ED] leading-relaxed">
+                        We maintain zero corporate physical office overhead. We operate as a direct, mobile-ready specialist team dispatched directly to your construction site.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="font-bold text-[#2C1A38] text-sm uppercase tracking-wider">Direct Lines (24/7):</h4>
+                    <div class="space-y-2 text-sm">
+                        <a href="tel:0757373025" class="flex items-center gap-3 text-slate-700 hover:text-[#FF9E79] transition-colors">
+                            <i data-lucide="phone" class="w-4 h-4 text-[#FFBFA3]"></i>
+                            0757373025 (Brian Kanya Ngala)
+                        </a>
+                        <a href="tel:0715257929" class="flex items-center gap-3 text-slate-700 hover:text-[#FF9E79] transition-colors">
+                            <i data-lucide="phone" class="w-4 h-4 text-[#FFBFA3]"></i>
+                            0715257929 (Alternative Hotline)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Direct Social Widgets -->
+                <div class="space-y-4 pt-4 border-t border-[#F2EBF4]">
+                    <h4 class="font-bold text-[#2C1A38] text-sm uppercase tracking-wider">Social Channels:</h4>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/profile.php?id=100091783191705" target="_blank" rel="noopener noreferrer" class="bg-white hover:bg-[#2C1A38] text-[#2C1A38] hover:text-white p-3 border border-[#F2EBF4] shadow-sm rounded-xl transition flex items-center gap-2 text-xs font-bold uppercase tracking-wider">
+                            <i data-lucide="facebook" class="w-4 h-4"></i> Facebook
+                        </a>
+                        <a href="https://tiktok.com/@briankanyangala" target="_blank" rel="noopener noreferrer" class="bg-white hover:bg-[#2C1A38] text-[#2C1A38] hover:text-white p-3 border border-[#F2EBF4] shadow-sm rounded-xl transition flex items-center gap-2 text-xs font-bold uppercase tracking-wider">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.01.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.23-1.13 4.48-2.91 5.81-1.78 1.34-4.22 1.79-6.4 1.25-2.19-.53-4.08-1.95-5.11-3.95-1.03-2-1.2-4.39-.46-6.49.74-2.11 2.45-3.85 4.58-4.63 2.13-.78 4.54-.62 6.57.45v4.24c-1.74-1.04-4.04-1.1-5.74-.16-1.7.94-2.73 2.89-2.51 4.84.22 1.95 1.63 3.59 3.51 4.07 1.88.48 3.98-.12 5.25-1.54 1.27-1.42 1.84-3.41 1.72-5.35V2.71c-.01-.9-.02-1.8-.02-2.69z"/></svg>
+                            TikTok
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Direct Contact Form -->
+            <div class="lg:col-span-7 bg-white p-8 sm:p-12 rounded-3xl border border-[#F2EBF4] shadow-xl">
+                <h3 class="text-2xl font-black mb-6 text-[#2C1A38] uppercase tracking-tight">Direct Consult Form</h3>
+                <form onsubmit="handleContactSubmit(event)" class="space-y-5">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-[#594B66] mb-2">Name</label>
+                        <input id="contactName" type="text" required class="w-full bg-[#FAF8FA] border border-[#F2EBF4] px-4 py-4 focus:outline-none focus:border-[#FFBFA3] rounded-xl text-[#2C1A38] font-bold text-sm" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-[#594B66] mb-2">Phone</label>
+                        <input id="contactPhone" type="tel" required class="w-full bg-[#FAF8FA] border border-[#F2EBF4] px-4 py-4 focus:outline-none focus:border-[#FFBFA3] rounded-xl text-[#2C1A38] font-bold text-sm" placeholder="Contact Mobile">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-[#594B66] mb-2">Project Brief / Message</label>
+                        <textarea id="contactMsg" rows="4" required class="w-full bg-[#FAF8FA] border border-[#F2EBF4] px-4 py-4 focus:outline-none focus:border-[#FFBFA3] resize-none rounded-xl text-[#2C1A38] font-bold text-sm" placeholder="e.g. Need gypsum ceilings and skimming for 3-bedroom apartment."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-[#25D366] text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-[#1da851] transition flex items-center justify-center gap-2 shadow-lg shadow-[#25D366]/20">
+                        Submit Inquiry to WhatsApp <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Fullscreen Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-[#2C1A38]/95 hidden items-center justify-center p-4" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-[#FFBFA3] hover:text-white transition-colors" onclick="closeLightbox()">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <img id="lightboxImg" src="" alt="Zoomed view" class="max-w-full max-h-[85vh] object-contain border-4 border-[#FFBFA3]/20 shadow-2xl rounded" onclick="event.stopPropagation()">
+        <p id="lightboxCaption" class="absolute bottom-6 text-[#FFBFA3] font-bold tracking-widest uppercase text-xs sm:text-sm"></p>
+    </div>
+
+    <!-- 7. Footer -->
+    <footer class="bg-[#2C1A38] text-white py-12 pb-24 sm:pb-12 border-t-4 border-[#FFBFA3]">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+          
+          <div class="space-y-1">
+            <span class="text-2xl font-black tracking-tighter block text-white">KANYA <span class="text-[#FFBFA3]">INTERIOR</span></span>
+            <p class="text-[#A294A9] text-xs">Delivering the desired vision for every client.</p>
+          </div>
+
+          <div class="flex flex-wrap justify-center gap-6 font-bold text-xs tracking-widest uppercase text-[#EAE2EE]">
+            <a href="#about" class="hover:text-[#FFBFA3] transition-colors">About</a>
+            <a href="#services" class="hover:text-[#FFBFA3] transition-colors">Services</a>
+            <a href="#gallery" class="hover:text-[#FFBFA3] transition-colors">Gallery</a>
+            <a href="#contact" class="hover:text-[#FFBFA3] transition-colors">Contact</a>
+          </div>
+
+          <p class="text-[#A294A9] text-xs font-medium">© Kanya Interior. All rights reserved.</p>
+
+        </div>
     </footer>
 
+    <!-- Slide State Management Script -->
     <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
+        // Total 39 slides mapped from 1 to 39
+        const originalPortfolio = [
+            { id: 1, file: 'images/1.jpeg', title: 'Modern Mansion Architectural Facade', category: 'Exterior', accent: 'Exterior Wallmaster & Paint', desc: 'Symmetrical external plaster detailing with premium textured wall cladding.' },
+            { id: 2, file: 'images/2.jpeg', title: 'Contemporary Side Elevation', category: 'Exterior', accent: 'Architectural Glazing', desc: 'Stunning structural glass layout reflecting Nairobi ambient light.' },
+            { id: 3, file: 'images/3.jpeg', title: 'Grand Elevation Perspective', category: 'Exterior', accent: 'Parapet Detailing', desc: 'High-altitude daylight shot outlining beautiful balcony railings.' },
+            { id: 4, file: 'images/4.jpeg', title: 'Structure Under-Construction Scaffold', category: 'Ceilings', accent: 'Gypsum Framework', desc: 'Precision framework alignment for modern interior false ceiling designs.' },
+            { id: 5, file: 'images/5.jpeg', title: 'Luxury Wainscoting Panel Art Wall', category: 'Wainscoting', accent: 'Wainscoting Panels', desc: 'Warm LED downlight showcasing premium geometric wood molding details.' },
+            { id: 6, file: 'images/6.jpeg', title: 'Floating Staircase Warm Illuminations', category: 'Lighting', accent: 'Stairway Lights', desc: 'Elegant staircase steps accented with concealed golden LED light strips.' },
+            { id: 7, file: 'images/7.jpeg', title: 'Cascade Bubble Chandelier', category: 'Lighting', accent: 'Pendant Installation', desc: 'Glass bubble lights flowing beautifully down the double-height staircase void.' },
+            { id: 8, file: 'images/8.jpeg', title: 'Wainscoting Preps & Primer Coating', category: 'Wainscoting', accent: 'Craftsmanship', desc: 'Craftsmen meticulously leveling modern wallboard panels.' },
+            { id: 9, file: 'images/9.jpeg', title: 'Wood-Texture SPC Planks Laying', category: 'Flooring', accent: 'SPC Flooring', desc: 'Waterproof stone plastic composite wood-grain floorboards install.' },
+            { id: 10, file: 'images/10.jpeg', title: 'Double-Tiered Gypsum Ring Ceiling', category: 'Ceilings', accent: 'Gypsum Design', desc: 'Completed modern false ceiling featuring dual light rings and perimeter glow.' }
+        ];
+
+        // Populate the rest of the 39 slides programmatically to guarantee coverage
+        const portfolio = [...originalPortfolio];
+        const categories = ['Exterior', 'Ceilings', 'Wainscoting', 'Flooring', 'Lighting'];
+        for (let i = 11; i <= 39; i++) {
+            const cat = categories[i % categories.length];
+            portfolio.push({
+                id: i,
+                file: `images/${i}.jpeg`,
+                title: `Architectural Finish #${i}`,
+                category: cat,
+                accent: `${cat} Module`,
+                desc: `High-fidelity construction work labeled ${i}.jpeg executed perfectly on-site to match client desires.`
+            });
+        }
+
+        let filteredPool = [...portfolio];
+        let currentSlideIndex = 0;
+        let playInterval = null;
+        let isAutoplay = true;
+
+        // Service List with Rates for Interactive Estimator
+        const estimatorServices = [
+            { id: 'skimming', title: 'Skimming & Prep', rate: 150 },
+            { id: 'painting', title: 'Premium Painting', rate: 120 },
+            { id: 'wallmaster', title: 'Wallmaster Finish', rate: 350 },
+            { id: 'gypsum', title: 'Gypsum Ceilings', rate: 450 },
+            { id: 'tiles', title: 'Tile Installation', rate: 300 },
+            { id: 'spc', title: 'SPC Wood Floors', rate: 400 },
+            { id: 'cabinets', title: 'Kitchen Cabinets', rate: 15000, flat: true },
+            { id: 'wardrobes', title: 'Bespoke Wardrobes', rate: 12000, flat: true },
+            { id: 'wainscoting', title: 'Elegant Wainscoting', rate: 250 }
+        ];
+
+        let selectedServices = [];
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            const isOpen = !menu.classList.contains('hidden');
+            if (isOpen) {
+                menu.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+            } else {
+                menu.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'x');
+            }
+            lucide.createIcons();
+        }
+
+        document.getElementById('menuBtn').addEventListener('click', toggleMobileMenu);
+
+        // Slideshow Handler
+        function updateSlide() {
+            if (filteredPool.length === 0) return;
+            const slide = filteredPool[currentSlideIndex];
+            
+            const img = document.getElementById('slideshowImg');
+            img.src = slide.file;
+            img.onerror = () => {
+                // Extension correction fallback (jpg <-> jpeg check)
+                const src = img.src;
+                if (src.endsWith('.jpeg')) img.src = src.replace(/\.jpeg$/, '.jpg');
+                else if (src.endsWith('.jpg')) img.src = src.replace(/\.jpg$/, '.jpeg');
+            };
+
+            document.getElementById('slideCategory').textContent = slide.category;
+            document.getElementById('slideTitle').textContent = slide.title;
+            document.getElementById('slideDesc').textContent = slide.desc;
+            document.getElementById('slideIndex').textContent = currentSlideIndex + 1;
+            document.getElementById('slideTotal').textContent = filteredPool.length;
+
+            const text = `Hi%20Kanya%20Interior,%20I'm%20interested%20in%2520this%2520design:%20${encodeURIComponent(slide.title)}%20(${slide.file})`;
+            document.getElementById('slideQuoteBtn').href = `https://wa.me/254757373025?text=${text}`;
+
+            // Sync Thumbnails & Dots
+            document.querySelectorAll('.thumb-btn').forEach((thumb, idx) => {
+                if (idx === currentSlideIndex) {
+                    thumb.classList.add('border-[#FFBFA3]', 'opacity-100');
+                    thumb.classList.remove('border-transparent', 'opacity-50');
+                    thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                } else {
+                    thumb.classList.remove('border-[#FFBFA3]', 'opacity-100');
+                    thumb.classList.add('border-transparent', 'opacity-50');
+                }
+            });
+
+            document.querySelectorAll('.dot-indicator').forEach((dot, idx) => {
+                if (idx === currentSlideIndex) {
+                    dot.classList.add('w-6', 'bg-[#FFBFA3]');
+                    dot.classList.remove('w-2', 'bg-slate-400');
+                } else {
+                    dot.classList.remove('w-6', 'bg-[#FFBFA3]');
+                    dot.classList.add('w-2', 'bg-slate-400');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % filteredPool.length;
+            updateSlide();
+        }
+
+        function prevSlide() {
+            currentSlideIndex = (currentSlideIndex - 1 + filteredPool.length) % filteredPool.length;
+            updateSlide();
+        }
+
+        function jumpToSlide(idx) {
+            currentSlideIndex = idx;
+            updateSlide();
+        }
+
+        // Filter Gallery
+        function filterGallery(category) {
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                if (tab.getAttribute('data-category') === category) {
+                    tab.classList.add('bg-[#2C1A38]', 'text-white', 'border-[#2C1A38]');
+                    tab.classList.remove('bg-white', 'text-[#2C1A38]', 'border-[#F2EBF4]');
+                } else {
+                    tab.classList.remove('bg-[#2C1A38]', 'text-white', 'border-[#2C1A38]');
+                    tab.classList.add('bg-white', 'text-[#2C1A38]', 'border-[#F2EBF4]');
+                }
+            });
+
+            if (category === 'All') {
+                filteredPool = [...portfolio];
+            } else {
+                filteredPool = portfolio.filter(item => item.category === category);
+            }
+            currentSlideIndex = 0;
+            renderDotsAndThumbs();
+            updateSlide();
+        }
+
+        // Render Dots and Thumbnails dynamically
+        function renderDotsAndThumbs() {
+            const dotsContainer = document.getElementById('slideDots');
+            const thumbsContainer = document.getElementById('slideThumbs');
+            
+            dotsContainer.innerHTML = '';
+            thumbsContainer.innerHTML = '';
+
+            filteredPool.forEach((item, index) => {
+                // Render Dot
+                const dot = document.createElement('button');
+                dot.className = `dot-indicator h-2 w-2 rounded-full transition-all ${index === 0 ? 'w-6 bg-[#FFBFA3]' : 'bg-slate-400'}`;
+                dot.onclick = () => jumpToSlide(index);
+                dotsContainer.appendChild(dot);
+
+                // Render Thumbnail
+                const thumb = document.createElement('button');
+                thumb.className = `thumb-btn relative flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${index === 0 ? 'border-[#FFBFA3] opacity-100' : 'border-transparent opacity-50'}`;
+                thumb.onclick = () => jumpToSlide(index);
+                
+                const thumbImg = document.createElement('img');
+                thumbImg.src = item.file;
+                thumbImg.className = 'w-full h-full object-cover';
+                thumbImg.onerror = () => {
+                    const src = thumbImg.src;
+                    if (src.endsWith('.jpeg')) thumbImg.src = src.replace(/\.jpeg$/, '.jpg');
+                    else if (src.endsWith('.jpg')) thumbImg.src = src.replace(/\.jpg$/, '.jpeg');
+                };
+
+                thumb.appendChild(thumbImg);
+                thumbsContainer.appendChild(thumb);
+            });
+        }
+
+        // Toggle playback
+        function toggleSlideshowPlayback() {
+            isAutoplay = !isAutoplay;
+            const textEl = document.getElementById('playText');
+            const iconBox = document.getElementById('playIcon');
+            if (isAutoplay) {
+                textEl.textContent = 'Autoplay: On';
+                iconBox.innerHTML = '<i data-lucide="pause" class="w-3.5 h-3.5"></i>';
+                startAutoplayTimer();
+            } else {
+                textEl.textContent = 'Autoplay: Off';
+                iconBox.innerHTML = '<i data-lucide="play" class="w-3.5 h-3.5"></i>';
+                clearInterval(playInterval);
+            }
+            lucide.createIcons();
+        }
+
+        function startAutoplayTimer() {
+            clearInterval(playInterval);
+            playInterval = setInterval(() => {
+                nextSlide();
+            }, 5000);
+        }
+
+        // Lightbox Zoom
+        function launchLightbox() {
+            const slide = filteredPool[currentSlideIndex];
+            const modal = document.getElementById('lightbox');
+            const mImg = document.getElementById('lightboxImg');
+            const mCap = document.getElementById('lightboxCaption');
+            
+            mImg.src = slide.file;
+            mImg.onerror = () => {
+                const src = mImg.src;
+                if (src.endsWith('.jpeg')) mImg.src = src.replace(/\.jpeg$/, '.jpg');
+                else if (src.endsWith('.jpg')) mImg.src = src.replace(/\.jpg$/, '.jpeg');
+            };
+
+            mCap.textContent = `${slide.category} : ${slide.title}`;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // Swipe Gestures for Mobile Slides
+        let touchStart = 0;
+        let touchEnd = 0;
+        document.getElementById('slideshowImg').addEventListener('touchstart', e => {
+            touchStart = e.changedTouches[0].screenX;
+        });
+        document.getElementById('slideshowImg').addEventListener('touchend', e => {
+            touchEnd = e.changedTouches[0].screenX;
+            if (touchStart - touchEnd > 50) nextSlide();
+            if (touchEnd - touchStart > 50) prevSlide();
+        });
+
+        // Initialize Estimator Checklist
+        function renderEstimatorList() {
+            const container = document.getElementById('servicesChecklist');
+            container.innerHTML = '';
+            estimatorServices.forEach(srv => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.id = `estBtn-${srv.id}`;
+                btn.onclick = () => toggleEstService(srv.id);
+                btn.className = 'p-3 bg-white text-left text-xs font-bold uppercase tracking-wider border border-[#F2EBF4] rounded-lg transition-all flex items-center justify-between text-[#2C1A38]';
+                btn.innerHTML = `<span>${srv.title}</span> <span class="indicator text-slate-300 font-bold">[ ]</span>`;
+                container.appendChild(btn);
+            });
+        }
+
+        function toggleEstService(id) {
+            const index = selectedServices.indexOf(id);
+            const btn = document.getElementById(`estBtn-${id}`);
+            const ind = btn.querySelector('.indicator');
+            if (index > -1) {
+                selectedServices.splice(index, 1);
+                btn.classList.remove('bg-[#2C1A38]', 'text-white', 'border-[#2C1A38]');
+                btn.classList.add('bg-white', 'text-[#2C1A38]', 'border-[#F2EBF4]');
+                ind.textContent = '[ ]';
+                ind.classList.remove('text-[#FFBFA3]');
+                ind.classList.add('text-slate-300');
+            } else {
+                selectedServices.push(id);
+                btn.classList.add('bg-[#2C1A38]', 'text-white', 'border-[#2C1A38]');
+                btn.classList.remove('bg-white', 'text-[#2C1A38]', 'border-[#F2EBF4]');
+                ind.textContent = '[X]';
+                ind.classList.remove('text-slate-300');
+                ind.classList.add('text-[#FFBFA3]');
+            }
+            updateEstimateCalculations();
+        }
+
+        function updateEstimateCalculations() {
+            const area = Number(document.getElementById('dimensionSlider').value);
+            document.getElementById('dimensionLabel').textContent = `${area} sq ft`;
+            
+            let minSum = 0;
+            let maxSum = 0;
+
+            selectedServices.forEach(id => {
+                const item = estimatorServices.find(s => s.id === id);
+                if (item) {
+                    if (item.flat) {
+                        minSum += item.rate;
+                        maxSum += item.rate * 1.4;
+                    } else {
+                        minSum += item.rate * area;
+                        maxSum += item.rate * area * 1.35;
+                    }
+                }
+            });
+
+            const display = document.getElementById('estDisplay');
+            if (selectedServices.length === 0) {
+                display.textContent = 'KES 0';
+            } else {
+                display.textContent = `KES ${Math.round(minSum).toLocaleString()} - ${Math.round(maxSum).toLocaleString()}`;
+            }
+        }
+
+        function sendEstimatorToWhatsApp() {
+            if (selectedServices.length === 0) {
+                alert('Please select at least one service module.');
+                return;
+            }
+            const name = document.getElementById('estName').value || 'Valued Client';
+            const location = document.getElementById('estLocation').value;
+            const area = document.getElementById('dimensionSlider').value;
+            const servicesText = selectedServices.map(id => estimatorServices.find(s => s.id === id).title).join(', ');
+            const price = document.getElementById('estDisplay').textContent;
+
+            const text = `Hello Kanya Interior, I'm ${name} from ${location}.%0A%0A📐 *Project Size:* ${area} sq ft%0A🛠 *Services Needed:* ${servicesText}%0A%0A*Estimated Projection:* ${price}%0A%0APlease schedule a formal inspection site visit.`;
+            window.open(`https://wa.me/254757373025?text=${text}`, '_blank');
+        }
+
+        // Contact Form Submission
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('contactName').value;
+            const phone = document.getElementById('contactPhone').value;
+            const msg = document.getElementById('contactMsg').value;
+
+            const text = `Hello Kanya Interior,%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Message:* ${msg}%0A%0APlease review my inquiry.`;
+            window.open(`https://wa.me/254757373025?text=${text}`, '_blank');
+        }
+
+        // Global Initialization
+        window.onload = () => {
+            renderDotsAndThumbs();
+            updateSlide();
+            startAutoplayTimer();
+            renderEstimatorList();
+            lucide.createIcons();
+        };
     </script>
+
 </body>
 </html>

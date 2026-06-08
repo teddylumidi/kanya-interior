@@ -77,7 +77,7 @@
             
             <!-- Brand Logo Space -->
             <a href="#" class="flex items-center gap-3">
-                <img src="images/logo.png" alt="Logo" class="h-12 w-12 object-cover rounded-lg border border-purpleAccent" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22 viewBox=%220%200%2024%2024%22 fill=%22none%22 stroke=%22%232C1A38%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 class=%22lucide%20lucide-home%22><path d=%22m3%209%209-7%209%207v11a2%202%200%200%201-2%202H5a2%202%200%200%201-2-2z%22/><polyline points=%229%2022%209%2012%2015%2012%2015%2022%22/></svg>'">
+                <img src="images/logo.png" alt="Logo" class="h-12 w-12 object-cover rounded-lg border border-purpleAccent" onerror="safeImageError(this, 'Logo')">
                 <div class="flex flex-col">
                     <span class="text-xl font-black tracking-tight leading-none text-purpleBrand">KANYA</span>
                     <span class="text-[10px] font-bold tracking-widest text-purpleAccent uppercase">Interior</span>
@@ -367,7 +367,7 @@
                 <!-- Main Slideshow Window -->
                 <div class="relative aspect-[16/10] sm:aspect-video w-full bg-purpleBrand rounded-2xl overflow-hidden group border border-gray-200">
                     <!-- Current Image Block -->
-                    <img id="slideshowImg" src="images/1.jpeg" alt="Slideshow Art" class="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out">
+                    <img id="slideshowImg" src="images/1.jpeg" alt="Slideshow Art" class="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out" onerror="safeImageError(this, '#1')">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#2C1A38]/95 via-transparent to-black/35 z-10 pointer-events-none"></div>
 
                     <!-- Slide Controls -->
@@ -556,15 +556,15 @@
                 <form onsubmit="handleContactSubmit(event)" class="space-y-5">
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Name</label>
-                        <input id="contactName" type="text" required class="w-full bg-greyLight border border-gray-200 px-4 py-4 focus:outline-none focus:border-purpleAccent rounded-xl text-purpleBrand font-bold text-sm" placeholder="Your Name">
+                        <input id="contactName" type="text" required class="w-full bg-[#FAF8FA] border border-gray-200 px-4 py-4 focus:outline-none focus:border-purpleAccent rounded-xl text-purpleBrand font-bold text-sm" placeholder="Your Name">
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Phone</label>
-                        <input id="contactPhone" type="tel" required class="w-full bg-greyLight border border-gray-200 px-4 py-4 focus:outline-none focus:border-purpleAccent rounded-xl text-purpleBrand font-bold text-sm" placeholder="Contact Mobile">
+                        <input id="contactPhone" type="tel" required class="w-full bg-[#FAF8FA] border border-gray-200 px-4 py-4 focus:outline-none focus:border-purpleAccent rounded-xl text-purpleBrand font-bold text-sm" placeholder="Contact Mobile">
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Project Brief / Message</label>
-                        <textarea id="contactMsg" rows="4" required class="w-full bg-greyLight border border-gray-200 px-4 py-4 focus:outline-none focus:border-purpleAccent resize-none rounded-xl text-purpleBrand font-bold text-sm" placeholder="e.g. Need gypsum ceilings and skimming for 3-bedroom apartment."></textarea>
+                        <textarea id="contactMsg" rows="4" required class="w-full bg-[#FAF8FA] border border-gray-200 px-4 py-4 focus:outline-none focus:border-purpleAccent resize-none rounded-xl text-purpleBrand font-bold text-sm" placeholder="e.g. Need gypsum ceilings and skimming for 3-bedroom apartment."></textarea>
                     </div>
                     
                     <button type="submit" class="w-full bg-[#25D366] text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-[#1da851] transition flex items-center justify-center gap-2 shadow-lg shadow-[#25D366]/20">
@@ -581,7 +581,7 @@
         <button class="absolute top-6 right-6 text-purpleAccent hover:text-white transition-colors" onclick="closeLightbox()">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
-        <img id="lightboxImg" src="" alt="Zoomed view" class="max-w-full max-h-[85vh] object-contain border-4 border-purpleAccent/20 shadow-2xl rounded" onclick="event.stopPropagation()">
+        <img id="lightboxImg" src="" alt="Zoomed view" class="max-w-full max-h-[85vh] object-contain border-4 border-purpleAccent/20 shadow-2xl rounded" onclick="event.stopPropagation()" onerror="safeImageError(this, 'Lightbox')">
         <p id="lightboxCaption" class="absolute bottom-6 text-purpleAccent font-bold tracking-widest uppercase text-xs sm:text-sm"></p>
     </div>
 
@@ -608,13 +608,30 @@
 
     <!-- Slide State Management Script -->
     <script>
+        // Universal robust image error handler to prevent loops and support extensions safely on case-sensitive servers
+        function safeImageError(imgEl, fallbackName) {
+            if (imgEl.dataset.triedFallback === "true") {
+                imgEl.src = `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'><rect width='100%' height='100%' fill='%232C1A38'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%238B5CF6' font-family='sans-serif' font-size='18' font-weight='bold'>Kanya Interior Project Image ${fallbackName || ''}</text></svg>`;
+                return;
+            }
+            imgEl.dataset.triedFallback = "true";
+            const src = imgEl.src;
+            if (src.endsWith('.jpeg')) {
+                imgEl.src = src.replace(/\.jpeg$/, '.jpg');
+            } else if (src.endsWith('.jpg')) {
+                imgEl.src = src.replace(/\.jpg$/, '.jpeg');
+            } else if (src.endsWith('.png')) {
+                imgEl.src = src.replace(/\.png$/, '.jpg');
+            }
+        }
+
         // Total 39 slides mapped from 1 to 39
         const originalPortfolio = [
             { id: 1, file: 'images/1.jpeg', title: 'Modern Mansion Architectural Facade', category: 'Exterior', accent: 'Exterior Wallmaster & Paint', desc: 'Symmetrical external plaster detailing with premium textured wall cladding.' },
             { id: 2, file: 'images/2.jpeg', title: 'Contemporary Side Elevation', category: 'Exterior', accent: 'Architectural Glazing', desc: 'Stunning structural glass layout reflecting Nairobi ambient light.' },
             { id: 3, file: 'images/3.jpeg', title: 'Grand Elevation Perspective', category: 'Exterior', accent: 'Parapet Detailing', desc: 'High-altitude daylight shot outlining beautiful balcony railings.' },
             { id: 4, file: 'images/4.jpeg', title: 'Structure Under-Construction Scaffold', category: 'Ceilings', accent: 'Gypsum Framework', desc: 'Precision framework alignment for modern interior false ceiling designs.' },
-            { id: 5, file: 'images/5.jpeg', title: 'Luxury Wainscoting Panel Art Wall', category: 'Wainscoting', accent: 'Wainscoting Panels', desc: 'Warm LED downlight showcasing premium geometric wood molding details.' },
+            { id: id = 5, file: 'images/5.jpeg', title: 'Luxury Wainscoting Panel Art Wall', category: 'Wainscoting', accent: 'Wainscoting Panels', desc: 'Warm LED downlight showcasing premium geometric wood molding details.' },
             { id: 6, file: 'images/6.jpeg', title: 'Floating Staircase Warm Illuminations', category: 'Lighting', accent: 'Stairway Lights', desc: 'Elegant staircase steps accented with concealed golden LED light strips.' },
             { id: 7, file: 'images/7.jpeg', title: 'Cascade Bubble Chandelier', category: 'Lighting', accent: 'Pendant Installation', desc: 'Glass bubble lights flowing beautifully down the double-height staircase void.' },
             { id: 8, file: 'images/8.jpeg', title: 'Wainscoting Preps & Primer Coating', category: 'Wainscoting', accent: 'Craftsmanship', desc: 'Craftsmen meticulously leveling modern wallboard panels.' },
@@ -680,13 +697,9 @@
             const slide = filteredPool[currentSlideIndex];
             
             const img = document.getElementById('slideshowImg');
+            // Reset safe error checks for new image
+            delete img.dataset.triedFallback;
             img.src = slide.file;
-            img.onerror = () => {
-                // Extension correction fallback (jpg <-> jpeg check)
-                const src = img.src;
-                if (src.endsWith('.jpeg')) img.src = src.replace(/\.jpeg$/, '.jpg');
-                else if (src.endsWith('.jpg')) img.src = src.replace(/\.jpg$/, '.jpeg');
-            };
 
             document.getElementById('slideCategory').textContent = slide.category;
             document.getElementById('slideTitle').textContent = slide.title;
@@ -723,11 +736,26 @@
         function nextSlide() {
             currentSlideIndex = (currentSlideIndex + 1) % filteredPool.length;
             updateSlide();
+            if (isAutoplay) {
+                startAutoplayTimer(); // Reset autoplay timer on manual trigger
+            }
         }
 
         function prevSlide() {
             currentSlideIndex = (currentSlideIndex - 1 + filteredPool.length) % filteredPool.length;
             updateSlide();
+            if (isAutoplay) {
+                startAutoplayTimer(); // Reset autoplay timer on manual trigger
+            }
+        }
+
+        // Jump to target slide index (handles dots & thumbnails navigation seamlessly)
+        function jumpToSlide(idx) {
+            currentSlideIndex = idx;
+            updateSlide();
+            if (isAutoplay) {
+                startAutoplayTimer(); // Reset autoplay timer on user selection
+            }
         }
 
         // Filter Gallery
@@ -775,10 +803,8 @@
                 const thumbImg = document.createElement('img');
                 thumbImg.src = item.file;
                 thumbImg.className = 'w-full h-full object-cover';
-                thumbImg.onerror = () => {
-                    const src = thumbImg.src;
-                    if (src.endsWith('.jpeg')) thumbImg.src = src.replace(/\.jpeg$/, '.jpg');
-                    else if (src.endsWith('.jpg')) thumbImg.src = src.replace(/\.jpg$/, '.jpeg');
+                thumbImg.onerror = function() {
+                    safeImageError(this, `#${item.id}`);
                 };
 
                 thumb.appendChild(thumbImg);
@@ -817,12 +843,8 @@
             const mImg = document.getElementById('lightboxImg');
             const mCap = document.getElementById('lightboxCaption');
             
+            delete mImg.dataset.triedFallback;
             mImg.src = slide.file;
-            mImg.onerror = () => {
-                const src = mImg.src;
-                if (src.endsWith('.jpeg')) mImg.src = src.replace(/\.jpeg$/, '.jpg');
-                else if (src.endsWith('.jpg')) mImg.src = src.replace(/\.jpg$/, '.jpeg');
-            };
 
             mCap.textContent = `${slide.category} : ${slide.title}`;
             modal.classList.remove('hidden');

@@ -1,0 +1,6 @@
+{
+  "name": "Kanya Interior",
+  "description": "Kanya Interior - Premium Design, Renovation & Construction Services in Nairobi & Kenya.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

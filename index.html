@@ -1,1160 +1,983 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanya Interior | Premium Design & Construction</title>
-    
-    <!-- Google Fonts for Luxury Editorial Aesthetics -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                    colors: {
-                        purpleBrand: '#1A0C24',     // Ultra-deep Velvet Obsidian Purple
-                        purpleSubtle: '#281538',    // Dark Plum Card Surface
-                        purpleAccent: '#9D65FE',    // Vibrant Royal Amethyst
-                        purpleHover: '#B282FF',     // Soft Glow Purple
-                        goldAccent: '#D4AF37',      // Champagne Gold Accent
-                        greyLight: '#F7F6F9',       // Clean Pearl Neutral Grey
-                        charcoalBlue: '#121A24',    // Midnight Slate
-                        greyFooter: '#0F0916',      // Deepest Purple Obsidian Footer
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Early theme init to prevent flash -->
-    <script>
-        (function() {
-            var saved = localStorage.getItem('kanya_theme');
-            if (saved === 'light') {
-                document.documentElement.classList.add('light-theme');
-            }
-        })();
-    </script>
+    <title>Kanya Interior - Premium Interior Design & Renovation Services</title>
     <style>
-        /* Custom scrollbar styling */
-        .custom-scrollbar::-webkit-scrollbar {
-            height: 6px;
-            width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #281538;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #9D65FE;
-            border-radius: 3px;
-        }
-        .hero-bg {
-            background-color: #1A0C24;
-            background-image: 
-                radial-gradient(circle at 15% 20%, rgba(157, 101, 254, 0.18) 0%, transparent 40%),
-                radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 45%),
-                radial-gradient(#9D65FE 0.6px, transparent 0.6px);
-            background-size: 100% 100%, 100% 100%, 28px 28px;
-            background-position: 0 0, 0 0, 0 0;
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-        }
-        .glass-card-dark {
-            background: rgba(40, 21, 56, 0.6);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(157, 101, 254, 0.2);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* High-Contrast Professional Light Theme Overrides */
-        html.light-theme body {
-            background-color: #FFFFFF;
-            color: #1E293B;
+        :root {
+            --dark-bg: #1a1a1a;
+            --dark-secondary: #2a2a2a;
+            --gold: #c9a961;
+            --gold-light: #d4b896;
+            --white: #ffffff;
+            --text-light: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-dark: #0f0f0f;
         }
-        html.light-theme nav {
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            border-bottom-color: rgba(203, 213, 225, 0.9) !important;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
         }
-        html.light-theme nav .text-white {
-            color: #0F172A !important;
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: rgba(26, 26, 26, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
         }
-        html.light-theme nav .text-gray-300 {
-            color: #334155 !important;
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
         }
-        html.light-theme #mobileMenu {
-            background-color: #FFFFFF !important;
-            border-color: #E2E8F0 !important;
-            color: #0F172A !important;
+
+        .logo img {
+            height: 40px;
+            width: auto;
         }
-        html.light-theme .hero-bg {
-            background-color: #F8FAFC !important;
-            background-image: 
-                radial-gradient(circle at 15% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 85% 80%, rgba(217, 119, 6, 0.08) 0%, transparent 45%),
-                radial-gradient(#CBD5E1 0.6px, transparent 0.6px) !important;
+
+        .logo span {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
-        html.light-theme .hero-bg .text-white {
-            color: #0F172A !important;
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
         }
-        html.light-theme .hero-bg .text-gray-300 {
-            color: #475569 !important;
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.25rem;
         }
-        html.light-theme .hero-bg .border-white\/10 {
-            border-color: rgba(203, 213, 225, 0.8) !important;
+
+        nav a:hover,
+        nav a.active {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
         }
-        html.light-theme .glass-panel {
-            background: rgba(255, 255, 255, 0.9) !important;
-            border-color: rgba(203, 213, 225, 0.8) !important;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04) !important;
+
+        .cta-btn {
+            background-color: var(--gold);
+            color: var(--dark-bg);
+            padding: 0.75rem 1.75rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+            cursor: pointer;
         }
-        html.light-theme .glass-panel .text-white {
-            color: #0F172A !important;
+
+        .cta-btn:hover {
+            background-color: transparent;
+            color: var(--gold);
         }
-        html.light-theme .bg-greyLight {
-            background-color: #F8FAFC !important;
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(201, 169, 97, 0.1) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 5%;
+            position: relative;
+            overflow: hidden;
         }
-        html.light-theme .bg-purpleBrand {
-            background-color: #0F172A !important;
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600"><rect x="50" y="50" width="400" height="500" fill="none" stroke="%23c9a961" stroke-width="15"/><rect x="80" y="80" width="340" height="220" fill="%23c9a961" opacity="0.1"/><rect x="80" y="310" width="340" height="220" fill="%23c9a961" opacity="0.1"/></svg>') no-repeat right center;
+            background-size: contain;
+            opacity: 0.3;
         }
-        html.light-theme .bg-purpleSubtle {
-            background-color: #F1F5F9 !important;
-            color: #0F172A !important;
+
+        .hero-content {
+            max-width: 600px;
+            z-index: 10;
         }
-        html.light-theme .glass-card-dark {
-            background: rgba(255, 255, 255, 0.95) !important;
-            border-color: rgba(203, 213, 225, 0.8) !important;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.1;
         }
-        html.light-theme .glass-card-dark .text-white {
-            color: #0F172A !important;
+
+        .hero h1 span {
+            color: var(--gold);
         }
-        html.light-theme .glass-card-dark .text-gray-300 {
-            color: #475569 !important;
+
+        .hero-line {
+            width: 60px;
+            height: 3px;
+            background-color: var(--gold);
+            margin-bottom: 1.5rem;
         }
-        html.light-theme .fixed.bottom-0.bg-purpleBrand\/95 {
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            border-top-color: #E2E8F0 !important;
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
         }
-        html.light-theme .fixed.bottom-0 .text-gray-200 {
-            color: #334155 !important;
+
+        /* Search Section */
+        .search-section {
+            background-color: rgba(42, 42, 42, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(201, 169, 97, 0.2);
+            backdrop-filter: blur(10px);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            align-items: end;
         }
-        html.light-theme footer {
-            background-color: #0F172A !important;
+
+        .search-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .search-field label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .search-field input,
+        .search-field select {
+            background-color: rgba(26, 26, 26, 0.6);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            color: var(--white);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-field input:focus,
+        .search-field select:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 10px rgba(201, 169, 97, 0.2);
+        }
+
+        .search-field input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .search-btn {
+            background-color: var(--gold);
+            color: var(--dark-bg);
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .search-btn:hover {
+            background-color: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        /* Featured Section */
+        .featured {
+            padding: 5rem 5%;
+            background-color: var(--dark-secondary);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            height: 350px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(26, 26, 26, 0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: rgba(26, 26, 26, 0.9);
+            color: var(--gold);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-location {
+            font-size: 0.9rem;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            padding: 5rem 5%;
+            background-color: var(--dark-bg);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            background-color: rgba(201, 169, 97, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover .feature-icon {
+            background-color: rgba(201, 169, 97, 0.2);
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .feature h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .feature p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(42, 42, 42, 0.8) 100%);
+            text-align: center;
+            border-radius: 15px;
+            margin: 0 5%;
+            position: relative;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .cta-section .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1rem;
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            padding: 5rem 5%;
+            background-color: var(--dark-secondary);
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(42, 42, 42, 0.8);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background-color: rgba(26, 26, 26, 0.6);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            color: var(--white);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 10px rgba(201, 169, 97, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            background-color: var(--gold);
+            color: var(--dark-bg);
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .form-submit:hover {
+            background-color: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--accent-dark);
+            padding: 3rem 5%;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .social-icon:hover {
+            background-color: var(--gold);
+            color: var(--dark-bg);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Widget */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            animation: bounce 2s infinite;
+        }
+
+        .whatsapp-btn {
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+                padding: 1rem 3%;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.85rem;
+                order: 3;
+                width: 100%;
+                margin-top: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                margin-top: 150px;
+                height: 80vh;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .search-section {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-widget {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Utilities */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Gallery Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            position: relative;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -30px;
+            right: 0;
+            color: var(--gold);
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--gold-light);
         }
     </style>
 </head>
-<body class="font-sans text-slate-800 bg-greyLight selection:bg-purpleAccent selection:text-white antialiased overflow-x-hidden">
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home" class="logo">
+            <img src="images/logo.png" alt="Kanya Interior Logo">
+            <span>KANYA INTERIOR</span>
+        </a>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#why-us">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="cta-btn">GET STARTED</a>
+    </nav>
 
-    <!-- Floating WhatsApp Widget styled as a premium circular brand badge -->
-    <a href="https://wa.me/254757373025?text=Hello%20Kanya%20Interior,%20I'm%2520interested%2520in%2520your%2520design%2520and%2520renovation%2520services." 
-       class="fixed bottom-24 sm:bottom-8 right-6 z-50 hover:scale-105 transition-transform duration-300 flex items-center justify-center group" 
-       target="_blank" rel="noopener noreferrer"
-       aria-label="Chat on WhatsApp">
-        <div class="relative flex items-center justify-center">
-            <span class="absolute -inset-1 rounded-full bg-emerald-500/30 animate-ping"></span>
-            <svg class="w-14 h-14 sm:w-16 sm:h-16 shadow-2xl rounded-full relative z-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>DESIGN YOUR <span>PERFECT SPACE</span></h1>
+            <div class="hero-line"></div>
+            <p>Discover exceptional interior design solutions and sophisticated spaces tailored to your unique style with Kanya Interior's premium design, renovation & construction services.</p>
+            
+            <!-- Search/Filter Section -->
+            <div class="search-section">
+                <div class="search-field">
+                    <label>Style</label>
+                    <select id="styleFilter">
+                        <option value="">All Styles</option>
+                        <option value="modern">Modern</option>
+                        <option value="contemporary">Contemporary</option>
+                        <option value="luxury">Luxury</option>
+                        <option value="residential">Residential</option>
+                    </select>
+                </div>
+                <div class="search-field">
+                    <label>Room Type</label>
+                    <select id="roomFilter">
+                        <option value="">All Rooms</option>
+                        <option value="living">Living Room</option>
+                        <option value="bedroom">Bedroom</option>
+                        <option value="kitchen">Kitchen</option>
+                        <option value="bathroom">Bathroom</option>
+                    </select>
+                </div>
+                <button class="search-btn" onclick="filterProjects()">🔍 SEARCH</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="featured" id="portfolio">
+        <h2 class="section-title">FEATURED PROJECTS</h2>
+        
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Projects will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us" id="why-us">
+        <h2 class="section-title">WHY CHOOSE US</h2>
+        
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🏠</div>
+                <h3>Premium Designs</h3>
+                <p>Curated exclusive interior designs and sophisticated spaces tailored to your unique aesthetic preferences and lifestyle needs.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🤝</div>
+                <h3>Expert Guidance</h3>
+                <p>Our design professionals bring extensive knowledge, local expertise, and personalized consultation for every project phase.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🎨</div>
+                <h3>Complete Service</h3>
+                <p>From initial concept through design, renovation, and construction - we handle everything with meticulous attention to detail.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+                <h3>Quality Assured</h3>
+                <p>We maintain the highest standards in materials, craftsmanship, and timely delivery for a worry-free experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>READY TO TRANSFORM YOUR SPACE?</h2>
+        <p>Let us help you create an interior you'll love to live in. Contact us today for a consultation.</p>
+        <a href="#contact" class="cta-btn">VIEW PORTFOLIO →</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">GET IN TOUCH</h2>
+        
+        <div class="contact-container">
+            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                <div class="form-group">
+                    <label for="contactName">Your Name</label>
+                    <input type="text" id="contactName" name="name" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactPhone">Phone Number</label>
+                    <input type="tel" id="contactPhone" name="phone" required placeholder="+254 (your phone number)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactMsg">Message</label>
+                    <textarea id="contactMsg" name="message" required placeholder="Tell us about your design vision..."></textarea>
+                </div>
+                
+                <button type="submit" class="form-submit">SEND VIA WHATSAPP</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="images/logo.png" alt="Kanya Interior" style="height: 40px; margin-bottom: 1rem;">
+                <p style="color: var(--text-muted);">Creating extraordinary interior spaces with design excellence, premium materials, and exceptional craftsmanship across Nairobi and Kenya.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#why-us">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Interior Design</a></li>
+                    <li><a href="#">Home Renovation</a></li>
+                    <li><a href="#">Construction</a></li>
+                    <li><a href="#">Consultation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">Follow our latest projects and design inspiration.</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com" class="social-icon" target="_blank">f</a>
+                    <a href="https://instagram.com" class="social-icon" target="_blank">📷</a>
+                    <a href="https://linkedin.com" class="social-icon" target="_blank">in</a>
+                </div>
+                <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.85rem;">
+                    <strong>Phone:</strong> +254 757 373 025
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Kanya Interior. All rights reserved. Premium Interior Design, Renovation & Construction Services in Nairobi, Kenya.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Widget -->
+    <a href="https://wa.me/254757373025?text=Hello%20Kanya%20Interior,%20I'm%2520interested%2520in%2520your%2520design%2520services." 
+       class="whatsapp-widget" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <div class="whatsapp-btn">
+            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="20" cy="20" r="20" fill="#25D366"/>
                 <path d="M20 10c-5.5 0-10 4.5-10 10 0 1.8.5 3.5 1.4 5L10 30l5.1-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S25.5 10 20 10zm4.2 13.8c-.2.4-.8.8-1.3.9-.3.1-.7.1-2.1-.4-1.7-.7-3.1-2.4-4-3.5-.1-.1-.1-.2-.2-.2-.2-.3-.4-.6-.6-1-.8-1.1-.9-2-.4-2.5l.4-.4c.2-.2.3-.2.4-.2h.3c.1 0 .3 0 .4.2l.8 1.9c.1.2.1.3-.1.5l-.4.5c-.1.1-.2.2-.1.4.4.8.9 1.4 1.5 2 .6.6 1.3 1.1 2.1 1.4.2.1.3.1.4-.1l.5-.6c.1-.1.3-.2.4-.1l1.9.9c.2.1.3.2.3.4v.8c0 .3-.1.6-.3.9z" fill="white"/>
             </svg>
         </div>
-        <span class="absolute right-20 bg-purpleBrand text-purpleAccent text-xs font-bold px-3.5 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap border border-purpleAccent/30 shadow-2xl">
-            Chat 24/7 on WhatsApp
-        </span>
     </a>
 
-    <!-- Mobile-First Sticky Action Bar -->
-    <div class="sm:hidden fixed bottom-0 left-0 w-full z-40 bg-purpleBrand/95 backdrop-blur-lg border-t border-purpleAccent/30 text-white flex divide-x divide-purpleAccent/20 shadow-2xl">
-        <a href="tel:0757373025" class="flex-1 py-3.5 flex flex-col justify-center items-center gap-1 font-bold text-[11px] text-purpleAccent hover:bg-purpleSubtle transition-colors">
-            <i data-lucide="phone" class="w-4 h-4"></i> Call 0757373025
-        </a>
-        <a href="tel:0715257929" class="flex-1 py-3.5 flex flex-col justify-center items-center gap-1 font-bold text-[11px] text-gray-200 hover:bg-purpleSubtle transition-colors">
-            <i data-lucide="phone-call" class="w-4 h-4"></i> Call 0715 257 929
-        </a>
-        <a href="https://wa.me/254757373025?text=Hello%20Kanya%20Interior,%20I'm%20interested%20in%20a%20design%20quote." target="_blank" rel="noopener noreferrer" class="flex-1 py-3.5 flex flex-col justify-center items-center gap-1 font-bold text-[11px] bg-[#25D366] text-white hover:bg-[#1fa952] transition-colors">
-            <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Quote
-        </a>
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeGallery()">&times;</span>
+            <img id="modalImage" src="" alt="Project Details">
+        </div>
     </div>
 
-    <!-- Navigation Header -->
-    <nav class="fixed w-full z-40 bg-purpleBrand/90 backdrop-blur-md border-b border-purpleAccent/20 shadow-xl transition-all">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex justify-between h-20 items-center">
-            
-            <!-- Brand Logo Space -->
-            <a href="#" class="flex items-center gap-3.5 group">
-                <div class="relative overflow-hidden rounded-xl p-0.5 bg-gradient-to-tr from-purpleAccent to-goldAccent">
-                    <img src="images/logo.png" alt="Kanya Interior Logo" class="h-11 w-11 object-cover rounded-[10px]" onerror="safeImageError(this, 'Logo')">
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-2xl font-serif font-bold tracking-tight leading-none text-white group-hover:text-purpleAccent transition-colors">KANYA</span>
-                    <span class="text-[9px] font-bold tracking-[0.25em] text-purpleAccent uppercase pt-0.5">Interior Design</span>
-                </div>
-            </a>
-            
-            <!-- Desktop Nav Items -->
-            <div class="hidden md:flex gap-8 font-semibold text-xs tracking-widest uppercase items-center text-gray-300">
-              <a href="#about" class="hover:text-purpleAccent transition-colors py-1">About</a>
-              <a href="#services" class="hover:text-purpleAccent transition-colors py-1">Services</a>
-              <a href="#gallery" class="hover:text-purpleAccent transition-colors py-1">Work Gallery</a>
-              <a href="#contact" class="hover:text-purpleAccent transition-colors py-1">Contact</a>
-            </div>
-
-            <!-- Direct Quick Call & Theme Switcher Header Buttons -->
-            <div class="hidden md:flex items-center gap-3">
-                <button id="themeToggleBtn" onclick="toggleTheme()" class="bg-purpleSubtle/80 text-white border border-purpleAccent/40 hover:border-purpleAccent hover:bg-purpleAccent/20 px-3.5 py-2.5 rounded-xl text-xs font-bold tracking-wider flex items-center gap-2 transition-all shadow-md cursor-pointer" title="Switch Theme" aria-label="Toggle site theme">
-                    <i data-lucide="sun" id="themeIcon" class="w-4 h-4 text-goldAccent"></i>
-                    <span id="themeText" class="hidden xl:inline">Dark</span>
-                </button>
-
-                <a href="tel:0757373025" class="hidden lg:flex bg-purpleSubtle/80 text-white border border-purpleAccent/40 hover:border-purpleAccent hover:bg-purpleAccent/20 px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider items-center gap-2.5 transition-all shadow-md">
-                    <i data-lucide="phone" class="w-3.5 h-3.5 text-purpleAccent"></i>
-                    <span>0757 373 025</span>
-                </a>
-            </div>
-
-            <!-- Mobile Menu Toggle & Theme Button -->
-            <div class="md:hidden flex items-center gap-1.5">
-              <button id="themeToggleBtnMobile" onclick="toggleTheme()" class="p-2 text-white focus:outline-none rounded-lg hover:bg-white/10 flex items-center justify-center" title="Switch Theme" aria-label="Toggle site theme">
-                <i data-lucide="sun" id="themeIconMobile" class="w-5 h-5 text-goldAccent"></i>
-              </button>
-              <button id="menuBtn" onclick="toggleMobileMenu()" class="p-2 text-white focus:outline-none rounded-lg hover:bg-white/10" aria-label="Toggle navigation">
-                <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Expandable Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-purpleBrand border-b border-purpleAccent/20 px-6 py-6 space-y-4 font-semibold text-center text-sm uppercase tracking-wider text-gray-200">
-            <a href="#about" class="block py-2 hover:text-purpleAccent" onclick="toggleMobileMenu()">About</a>
-            <a href="#services" class="block py-2 hover:text-purpleAccent" onclick="toggleMobileMenu()">Services</a>
-            <a href="#gallery" class="block py-2 hover:text-purpleAccent" onclick="toggleMobileMenu()">Work Gallery</a>
-            <a href="#contact" class="block py-2 hover:text-purpleAccent" onclick="toggleMobileMenu()">Contact</a>
-            <div class="pt-4 border-t border-purpleAccent/20 flex flex-col gap-2.5">
-                <a href="tel:0757373025" class="text-xs bg-purpleAccent text-white py-3 rounded-xl flex items-center justify-center gap-2 font-bold tracking-wider">
-                    <i data-lucide="phone" class="w-4 h-4"></i> Call 0757 373 025
-                </a>
-                <a href="tel:0715257929" class="text-xs bg-purpleSubtle text-gray-200 border border-purpleAccent/30 py-3 rounded-xl flex items-center justify-center gap-2 font-bold tracking-wider">
-                    <i data-lucide="phone-call" class="w-4 h-4"></i> Call 0715 257 929
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- 1. Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-28 pb-16 hero-bg overflow-hidden">
-        <!-- Interactive ambient glow spots -->
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#1A0C24]/60 to-[#1A0C24] z-0 pointer-events-none"></div>
-        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purpleAccent/10 rounded-full blur-[120px] pointer-events-none"></div>
-
-        <div class="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto space-y-8">
-            <div class="inline-flex items-center gap-2.5 bg-white/5 backdrop-blur-xl border border-purpleAccent/30 px-4 py-2 rounded-full text-xs text-purpleHover font-semibold uppercase tracking-widest shadow-xl">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                Direct Mobile Service • Nairobi & Nation-wide
-            </div>
-            
-            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-serif font-normal text-white tracking-tight leading-[0.95] drop-shadow-2xl">
-                KANYA <span class="italic font-light text-purpleAccent">INTERIOR</span>
-            </h1>
-            
-            <p class="text-lg sm:text-xl lg:text-2xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed drop-shadow-md">
-                “Kanya Interior delivers the desired vision for every client.” From luxury wainscoting and modern gypsum lighting ceilings to weather-resistant Wallmaster finishes.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-6 max-w-md sm:max-w-none mx-auto">
-                <a href="tel:0757373025" class="bg-purpleAccent text-white hover:bg-purpleHover transition-all duration-300 px-9 py-4.5 rounded-2xl font-bold uppercase tracking-widest text-xs shadow-2xl shadow-purpleAccent/25 hover:scale-[1.02] flex items-center justify-center gap-3">
-                    <i data-lucide="phone" class="w-4 h-4"></i> Call Now
-                </a>
-                <a href="https://wa.me/254757373025?text=Hi%20Kanya%20Interior!%20I'm%20looking%20for%20a%20quote%20for%20a%20new%20interior%20project." 
-                   target="_blank" rel="noopener noreferrer" 
-                   class="glass-panel text-white hover:border-purpleAccent px-9 py-4.5 rounded-2xl font-bold uppercase tracking-widest text-xs transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3 shadow-2xl">
-                    <svg class="w-4 h-4" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="20" cy="20" r="20" fill="#25D366"/>
-                        <path d="M20 10c-5.5 0-10 4.5-10 10 0 1.8.5 3.5 1.4 5L10 30l5.1-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S25.5 10 20 10zm4.2 13.8c-.2.4-.8.8-1.3.9-.3.1-.7.1-2.1-.4-1.7-.7-3.1-2.4-4-3.5-.1-.1-.1-.2-.2-.2-.2-.3-.4-.6-.6-1-.8-1.1-.9-2-.4-2.5l.4-.4c.2-.2.3-.2.4-.2h.3c.1 0 .3 0 .4.2l.8 1.9c.1.2.1.3-.1.5l-.4.5c-.1.1-.2.2-.1.4.4.8.9 1.4 1.5 2 .6.6 1.3 1.1 2.1 1.4.2.1.3.1.4-.1l.5-.6c.1-.1.3-.2.4-.1l1.9.9c.2.1.3.2.3.4v.8c0 .3-.1.6-.3.9z" fill="white"/>
-                    </svg>
-                    Get Quote On WhatsApp
-                </a>
-            </div>
-
-            <!-- Quick Highlight Badges -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-12 text-left max-w-4xl mx-auto border-t border-white/10">
-                <div class="p-4 rounded-xl glass-panel">
-                    <p class="text-purpleAccent text-xs font-bold uppercase tracking-wider">Direct Hotline</p>
-                    <p class="text-white text-sm font-bold mt-1">0757 373 025</p>
-                </div>
-                <div class="p-4 rounded-xl glass-panel">
-                    <p class="text-purpleAccent text-xs font-bold uppercase tracking-wider">Alternative Line</p>
-                    <p class="text-white text-sm font-bold mt-1">0715 257 929</p>
-                </div>
-                <div class="p-4 rounded-xl glass-panel">
-                    <p class="text-purpleAccent text-xs font-bold uppercase tracking-wider">Coverage</p>
-                    <p class="text-white text-sm font-bold mt-1">Kenya-Wide</p>
-                </div>
-                <div class="p-4 rounded-xl glass-panel">
-                    <p class="text-purpleAccent text-xs font-bold uppercase tracking-wider">Pricing</p>
-                    <p class="text-emerald-400 text-sm font-bold mt-1">100% Negotiable</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Subtle bottom scroll indicator -->
-        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce hidden sm:block">
-            <a href="#about" class="text-white/40 hover:text-purpleAccent transition-colors">
-                <i data-lucide="chevron-down" class="w-7 h-7"></i>
-            </a>
-        </div>
-    </section>
-
-    <!-- 2. About Section -->
-    <section id="about" class="py-24 bg-greyLight border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                
-                <!-- Graphic Highlight Left -->
-                <div class="lg:col-span-5 space-y-6">
-                    <div class="relative bg-purpleBrand text-white p-8 sm:p-10 rounded-3xl overflow-hidden shadow-2xl border border-purpleAccent/30">
-                        <div class="absolute -right-16 -bottom-16 w-56 h-56 bg-purpleAccent/20 rounded-full blur-3xl"></div>
-                        
-                        <div class="w-14 h-14 bg-purpleSubtle rounded-2xl flex items-center justify-center border border-purpleAccent/40 mb-6 text-purpleAccent">
-                            <i data-lucide="compass" class="w-7 h-7"></i>
-                        </div>
-
-                        <span class="text-[10px] font-bold tracking-[0.2em] text-purpleAccent uppercase">Core Advantage</span>
-                        <h3 class="text-2xl font-serif font-bold tracking-tight text-white mt-1">Our Operational Model</h3>
-                        
-                        <p class="text-gray-300 text-sm leading-relaxed mt-4">
-                            We work without expensive brick-and-mortar showrooms, allowing us to source and install top-tier materials while passing 100% of the cost-savings directly to our clients.
-                        </p>
-
-                        <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-purpleAccent">
-                            <span class="flex items-center gap-2">
-                                <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Status: Active 24/7
-                            </span>
-                            <span>Direct Response</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Text Content Right -->
-                <div class="lg:col-span-7 space-y-8">
-                    <div class="space-y-3">
-                        <span class="text-xs font-bold tracking-[0.25em] uppercase text-purpleAccent">01 / Operational Overview</span>
-                        <h2 class="text-4xl sm:text-5xl font-serif font-normal text-purpleBrand tracking-tight leading-tight">
-                            Flexible Mobile Architecture.
-                        </h2>
-                        <div class="w-16 h-1 bg-purpleAccent rounded-full"></div>
-                    </div>
-                    
-                    <p class="text-gray-700 text-base sm:text-lg leading-relaxed font-light">
-                        Kanya Interior is a premier mobile design, finish, and construction group based in Nairobi, operating country-wide across Kenya. We specialize in transforming residential villas, corporate offices, commercial centers, and residential apartments into highly functional and aesthetically pleasing environments.
-                    </p>
-
-                    <div class="grid sm:grid-cols-3 gap-5 pt-2">
-                        <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow space-y-2">
-                            <div class="p-2.5 bg-purpleBrand/5 rounded-xl text-purpleAccent w-fit">
-                                <i data-lucide="clock" class="w-5 h-5"></i>
-                            </div>
-                            <h4 class="font-bold text-xs uppercase tracking-wider text-purpleBrand pt-1">24/7 Service</h4>
-                            <p class="text-xs text-gray-600">Ready when your project demands.</p>
-                        </div>
-                        
-                        <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow space-y-2">
-                            <div class="p-2.5 bg-purpleBrand/5 rounded-xl text-purpleAccent w-fit">
-                                <i data-lucide="map-pin" class="w-5 h-5"></i>
-                            </div>
-                            <h4 class="font-bold text-xs uppercase tracking-wider text-purpleBrand pt-1">Nairobi Based</h4>
-                            <p class="text-xs text-gray-600">Deploying units countrywide daily.</p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow space-y-2">
-                            <div class="p-2.5 bg-purpleBrand/5 rounded-xl text-purpleAccent w-fit">
-                                <i data-lucide="shield-check" class="w-5 h-5"></i>
-                            </div>
-                            <h4 class="font-bold text-xs uppercase tracking-wider text-purpleBrand pt-1">Mobile Team</h4>
-                            <p class="text-xs text-gray-600">Zero overhead, maximum savings.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. Services Section -->
-    <section id="services" class="py-24 bg-white border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <span class="text-xs font-bold tracking-[0.25em] uppercase text-purpleAccent">02 / Services Directory</span>
-                <h2 class="text-4xl sm:text-5xl font-serif font-normal tracking-tight text-purpleBrand">Our Technical Specialties</h2>
-                <div class="w-16 h-1 bg-purpleAccent rounded-full mx-auto"></div>
-                <p class="text-gray-600 text-base">
-                    Highly engineered wall preparation, decorative architectural layouts, flooring finishes, and custom cabinetry setups executed with precision.
-                </p>
-                <div class="inline-flex items-center gap-2 bg-purpleBrand/5 border border-purpleAccent/30 text-purpleBrand text-xs font-bold px-4 py-2 rounded-full mt-2 uppercase tracking-wide">
-                    <span>⚠️ All pricing packages are 100% negotiable to fit your budget!</span>
-                </div>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Service 1 -->
-                <div class="bg-greyLight p-8 rounded-3xl border border-gray-200/80 hover:bg-purpleBrand hover:text-white transition-all duration-300 group hover:shadow-2xl hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-purpleAccent mb-6 group-hover:bg-purpleAccent group-hover:text-white transition-colors">
-                        <i data-lucide="paintbrush" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-serif font-bold mb-3 tracking-tight">Skimming & Wall Finishing</h3>
-                    <p class="text-xs text-gray-600 group-hover:text-purple-200/90 leading-relaxed font-light">
-                        Precision multi-layered undercoats to achieve zero-defect smooth walls, preparing surfaces perfectly for luxury paint or architectural wainscoting.
-                    </p>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="bg-greyLight p-8 rounded-3xl border border-gray-200/80 hover:bg-purpleBrand hover:text-white transition-all duration-300 group hover:shadow-2xl hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-purpleAccent mb-6 group-hover:bg-purpleAccent group-hover:text-white transition-colors">
-                        <i data-lucide="palette" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-serif font-bold mb-3 tracking-tight">Painting Services</h3>
-                    <p class="text-xs text-gray-600 group-hover:text-purple-200/90 leading-relaxed font-light">
-                        Premium interior and exterior coatings utilizing professional-grade, long-lasting emulsions with beautiful color-matching expertise.
-                    </p>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="bg-greyLight p-8 rounded-3xl border border-gray-200/80 hover:bg-purpleBrand hover:text-white transition-all duration-300 group hover:shadow-2xl hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-purpleAccent mb-6 group-hover:bg-purpleAccent group-hover:text-white transition-colors">
-                        <i data-lucide="layers" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-serif font-bold mb-3 tracking-tight">Wallmaster Installations</h3>
-                    <p class="text-xs text-gray-600 group-hover:text-purple-200/90 leading-relaxed font-light">
-                        Highly resilient, weather-proof textured cladding designed to defend external facades while offering modern visual elements.
-                    </p>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="bg-greyLight p-8 rounded-3xl border border-gray-200/80 hover:bg-purpleBrand hover:text-white transition-all duration-300 group hover:shadow-2xl hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-purpleAccent mb-6 group-hover:bg-purpleAccent group-hover:text-white transition-colors">
-                        <i data-lucide="grid" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-serif font-bold mb-3 tracking-tight">Gypsum Installation</h3>
-                    <p class="text-xs text-gray-600 group-hover:text-purple-200/90 leading-relaxed font-light">
-                        State-of-the-art false ceilings, double-tiered bulkhead channels, integrated LED ambient voids, and flawless plaster boards.
-                    </p>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="bg-greyLight p-8 rounded-3xl border border-gray-200/80 hover:bg-purpleBrand hover:text-white transition-all duration-300 group hover:shadow-2xl hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-purpleAccent mb-6 group-hover:bg-purpleAccent group-hover:text-white transition-colors">
-                        <i data-lucide="layout-grid" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-serif font-bold mb-3 tracking-tight">Tile Installation</h3>
-                    <p class="text-xs text-gray-600 group-hover:text-purple-200/90 leading-relaxed font-light">
-                        Precision porcelain, ceramic, and marble flooring tiling alignment with clean waterproofing and premium epoxy grouting.
-                    </p>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="bg-greyLight p-8 rounded-3xl border border-gray-200/80 hover:bg-purpleBrand hover:text-white transition-all duration-300 group hover:shadow-2xl hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-purpleAccent mb-6 group-hover:bg-purpleAccent group-hover:text-white transition-colors">
-                        <i data-lucide="columns" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-serif font-bold mb-3 tracking-tight">SPC Flooring</h3>
-                    <p class="text-xs text-gray-600 group-hover:text-purple-200/90 leading-relaxed font-light">
-                        Premium Stone Plastic Composite waterproof floorboards laid elegantly across your space with protective sound barriers.
-                    </p>
-                </div>
-
-                <!-- Service 7 -->
-                <div class="bg-greyLight p-8 rounded-3xl border border-gray-200/80 hover:bg-purpleBrand hover:text-white transition-all duration-300 group hover:shadow-2xl hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-purpleAccent mb-6 group-hover:bg-purpleAccent group-hover:text-white transition-colors">
-                        <i data-lucide="hammer" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-serif font-bold mb-3 tracking-tight">Kitchen Cabinet Design</h3>
-                    <p class="text-xs text-gray-600 group-hover:text-purple-200/90 leading-relaxed font-light">
-                        Highly customizable modern kitchen cabinetry layout including silent soft-close hinges, quartz worktops, and modular space efficiency.
-                    </p>
-                </div>
-
-                <!-- Service 8 -->
-                <div class="bg-greyLight p-8 rounded-3xl border border-gray-200/80 hover:bg-purpleBrand hover:text-white transition-all duration-300 group hover:shadow-2xl hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-purpleAccent mb-6 group-hover:bg-purpleAccent group-hover:text-white transition-colors">
-                        <i data-lucide="home" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-serif font-bold mb-3 tracking-tight">Bespoke Wardrobes</h3>
-                    <p class="text-xs text-gray-600 group-hover:text-purple-200/90 leading-relaxed font-light">
-                        Tailor-made floor-to-ceiling sliding or hinged wardrobes, optimizing internal configurations to support complete organization.
-                    </p>
-                </div>
-
-                <!-- Service 9 -->
-                <div class="bg-greyLight p-8 rounded-3xl border border-gray-200/80 hover:bg-purpleBrand hover:text-white transition-all duration-300 group hover:shadow-2xl hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-purpleAccent mb-6 group-hover:bg-purpleAccent group-hover:text-white transition-colors">
-                        <i data-lucide="box" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-serif font-bold mb-3 tracking-tight">Wainscoting & Panels</h3>
-                    <p class="text-xs text-gray-600 group-hover:text-purple-200/90 leading-relaxed font-light">
-                        Classic and contemporary custom solid wood moldings and symmetrical panels providing elegant structural visual highlights.
-                    </p>
-                </div>
-
-                <!-- Service 10 -->
-                <div class="bg-greyLight p-8 rounded-3xl border border-gray-200/80 hover:bg-purpleBrand hover:text-white transition-all duration-300 group hover:shadow-2xl hover:-translate-y-1 sm:col-span-2 lg:col-span-1">
-                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-purpleAccent mb-6 group-hover:bg-purpleAccent group-hover:text-white transition-colors">
-                        <i data-lucide="door-closed" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-serif font-bold mb-3 tracking-tight">Frames & Door Installation</h3>
-                    <p class="text-xs text-gray-600 group-hover:text-purple-200/90 leading-relaxed font-light">
-                        Precision mounting of high-grade wooden/metal door frames, elegant architraves, hinges, locksets, and flush or panel doors with seamless alignment.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 4. Interactive Work Gallery (39 Images Catalog + Grid View + Search) -->
-    <section id="gallery" class="py-24 bg-greyLight border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-6">
-                <div class="space-y-3 text-left">
-                    <span class="text-xs font-bold tracking-[0.25em] uppercase text-purpleAccent">03 / Project Catalog</span>
-                    <h2 class="text-4xl sm:text-5xl font-serif font-normal text-purpleBrand">Our Masterpieces</h2>
-                    <div class="w-16 h-1 bg-purpleAccent rounded-full"></div>
-                </div>
-                
-                <!-- Category Selectors -->
-                <div class="flex flex-wrap gap-2 text-xs font-bold uppercase tracking-wider">
-                    <button onclick="filterGallery('All')" class="category-tab px-4 py-2.5 rounded-xl border border-purpleBrand bg-purpleBrand text-white transition-all shadow-sm" data-category="All">All Projects</button>
-                    <button onclick="filterGallery('Exterior')" class="category-tab px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-purpleBrand hover:bg-gray-100 transition-all" data-category="Exterior">Exteriors</button>
-                    <button onclick="filterGallery('Ceilings')" class="category-tab px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-purpleBrand hover:bg-gray-100 transition-all" data-category="Ceilings">Ceilings & Gypsum</button>
-                    <button onclick="filterGallery('Flooring')" class="category-tab px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-purpleBrand hover:bg-gray-100 transition-all" data-category="Flooring">Flooring / SPC</button>
-                    <button onclick="filterGallery('Wainscoting')" class="category-tab px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-purpleBrand hover:bg-gray-100 transition-all" data-category="Wainscoting">Wainscoting</button>
-                </div>
-            </div>
-
-            <!-- Search Bar & Keyword Quick Filters -->
-            <div class="max-w-5xl mx-auto mb-8 bg-white p-4 sm:p-5 rounded-2xl border border-gray-200/80 shadow-md space-y-3.5">
-                <div class="relative flex items-center">
-                    <i data-lucide="search" class="w-5 h-5 absolute left-4 text-purpleAccent pointer-events-none"></i>
-                    <input id="gallerySearchInput" type="text" oninput="handleGallerySearch(this.value)" placeholder="Search projects by service type or keyword (e.g., Wainscoting, Gypsum, SPC, Lighting)..." class="w-full bg-greyLight border border-gray-200/90 rounded-xl pl-12 pr-10 py-3 text-sm text-purpleBrand font-medium focus:outline-none focus:border-purpleAccent transition-colors">
-                    <button id="clearSearchBtn" onclick="clearGallerySearch()" class="hidden absolute right-3 p-1.5 rounded-lg text-gray-400 hover:text-purpleBrand hover:bg-gray-200 transition-colors" title="Clear Search">
-                        <i data-lucide="x" class="w-4 h-4"></i>
-                    </button>
-                </div>
-                
-                <!-- Quick Keyword Filter Pills -->
-                <div class="flex flex-wrap items-center gap-2 text-xs font-semibold text-gray-600">
-                    <span class="text-[11px] font-bold text-purpleBrand uppercase tracking-wider flex items-center gap-1 mr-1">
-                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-purpleAccent"></i> Quick Tags:
-                    </span>
-                    <button onclick="setKeywordSearch('Wainscoting')" class="px-3 py-1.5 bg-purpleBrand/5 hover:bg-purpleAccent hover:text-white text-purpleBrand rounded-xl border border-purpleBrand/10 transition-colors font-medium">Wainscoting</button>
-                    <button onclick="setKeywordSearch('Gypsum')" class="px-3 py-1.5 bg-purpleBrand/5 hover:bg-purpleAccent hover:text-white text-purpleBrand rounded-xl border border-purpleBrand/10 transition-colors font-medium">Gypsum Ceilings</button>
-                    <button onclick="setKeywordSearch('SPC')" class="px-3 py-1.5 bg-purpleBrand/5 hover:bg-purpleAccent hover:text-white text-purpleBrand rounded-xl border border-purpleBrand/10 transition-colors font-medium">SPC Flooring</button>
-                    <button onclick="setKeywordSearch('Lighting')" class="px-3 py-1.5 bg-purpleBrand/5 hover:bg-purpleAccent hover:text-white text-purpleBrand rounded-xl border border-purpleBrand/10 transition-colors font-medium">Lighting & LED</button>
-                    <button onclick="setKeywordSearch('Wallmaster')" class="px-3 py-1.5 bg-purpleBrand/5 hover:bg-purpleAccent hover:text-white text-purpleBrand rounded-xl border border-purpleBrand/10 transition-colors font-medium">Wallmaster</button>
-                    <button onclick="setKeywordSearch('Facade')" class="px-3 py-1.5 bg-purpleBrand/5 hover:bg-purpleAccent hover:text-white text-purpleBrand rounded-xl border border-purpleBrand/10 transition-colors font-medium">Exterior Facade</button>
-                </div>
-            </div>
-
-            <!-- Empty Search Results Fallback -->
-            <div id="emptySearchResults" class="hidden max-w-5xl mx-auto mb-8 p-10 bg-white rounded-3xl border border-gray-200/80 shadow-lg text-center space-y-4">
-                <div class="w-14 h-14 bg-purpleBrand/5 rounded-2xl flex items-center justify-center mx-auto text-purpleAccent">
-                    <i data-lucide="search-x" class="w-7 h-7"></i>
-                </div>
-                <h3 class="text-xl font-serif font-bold text-purpleBrand">No Matching Projects Found</h3>
-                <p id="emptySearchText" class="text-sm text-gray-500 font-light max-w-md mx-auto">We couldn't find any portfolio items matching your query.</p>
-                <button onclick="clearGallerySearch()" class="bg-purpleBrand text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-xl hover:bg-purpleSubtle transition-all shadow-md">Reset Search & View All</button>
-            </div>
-
-            <!-- Slideshow Featured Showcase -->
-            <div id="slideshowShowcase" class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/80 shadow-2xl max-w-5xl mx-auto space-y-6">
-                
-                <!-- Main Stage Image Window -->
-                <div class="relative aspect-[16/10] sm:aspect-video w-full bg-purpleBrand rounded-2xl overflow-hidden group border border-purpleAccent/20">
-                    <img id="slideshowImg" src="images/1.jpeg" alt="Kanya Interior Portfolio Project" class="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out" onerror="safeImageError(this, '#1')">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#1A0C24] via-transparent to-black/30 z-10 pointer-events-none"></div>
-
-                    <!-- Left & Right Arrow Navigation -->
-                    <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-purpleBrand/80 hover:bg-purpleAccent text-white rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 shadow-2xl border border-white/20" aria-label="Previous image">
-                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
-                    </button>
-                    <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-purpleBrand/80 hover:bg-purpleAccent text-white rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 shadow-2xl border border-white/20" aria-label="Next image">
-                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
-                    </button>
-
-                    <!-- Overlay Detail Panel -->
-                    <div class="absolute bottom-6 left-6 right-6 z-20 text-white space-y-2.5 text-left pointer-events-auto">
-                        <div class="flex items-center gap-2">
-                            <span id="slideCategory" class="bg-purpleAccent text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Exterior</span>
-                        </div>
-                        <h3 id="slideTitle" class="text-xl sm:text-3xl font-serif font-bold text-white tracking-wide">Modern Mansion Exterior</h3>
-                        <p id="slideDesc" class="text-xs sm:text-sm text-gray-300 font-light max-w-2xl line-clamp-2 leading-relaxed">High-definition triple-story exterior finishing and Wallmaster installation in Nairobi.</p>
-                        
-                        <div class="pt-2 flex flex-wrap gap-3">
-                            <button onclick="launchLightbox()" class="bg-white/15 hover:bg-white/30 backdrop-blur-md text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all border border-white/20 flex items-center gap-2">
-                                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Inspect Full Image
-                            </button>
-                            <a id="slideQuoteBtn" href="#" target="_blank" class="bg-[#25D366] hover:bg-[#1fa952] text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all flex items-center gap-2 shadow-lg">
-                                <i data-lucide="message-circle" class="w-4 h-4"></i> Inquire This Design
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Slide Counter Indicator -->
-                    <div class="absolute top-6 right-6 z-20 bg-purpleBrand/90 text-white border border-purpleAccent/40 px-3.5 py-1.5 rounded-full text-xs font-mono backdrop-blur-md shadow-lg">
-                        <span id="slideIndex" class="text-purpleAccent font-bold">1</span> / <span id="slideTotal">39</span>
-                    </div>
-                </div>
-
-                <!-- Gallery Controls Toolbar -->
-                <div class="flex flex-col sm:flex-row justify-between items-center gap-4 bg-greyLight p-4 rounded-2xl border border-gray-200">
-                    <button onclick="toggleSlideshowPlayback()" class="flex items-center gap-2.5 text-xs font-bold text-purpleBrand hover:text-purpleAccent transition-all">
-                        <span id="playIcon" class="p-2 bg-purpleBrand rounded-xl text-purpleAccent shadow-sm"><i data-lucide="pause" class="w-3.5 h-3.5"></i></span>
-                        <span id="playText" class="uppercase tracking-wider">Autoplay: On</span>
-                    </button>
-
-                    <!-- Dot indicators -->
-                    <div id="slideDots" class="flex gap-1.5 max-w-[280px] overflow-x-auto py-1 custom-scrollbar">
-                        <!-- Populated dynamically -->
-                    </div>
-
-                    <span class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">39 Verified Project Shots</span>
-                </div>
-
-                <!-- Horizontal clickable thumbnail index -->
-                <div class="space-y-2">
-                    <p class="text-xs font-bold uppercase tracking-wider text-purpleBrand text-left">Click Thumbnail to Jump:</p>
-                    <div id="slideThumbs" class="flex gap-2.5 overflow-x-auto py-2 custom-scrollbar">
-                        <!-- Populated dynamically -->
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Optional Grid Overview for Fast Image Browsing -->
-            <div class="mt-16 text-center space-y-6">
-                <button id="toggleGridBtn" onclick="toggleGalleryGrid()" class="bg-white hover:bg-gray-50 text-purpleBrand border border-gray-300 font-bold text-xs uppercase tracking-widest px-8 py-3.5 rounded-2xl transition shadow-sm inline-flex items-center gap-2">
-                    <i data-lucide="grid" class="w-4 h-4 text-purpleAccent"></i> <span id="gridBtnText">View All 39 Photos Grid</span>
-                </button>
-
-                <div id="galleryGridContainer" class="hidden grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 text-left pt-6">
-                    <!-- Populated dynamically in JS -->
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 5. Contact & Social Section -->
-    <section id="contact" class="py-24 bg-greyLight border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
-            
-            <!-- Contact Details Left Column -->
-            <div class="lg:col-span-5 space-y-8">
-                <div class="space-y-3">
-                    <span class="text-xs font-bold tracking-[0.25em] uppercase text-purpleAccent">04 / Communication</span>
-                    <h2 class="text-4xl font-serif font-normal text-purpleBrand">Let's Build Together</h2>
-                    <div class="w-16 h-1 bg-purpleAccent rounded-full"></div>
-                    <p class="text-gray-600 font-light leading-relaxed">
-                        Have a residential or corporate interior transformation project? Reach out to our mobile team anytime. We deploy country-wide from our Nairobi hub.
-                    </p>
-                </div>
-
-                <!-- Mobile Operation Notice Block -->
-                <div class="bg-purpleBrand text-white p-6 border-l-4 border-purpleAccent space-y-2 rounded-r-2xl shadow-xl">
-                    <p class="font-bold uppercase tracking-widest text-purpleAccent text-xs flex items-center gap-2">
-                        <i data-lucide="check-circle-2" class="w-4 h-4 text-purpleAccent"></i>
-                        Operational Policy
-                    </p>
-                    <p class="text-xs text-gray-300 leading-relaxed font-light">
-                        We maintain zero corporate physical office overhead. We operate as a direct, mobile-ready specialist team dispatched directly to your construction site.
-                    </p>
-                </div>
-
-                <div class="space-y-3">
-                    <h4 class="font-bold text-purpleBrand text-xs uppercase tracking-wider">Direct Lines (24/7):</h4>
-                    <div class="space-y-2 text-sm">
-                        <a href="tel:0757373025" class="flex items-center gap-3 text-slate-700 hover:text-purpleAccent transition-colors font-semibold">
-                            <div class="p-2 bg-white rounded-lg text-purpleAccent border border-gray-200 shadow-sm">
-                                <i data-lucide="phone" class="w-4 h-4"></i>
-                            </div>
-                            <span>0757 373 025 (Brian Kanya Ngala)</span>
-                        </a>
-                        <a href="tel:0715257929" class="flex items-center gap-3 text-slate-700 hover:text-purpleAccent transition-colors font-semibold">
-                            <div class="p-2 bg-white rounded-lg text-purpleAccent border border-gray-200 shadow-sm">
-                                <i data-lucide="phone-call" class="w-4 h-4"></i>
-                            </div>
-                            <span>0715 257 929 (Alternative Hotline)</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Social Channels -->
-                <div class="space-y-3 pt-4 border-t border-gray-200">
-                    <h4 class="font-bold text-purpleBrand text-xs uppercase tracking-wider">Social Channels:</h4>
-                    <div class="flex items-center gap-3 flex-wrap">
-                        
-                        <!-- WhatsApp Link with Circular Badge -->
-                        <a href="https://wa.me/254757373025?text=Hello%20Kanya%20Interior" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 bg-white hover:bg-slate-50 border border-gray-200/80 rounded-full p-2 pr-4 transition-all shadow-sm">
-                            <svg class="w-10 h-10 group-hover:scale-105 transition-transform rounded-full shadow" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="20" cy="20" r="20" fill="#25D366"/>
-                                <path d="M20 10c-5.5 0-10 4.5-10 10 0 1.8.5 3.5 1.4 5L10 30l5.1-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S25.5 10 20 10zm4.2 13.8c-.2.4-.8.8-1.3.9-.3.1-.7.1-2.1-.4-1.7-.7-3.1-2.4-4-3.5-.1-.1-.1-.2-.2-.2-.2-.3-.4-.6-.6-1-.8-1.1-.9-2-.4-2.5l.4-.4c.2-.2.3-.2.4-.2h.3c.1 0 .3 0 .4.2l.8 1.9c.1.2.1.3-.1.5l-.4.5c-.1.1-.2.2-.1.4.4.8.9 1.4 1.5 2 .6.6 1.3 1.1 2.1 1.4.2.1.3.1.4-.1l.5-.6c.1-.1.3-.2.4-.1l1.9.9c.2.1.3.2.3.4v.8c0 .3-.1.6-.3.9z" fill="white"/>
-                            </svg>
-                            <div class="text-left">
-                                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-wider leading-none">Chat Now</p>
-                                <p class="text-xs font-bold text-purpleBrand">WhatsApp</p>
-                            </div>
-                        </a>
-
-                        <!-- Facebook Link with Circular Badge -->
-                        <a href="https://www.facebook.com/profile.php?id=100091783191705" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 bg-white hover:bg-slate-50 border border-gray-200/80 rounded-full p-2 pr-4 transition-all shadow-sm">
-                            <svg class="w-10 h-10 group-hover:scale-105 transition-transform rounded-full shadow" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="20" cy="20" r="20" fill="#1877F2"/>
-                                <path d="M24 20h-3v8h-3.5v-8h-2v-3.5h2v-2c0-2.8 1.2-4.5 4.5-4.5h3v3.5h-2c-1.1 0-1.5.5-1.5 1.5v1.5h3.5L24 20z" fill="white"/>
-                            </svg>
-                            <div class="text-left">
-                                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-wider leading-none">Connect</p>
-                                <p class="text-xs font-bold text-purpleBrand">Facebook</p>
-                            </div>
-                        </a>
-
-                        <!-- TikTok Link with Circular Badge -->
-                        <a href="https://tiktok.com/@briankanyangala" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 bg-white hover:bg-slate-50 border border-gray-200/80 rounded-full p-2 pr-4 transition-all shadow-sm">
-                            <svg class="w-10 h-10 group-hover:scale-105 transition-transform rounded-full shadow" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="20" cy="20" r="20" fill="#000000"/>
-                                <path d="M25.5 16.5a4.95 4.95 0 0 1-3.5-3.5v9.5a5 5 0 1 1-5-5c.3 0 .5 0 .8.1v3.1a2 2 0 1 0-1.8 1.8c.1 0 .2 0 .2-.1V11h3.5a4.95 4.95 0 0 0 4.95 4.95l.85.55" fill="white"/>
-                            </svg>
-                            <div class="text-left">
-                                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-wider leading-none">Watch Videos</p>
-                                <p class="text-xs font-bold text-purpleBrand">TikTok</p>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Direct Contact Form -->
-            <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-gray-200/80 shadow-xl">
-                <h3 class="text-2xl font-serif font-bold mb-6 text-purpleBrand tracking-tight">Direct Consult Form</h3>
-                <form onsubmit="handleContactSubmit(event)" class="space-y-5">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Name</label>
-                        <input id="contactName" type="text" required class="w-full bg-greyLight border border-gray-200 px-4 py-3.5 focus:outline-none focus:border-purpleAccent rounded-xl text-purpleBrand font-semibold text-sm transition-colors" placeholder="Your Name">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Phone</label>
-                        <input id="contactPhone" type="tel" required class="w-full bg-greyLight border border-gray-200 px-4 py-3.5 focus:outline-none focus:border-purpleAccent rounded-xl text-purpleBrand font-semibold text-sm transition-colors" placeholder="Contact Mobile">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Project Brief / Message</label>
-                        <textarea id="contactMsg" rows="4" required class="w-full bg-greyLight border border-gray-200 px-4 py-3.5 focus:outline-none focus:border-purpleAccent resize-none rounded-xl text-purpleBrand font-semibold text-sm transition-colors" placeholder="e.g. Need gypsum ceilings and skimming for 3-bedroom apartment."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="w-full bg-[#25D366] text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-[#1fa952] transition flex items-center justify-center gap-2 shadow-lg text-xs">
-                        Submit Inquiry to WhatsApp <i data-lucide="message-circle" class="w-4 h-4"></i>
-                    </button>
-                </form>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Fullscreen Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 z-50 bg-purpleBrand/95 backdrop-blur-md hidden items-center justify-center p-4" onclick="closeLightbox()">
-        <button class="absolute top-6 right-6 text-white/70 hover:text-white p-2 rounded-full bg-white/10 transition-colors" onclick="closeLightbox()" aria-label="Close lightbox">
-            <i data-lucide="x" class="w-7 h-7"></i>
-        </button>
-        <img id="lightboxImg" src="" alt="Zoomed view" class="max-w-full max-h-[85vh] object-contain border border-white/20 shadow-2xl rounded-2xl" onclick="event.stopPropagation()" onerror="safeImageError(this, 'Lightbox')">
-        <p id="lightboxCaption" class="absolute bottom-6 text-purpleAccent font-bold tracking-wider uppercase text-xs sm:text-sm bg-purpleBrand/80 px-4 py-2 rounded-xl border border-purpleAccent/30 backdrop-blur-md"></p>
-    </div>
-
-    <!-- 7. Footer -->
-    <footer class="bg-greyFooter text-white py-12 pb-24 sm:pb-12 border-t border-purpleAccent/30">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          
-          <div class="space-y-1">
-            <span class="text-2xl font-serif font-bold tracking-tight block text-white">KANYA <span class="text-purpleAccent italic font-light">INTERIOR</span></span>
-            <p class="text-gray-400 text-xs font-light">Delivering the desired vision for every client.</p>
-          </div>
-
-          <div class="flex flex-wrap justify-center gap-6 font-semibold text-xs tracking-widest uppercase text-gray-300">
-            <a href="#about" class="hover:text-purpleAccent transition-colors">About</a>
-            <a href="#services" class="hover:text-purpleAccent transition-colors">Services</a>
-            <a href="#gallery" class="hover:text-purpleAccent transition-colors">Gallery</a>
-            <a href="#contact" class="hover:text-purpleAccent transition-colors">Contact</a>
-          </div>
-
-          <p class="text-gray-500 text-xs font-normal">© Kanya Interior. All rights reserved.</p>
-
-        </div>
-    </footer>
-
-    <!-- Slide State Management Script -->
     <script>
-        // Universal robust image error handler to prevent loops and support extensions safely on case-sensitive servers
-        function safeImageError(imgEl, fallbackName) {
-            if (imgEl.dataset.triedFallback === "true") {
-                imgEl.src = `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'><rect width='100%' height='100%' fill='%231A0C24'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%239D65FE' font-family='sans-serif' font-size='18' font-weight='bold'>Kanya Interior Project Image ${fallbackName || ''}</text></svg>`;
-                return;
-            }
-            imgEl.dataset.triedFallback = "true";
-            const src = imgEl.src;
-            if (src.endsWith('.jpeg')) {
-                imgEl.src = src.replace(/\.jpeg$/, '.jpg');
-            } else if (src.endsWith('.jpg')) {
-                imgEl.src = src.replace(/\.jpg$/, '.jpeg');
-            } else if (src.endsWith('.png')) {
-                imgEl.src = src.replace(/\.png$/, '.jpg');
-            }
-        }
-
-        // Total 39 slides mapped from 1 to 39
-        const originalPortfolio = [
-            { id: 1, file: 'images/1.jpeg', title: 'Modern Mansion Architectural Facade', category: 'Exterior', accent: 'Exterior Wallmaster & Paint', desc: 'Symmetrical external plaster detailing with premium textured wall cladding.' },
-            { id: 2, file: 'images/2.jpeg', title: 'Contemporary Side Elevation', category: 'Exterior', accent: 'Architectural Glazing', desc: 'Stunning structural glass layout reflecting Nairobi ambient light.' },
-            { id: 3, file: 'images/3.jpeg', title: 'Grand Elevation Perspective', category: 'Exterior', accent: 'Parapet Detailing', desc: 'High-altitude daylight shot outlining beautiful balcony railings.' },
-            { id: 4, file: 'images/4.jpeg', title: 'Structure Under-Construction Scaffold', category: 'Ceilings', accent: 'Gypsum Framework', desc: 'Precision framework alignment for modern interior false ceiling designs.' },
-            { id: 5, file: 'images/5.jpeg', title: 'Luxury Wainscoting Panel Art Wall', category: 'Wainscoting', accent: 'Wainscoting Panels', desc: 'Warm LED downlight showcasing premium geometric wood molding details.' },
-            { id: 6, file: 'images/6.jpeg', title: 'Floating Staircase Warm Illuminations', category: 'Lighting', accent: 'Stairway Lights', desc: 'Elegant staircase steps accented with concealed golden LED light strips.' },
-            { id: 7, file: 'images/7.jpeg', title: 'Cascade Bubble Chandelier', category: 'Lighting', accent: 'Pendant Installation', desc: 'Glass bubble lights flowing beautifully down the double-height staircase void.' },
-            { id: 8, file: 'images/8.jpeg', title: 'Wainscoting Preps & Primer Coating', category: 'Wainscoting', accent: 'Craftsmanship', desc: 'Craftsmen meticulously leveling modern wallboard panels.' },
-            { id: 9, file: 'images/9.jpeg', title: 'Wood-Texture SPC Planks Laying', category: 'Flooring', accent: 'SPC Flooring', desc: 'Waterproof stone plastic composite wood-grain floorboards install.' },
-            { id: 10, file: 'images/10.jpeg', title: 'Double-Tiered Gypsum Ring Ceiling', category: 'Ceilings', accent: 'Gypsum Design', desc: 'Completed modern false ceiling featuring dual light rings and perimeter glow.' }
+        // Project Data - All 39 images
+        const projects = [
+            { id: 1, file: 'images/1.jpeg', title: 'Modern Living Room', category: 'Residential', style: 'modern' },
+            { id: 2, file: 'images/2.jpeg', title: 'Contemporary Bedroom', category: 'Residential', style: 'contemporary' },
+            { id: 3, file: 'images/3.jpeg', title: 'Luxury Kitchen', category: 'Kitchen', style: 'luxury' },
+            { id: 4, file: 'images/4.jpeg', title: 'Elegant Bathroom', category: 'Bathroom', style: 'modern' },
+            { id: 5, file: 'images/5.jpeg', title: 'Home Office Design', category: 'Office', style: 'contemporary' },
+            { id: 6, file: 'images/6.jpeg', title: 'Master Bedroom Suite', category: 'Bedroom', style: 'luxury' },
+            { id: 7, file: 'images/7.jpeg', title: 'Open Plan Living', category: 'Living', style: 'modern' },
+            { id: 8, file: 'images/8.jpeg', title: 'Dining Space', category: 'Residential', style: 'contemporary' },
+            { id: 9, file: 'images/9.jpeg', title: 'Kitchen Renovation', category: 'Kitchen', style: 'modern' },
+            { id: 10, file: 'images/10.jpeg', title: 'Bedroom Interior', category: 'Bedroom', style: 'luxury' },
+            { id: 11, file: 'images/11.jpeg', title: 'Living Room Design', category: 'Living', style: 'contemporary' },
+            { id: 12, file: 'images/12.jpeg', title: 'Modern Bathroom', category: 'Bathroom', style: 'modern' },
+            { id: 13, file: 'images/13.jpeg', title: 'Office Space', category: 'Office', style: 'contemporary' },
+            { id: 14, file: 'images/14.jpeg', title: 'Luxury Bedroom', category: 'Bedroom', style: 'luxury' },
+            { id: 15, file: 'images/15.jpeg', title: 'Contemporary Kitchen', category: 'Kitchen', style: 'contemporary' },
+            { id: 16, file: 'images/16.jpeg', title: 'Residential Living', category: 'Living', style: 'modern' },
+            { id: 17, file: 'images/17.jpeg', title: 'Home Design', category: 'Residential', style: 'modern' },
+            { id: 18, file: 'images/18.jpeg', title: 'Luxury Interior', category: 'Residential', style: 'luxury' },
+            { id: 19, file: 'images/19.jpeg', title: 'Modern Kitchen', category: 'Kitchen', style: 'modern' },
+            { id: 20, file: 'images/20.jpeg', title: 'Bathroom Renovation', category: 'Bathroom', style: 'contemporary' },
+            { id: 21, file: 'images/21.jpeg', title: 'Bedroom Design', category: 'Bedroom', style: 'modern' },
+            { id: 22, file: 'images/22.jpeg', title: 'Living Space', category: 'Living', style: 'luxury' },
+            { id: 23, file: 'images/23.jpeg', title: 'Contemporary Living', category: 'Living', style: 'contemporary' },
+            { id: 24, file: 'images/24.jpeg', title: 'Kitchen Space', category: 'Kitchen', style: 'modern' },
+            { id: 25, file: 'images/25.jpeg', title: 'Residential Design', category: 'Residential', style: 'luxury' },
+            { id: 26, file: 'images/26.jpeg', title: 'Modern Bedroom', category: 'Bedroom', style: 'modern' },
+            { id: 27, file: 'images/27.jpeg', title: 'Office Interior', category: 'Office', style: 'contemporary' },
+            { id: 28, file: 'images/28.jpeg', title: 'Luxury Kitchen', category: 'Kitchen', style: 'luxury' },
+            { id: 29, file: 'images/29.jpeg', title: 'Home Interior', category: 'Residential', style: 'contemporary' },
+            { id: 30, file: 'images/30.jpeg', title: 'Bathroom Design', category: 'Bathroom', style: 'modern' },
+            { id: 31, file: 'images/31.jpeg', title: 'Contemporary Bedroom', category: 'Bedroom', style: 'contemporary' },
+            { id: 32, file: 'images/32.jpeg', title: 'Living Room Interior', category: 'Living', style: 'modern' },
+            { id: 33, file: 'images/33.jpeg', title: 'Modern Design', category: 'Residential', style: 'modern' },
+            { id: 34, file: 'images/34.jpeg', title: 'Luxury Living', category: 'Living', style: 'luxury' },
+            { id: 35, file: 'images/35.jpeg', title: 'Kitchen Design', category: 'Kitchen', style: 'contemporary' },
+            { id: 36, file: 'images/36.jpeg', title: 'Bedroom Suite', category: 'Bedroom', style: 'luxury' },
+            { id: 37, file: 'images/37.jpeg', title: 'Contemporary Space', category: 'Residential', style: 'contemporary' },
+            { id: 38, file: 'images/38.jpeg', title: 'Modern Bathroom', category: 'Bathroom', style: 'modern' },
+            { id: 39, file: 'images/39.jpeg', title: 'Luxury Interior', category: 'Residential', style: 'luxury' }
         ];
 
-        // Populate the rest of the 39 slides programmatically to guarantee coverage
-        const portfolio = [...originalPortfolio];
-        const categories = ['Exterior', 'Ceilings', 'Wainscoting', 'Flooring', 'Lighting'];
-        for (let i = 11; i <= 39; i++) {
-            const cat = categories[i % categories.length];
-            portfolio.push({
-                id: i,
-                file: `images/${i}.jpeg`,
-                title: `Architectural Finish #${i}`,
-                category: cat,
-                accent: `${cat} Module`,
-                desc: `High-fidelity construction work labeled ${i}.jpeg executed perfectly on-site to match client desires.`
-            });
-        }
+        let filteredProjects = [...projects];
 
-        let filteredPool = [...portfolio];
-        let currentSlideIndex = 0;
-        let playInterval = null;
-        let isAutoplay = true;
-
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const icon = document.getElementById('menuIcon');
-            const isOpen = !menu.classList.contains('hidden');
-            if (isOpen) {
-                menu.classList.add('hidden');
-                icon.setAttribute('data-lucide', 'menu');
-            } else {
-                menu.classList.remove('hidden');
-                icon.setAttribute('data-lucide', 'x');
-            }
-            lucide.createIcons();
-        }
-
-        document.getElementById('menuBtn').addEventListener('click', toggleMobileMenu);
-
-        // Slideshow Handler
-        function updateSlide() {
-            if (filteredPool.length === 0) return;
-            const slide = filteredPool[currentSlideIndex];
-            
-            const img = document.getElementById('slideshowImg');
-            delete img.dataset.triedFallback;
-            img.src = slide.file;
-
-            document.getElementById('slideCategory').textContent = slide.category;
-            document.getElementById('slideTitle').textContent = slide.title;
-            document.getElementById('slideDesc').textContent = slide.desc;
-            document.getElementById('slideIndex').textContent = currentSlideIndex + 1;
-            document.getElementById('slideTotal').textContent = filteredPool.length;
-
-            const text = `Hi%20Kanya%20Interior,%20I'm%20interested%20in%2520this%2520design:%20${encodeURIComponent(slide.title)}%20(${slide.file})`;
-            document.getElementById('slideQuoteBtn').href = `https://wa.me/254757373025?text=${text}`;
-
-            // Sync Thumbnails & Dots
-            document.querySelectorAll('.thumb-btn').forEach((thumb, idx) => {
-                if (idx === currentSlideIndex) {
-                    thumb.classList.add('border-purpleAccent', 'opacity-100', 'scale-105');
-                    thumb.classList.remove('border-transparent', 'opacity-40');
-                    thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-                } else {
-                    thumb.classList.remove('border-purpleAccent', 'opacity-100', 'scale-105');
-                    thumb.classList.add('border-transparent', 'opacity-40');
-                }
-            });
-
-            document.querySelectorAll('.dot-indicator').forEach((dot, idx) => {
-                if (idx === currentSlideIndex) {
-                    dot.classList.add('w-6', 'bg-purpleAccent');
-                    dot.classList.remove('w-2', 'bg-slate-300');
-                } else {
-                    dot.classList.remove('w-6', 'bg-purpleAccent');
-                    dot.classList.add('w-2', 'bg-slate-300');
-                }
-            });
-        }
-
-        function nextSlide() {
-            if (filteredPool.length === 0) return;
-            currentSlideIndex = (currentSlideIndex + 1) % filteredPool.length;
-            updateSlide();
-            if (isAutoplay) {
-                startAutoplayTimer();
-            }
-        }
-
-        function jumpToSlide(idx) {
-            currentSlideIndex = idx;
-            updateSlide();
-            if (isAutoplay) {
-                startAutoplayTimer();
-            }
-        }
-
-        function prevSlide() {
-            if (filteredPool.length === 0) return;
-            currentSlideIndex = (currentSlideIndex - 1 + filteredPool.length) % filteredPool.length;
-            updateSlide();
-            if (isAutoplay) {
-                startAutoplayTimer();
-            }
-        }
-
-        let activeCategory = 'All';
-        let searchQuery = '';
-
-        // Unified Filter Gallery & Search Processor
-        function applyGalleryFilters() {
-            const query = searchQuery.trim().toLowerCase();
-
-            filteredPool = portfolio.filter(item => {
-                const matchesCat = (activeCategory === 'All') || (item.category === activeCategory);
-                const matchesQuery = !query || 
-                    item.title.toLowerCase().includes(query) ||
-                    item.category.toLowerCase().includes(query) ||
-                    item.accent.toLowerCase().includes(query) ||
-                    item.desc.toLowerCase().includes(query);
-                return matchesCat && matchesQuery;
-            });
-
-            currentSlideIndex = 0;
-
-            const emptyContainer = document.getElementById('emptySearchResults');
-            const emptyText = document.getElementById('emptySearchText');
-            const slideshowContainer = document.getElementById('slideshowShowcase');
-
-            if (filteredPool.length === 0) {
-                if (emptyContainer) {
-                    emptyContainer.classList.remove('hidden');
-                    emptyText.textContent = `No portfolio projects matching "${searchQuery}" ${activeCategory === 'All' ? 'in any category' : 'under ' + activeCategory}. Try another keyword or reset filters!`;
-                }
-                if (slideshowContainer) slideshowContainer.classList.add('hidden');
-            } else {
-                if (emptyContainer) emptyContainer.classList.add('hidden');
-                if (slideshowContainer) slideshowContainer.classList.remove('hidden');
-            }
-
-            renderDotsAndThumbs();
-            renderGalleryGrid();
-            if (filteredPool.length > 0) {
-                updateSlide();
-            }
-            lucide.createIcons();
-        }
-
-        function filterGallery(category) {
-            activeCategory = category;
-            document.querySelectorAll('.category-tab').forEach(tab => {
-                if (tab.getAttribute('data-category') === category) {
-                    tab.classList.add('bg-purpleBrand', 'text-white', 'border-purpleBrand');
-                    tab.classList.remove('bg-white', 'text-purpleBrand', 'border-gray-200');
-                } else {
-                    tab.classList.remove('bg-purpleBrand', 'text-white', 'border-purpleBrand');
-                    tab.classList.add('bg-white', 'text-purpleBrand', 'border-gray-200');
-                }
-            });
-            applyGalleryFilters();
-        }
-
-        function handleGallerySearch(val) {
-            searchQuery = val;
-            const clearBtn = document.getElementById('clearSearchBtn');
-            if (val.trim().length > 0) {
-                clearBtn.classList.remove('hidden');
-            } else {
-                clearBtn.classList.add('hidden');
-            }
-            applyGalleryFilters();
-        }
-
-        function setKeywordSearch(kw) {
-            const input = document.getElementById('gallerySearchInput');
-            input.value = kw;
-            handleGallerySearch(kw);
-        }
-
-        function clearGallerySearch() {
-            const input = document.getElementById('gallerySearchInput');
-            input.value = '';
-            handleGallerySearch('');
-        }
-
-        // Render Dots and Thumbnails dynamically
-        function renderDotsAndThumbs() {
-            const dotsContainer = document.getElementById('slideDots');
-            const thumbsContainer = document.getElementById('slideThumbs');
-            
-            dotsContainer.innerHTML = '';
-            thumbsContainer.innerHTML = '';
-
-            filteredPool.forEach((item, index) => {
-                // Render Dot
-                const dot = document.createElement('button');
-                dot.className = `dot-indicator h-2 w-2 rounded-full transition-all ${index === 0 ? 'w-6 bg-purpleAccent' : 'bg-slate-300'}`;
-                dot.onclick = () => jumpToSlide(index);
-                dotsContainer.appendChild(dot);
-
-                // Render Thumbnail
-                const thumb = document.createElement('button');
-                thumb.className = `thumb-btn relative flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 transition-all ${index === 0 ? 'border-purpleAccent opacity-100 scale-105' : 'border-transparent opacity-40'}`;
-                thumb.onclick = () => jumpToSlide(index);
-                
-                const thumbImg = document.createElement('img');
-                thumbImg.src = item.file;
-                thumbImg.className = 'w-full h-full object-cover';
-                thumbImg.onerror = function() {
-                    safeImageError(this, `#${item.id}`);
-                };
-
-                thumb.appendChild(thumbImg);
-                thumbsContainer.appendChild(thumb);
-            });
-        }
-
-        // Grid Toggle Handler
-        function toggleGalleryGrid() {
-            const grid = document.getElementById('galleryGridContainer');
-            const btnText = document.getElementById('gridBtnText');
-            if (grid.classList.contains('hidden')) {
-                grid.classList.remove('hidden');
-                btnText.textContent = 'Hide Photos Grid';
-            } else {
-                grid.classList.add('hidden');
-                btnText.textContent = 'View All 39 Photos Grid';
-            }
-        }
-
-        function renderGalleryGrid() {
-            const grid = document.getElementById('galleryGridContainer');
+        // Render projects
+        function renderProjects() {
+            const grid = document.getElementById('projectsGrid');
             grid.innerHTML = '';
-            filteredPool.forEach((item, index) => {
-                const card = document.createElement('div');
-                card.className = 'bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-md transition cursor-pointer group';
-                card.onclick = () => {
-                    jumpToSlide(index);
-                    window.scrollTo({ top: document.getElementById('gallery').offsetTop - 80, behavior: 'smooth' });
-                };
 
+            filteredProjects.forEach(project => {
+                const card = document.createElement('div');
+                card.className = 'project-card';
                 card.innerHTML = `
-                    <div class="relative aspect-square overflow-hidden bg-purpleBrand">
-                        <img src="${item.file}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="safeImageError(this, '#${item.id}')">
-                        <div class="absolute inset-0 bg-purpleBrand/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="bg-purpleAccent text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-lg">View Details</span>
-                        </div>
-                    </div>
-                    <div class="p-3.5 space-y-1">
-                        <span class="text-[9px] font-bold text-purpleAccent uppercase tracking-widest">${item.category}</span>
-                        <h4 class="text-xs font-bold text-purpleBrand truncate">${item.title}</h4>
+                    <img src="${project.file}" alt="${project.title}" onclick="openGallery('${project.file}')">
+                    <div class="project-overlay">
+                        <span class="project-tag">${project.style.toUpperCase()}</span>
+                        <h3 class="project-title">${project.title}</h3>
+                        <p class="project-location">📍 Nairobi, Kenya</p>
                     </div>
                 `;
                 grid.appendChild(card);
             });
         }
 
-        // Toggle playback
-        function toggleSlideshowPlayback() {
-            isAutoplay = !isAutoplay;
-            const textEl = document.getElementById('playText');
-            const iconBox = document.getElementById('playIcon');
-            if (isAutoplay) {
-                textEl.textContent = 'Autoplay: On';
-                iconBox.innerHTML = '<i data-lucide="pause" class="w-3.5 h-3.5"></i>';
-                startAutoplayTimer();
-            } else {
-                textEl.textContent = 'Autoplay: Off';
-                iconBox.innerHTML = '<i data-lucide="play" class="w-3.5 h-3.5"></i>';
-                clearInterval(playInterval);
-            }
-            lucide.createIcons();
+        // Filter projects
+        function filterProjects() {
+            const styleFilter = document.getElementById('styleFilter').value;
+            const roomFilter = document.getElementById('roomFilter').value;
+
+            filteredProjects = projects.filter(project => {
+                const styleMatch = !styleFilter || project.style === styleFilter;
+                const roomMatch = !roomFilter || project.category.toLowerCase().includes(roomFilter.toLowerCase());
+                return styleMatch && roomMatch;
+            });
+
+            renderProjects();
         }
 
-        function startAutoplayTimer() {
-            clearInterval(playInterval);
-            playInterval = setInterval(() => {
-                nextSlide();
-            }, 5000);
+        // Gallery functions
+        function openGallery(imageSrc) {
+            const modal = document.getElementById('galleryModal');
+            const img = document.getElementById('modalImage');
+            img.src = imageSrc;
+            modal.classList.add('active');
         }
 
-        // Lightbox Zoom
-        function launchLightbox() {
-            const slide = filteredPool[currentSlideIndex];
-            const modal = document.getElementById('lightbox');
-            const mImg = document.getElementById('lightboxImg');
-            const mCap = document.getElementById('lightboxCaption');
-            
-            delete mImg.dataset.triedFallback;
-            mImg.src = slide.file;
-
-            mCap.textContent = `${slide.category} : ${slide.title}`;
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.classList.remove('active');
         }
 
-        // Close lightbox
-        function closeLightbox() {
-            const modal = document.getElementById('lightbox');
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
-        }
-
-        // Swipe Gestures for Mobile Slides
-        let touchStart = 0;
-        let touchEnd = 0;
-        document.getElementById('slideshowImg').addEventListener('touchstart', e => {
-            touchStart = e.changedTouches[0].screenX;
-        }, { passive: true });
-        document.getElementById('slideshowImg').addEventListener('touchend', e => {
-            touchEnd = e.changedTouches[0].screenX;
-            if (touchStart - touchEnd > 50) nextSlide();
-            if (touchEnd - touchStart > 50) prevSlide();
-        }, { passive: true });
-
-        // Contact Form Submission
+        // Contact form
         function handleContactSubmit(e) {
             e.preventDefault();
             const name = document.getElementById('contactName').value;
@@ -1163,63 +986,54 @@
 
             const text = `Hello Kanya Interior,%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Message:* ${msg}%0A%0APlease review my inquiry.`;
             window.open(`https://wa.me/254757373025?text=${text}`, '_blank');
+            
+            document.getElementById('contactForm').reset();
         }
 
-        // Theme Switcher Engine
-        function initTheme() {
-            const savedTheme = localStorage.getItem('kanya_theme');
-            if (savedTheme === 'light') {
-                document.documentElement.classList.add('light-theme');
-            } else {
-                document.documentElement.classList.remove('light-theme');
-            }
-            updateThemeIcons();
-        }
-
-        function toggleTheme() {
-            const isLight = document.documentElement.classList.toggle('light-theme');
-            localStorage.setItem('kanya_theme', isLight ? 'light' : 'dark');
-            updateThemeIcons();
-        }
-
-        function updateThemeIcons() {
-            const isLight = document.documentElement.classList.contains('light-theme');
-            const themeIcon = document.getElementById('themeIcon');
-            const themeIconMobile = document.getElementById('themeIconMobile');
-            const themeText = document.getElementById('themeText');
-
-            if (themeIcon) {
-                themeIcon.setAttribute('data-lucide', isLight ? 'moon' : 'sun');
-                if (isLight) {
-                    themeIcon.className = 'w-4 h-4 text-purpleAccent';
-                } else {
-                    themeIcon.className = 'w-4 h-4 text-goldAccent';
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
-            }
-            if (themeIconMobile) {
-                themeIconMobile.setAttribute('data-lucide', isLight ? 'moon' : 'sun');
-                if (isLight) {
-                    themeIconMobile.className = 'w-5 h-5 text-purpleAccent';
-                } else {
-                    themeIconMobile.className = 'w-5 h-5 text-goldAccent';
-                }
-            }
-            if (themeText) {
-                themeText.textContent = isLight ? 'Light' : 'Dark';
-            }
-            if (window.lucide) {
-                lucide.createIcons();
-            }
-        }
+            });
+        });
 
-        // Global Initialization
+        // Active navigation highlight
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Close modal on outside click
+        document.getElementById('galleryModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeGallery();
+            }
+        });
+
+        // Initialize
         window.onload = () => {
-            initTheme();
-            renderDotsAndThumbs();
-            renderGalleryGrid();
-            updateSlide();
-            startAutoplayTimer();
-            lucide.createIcons();
+            renderProjects();
         };
     </script>
 

@@ -731,13 +731,17 @@
                     </select>
                 </div>
                 <div class="search-field">
-                    <label>Room Type</label>
+                    <label>Category</label>
                     <select id="roomFilter">
-                        <option value="">All Rooms</option>
+                        <option value="">All Categories</option>
+                        <option value="construction">Construction</option>
+                        <option value="interior">Interior</option>
                         <option value="living">Living Room</option>
                         <option value="bedroom">Bedroom</option>
                         <option value="kitchen">Kitchen</option>
-                        <option value="bathroom">Bathroom</option>
+                        <option value="dining">Dining</option>
+                        <option value="hallway">Hallway</option>
+                        <option value="staircase">Staircase</option>
                     </select>
                 </div>
                 <button class="search-btn" onclick="filterProjects()">🔍 SEARCH</button>
@@ -887,45 +891,45 @@
     <script>
         // Project Data - All 39 images
         const projects = [
-            { id: 1, file: 'images/1.jpeg', title: 'Modern Living Room', category: 'Residential', style: 'modern' },
-            { id: 2, file: 'images/2.jpeg', title: 'Contemporary Bedroom', category: 'Residential', style: 'contemporary' },
-            { id: 3, file: 'images/3.jpeg', title: 'Luxury Kitchen', category: 'Kitchen', style: 'luxury' },
-            { id: 4, file: 'images/4.jpeg', title: 'Elegant Bathroom', category: 'Bathroom', style: 'modern' },
-            { id: 5, file: 'images/5.jpeg', title: 'Home Office Design', category: 'Office', style: 'contemporary' },
-            { id: 6, file: 'images/6.jpeg', title: 'Master Bedroom Suite', category: 'Bedroom', style: 'luxury' },
-            { id: 7, file: 'images/7.jpeg', title: 'Open Plan Living', category: 'Living', style: 'modern' },
-            { id: 8, file: 'images/8.jpeg', title: 'Dining Space', category: 'Residential', style: 'contemporary' },
-            { id: 9, file: 'images/9.jpeg', title: 'Kitchen Renovation', category: 'Kitchen', style: 'modern' },
-            { id: 10, file: 'images/10.jpeg', title: 'Bedroom Interior', category: 'Bedroom', style: 'luxury' },
-            { id: 11, file: 'images/11.jpeg', title: 'Living Room Design', category: 'Living', style: 'contemporary' },
-            { id: 12, file: 'images/12.jpeg', title: 'Modern Bathroom', category: 'Bathroom', style: 'modern' },
-            { id: 13, file: 'images/13.jpeg', title: 'Office Space', category: 'Office', style: 'contemporary' },
-            { id: 14, file: 'images/14.jpeg', title: 'Luxury Bedroom', category: 'Bedroom', style: 'luxury' },
-            { id: 15, file: 'images/15.jpeg', title: 'Contemporary Kitchen', category: 'Kitchen', style: 'contemporary' },
-            { id: 16, file: 'images/16.jpeg', title: 'Residential Living', category: 'Living', style: 'modern' },
-            { id: 17, file: 'images/17.jpeg', title: 'Home Design', category: 'Residential', style: 'modern' },
-            { id: 18, file: 'images/18.jpeg', title: 'Luxury Interior', category: 'Residential', style: 'luxury' },
-            { id: 19, file: 'images/19.jpeg', title: 'Modern Kitchen', category: 'Kitchen', style: 'modern' },
-            { id: 20, file: 'images/20.jpeg', title: 'Bathroom Renovation', category: 'Bathroom', style: 'contemporary' },
-            { id: 21, file: 'images/21.jpeg', title: 'Bedroom Design', category: 'Bedroom', style: 'modern' },
-            { id: 22, file: 'images/22.jpeg', title: 'Living Space', category: 'Living', style: 'luxury' },
-            { id: 23, file: 'images/23.jpeg', title: 'Contemporary Living', category: 'Living', style: 'contemporary' },
-            { id: 24, file: 'images/24.jpeg', title: 'Kitchen Space', category: 'Kitchen', style: 'modern' },
-            { id: 25, file: 'images/25.jpeg', title: 'Residential Design', category: 'Residential', style: 'luxury' },
-            { id: 26, file: 'images/26.jpeg', title: 'Modern Bedroom', category: 'Bedroom', style: 'modern' },
-            { id: 27, file: 'images/27.jpeg', title: 'Office Interior', category: 'Office', style: 'contemporary' },
-            { id: 28, file: 'images/28.jpeg', title: 'Luxury Kitchen', category: 'Kitchen', style: 'luxury' },
-            { id: 29, file: 'images/29.jpeg', title: 'Home Interior', category: 'Residential', style: 'contemporary' },
-            { id: 30, file: 'images/30.jpeg', title: 'Bathroom Design', category: 'Bathroom', style: 'modern' },
-            { id: 31, file: 'images/31.jpeg', title: 'Contemporary Bedroom', category: 'Bedroom', style: 'contemporary' },
-            { id: 32, file: 'images/32.jpeg', title: 'Living Room Interior', category: 'Living', style: 'modern' },
-            { id: 33, file: 'images/33.jpeg', title: 'Modern Design', category: 'Residential', style: 'modern' },
-            { id: 34, file: 'images/34.jpeg', title: 'Luxury Living', category: 'Living', style: 'luxury' },
-            { id: 35, file: 'images/35.jpeg', title: 'Kitchen Design', category: 'Kitchen', style: 'contemporary' },
-            { id: 36, file: 'images/36.jpeg', title: 'Bedroom Suite', category: 'Bedroom', style: 'luxury' },
-            { id: 37, file: 'images/37.jpeg', title: 'Contemporary Space', category: 'Residential', style: 'contemporary' },
-            { id: 38, file: 'images/38.jpeg', title: 'Modern Bathroom', category: 'Bathroom', style: 'modern' },
-            { id: 39, file: 'images/39.jpeg', title: 'Luxury Interior', category: 'Residential', style: 'luxury' }
+            { id: 1,  file: 'images/1.jpeg',  title: 'House Exterior – Completed Build',       category: 'Construction', style: 'modern' },
+            { id: 2,  file: 'images/2.jpeg',  title: 'Contemporary Home Exterior',             category: 'Construction', style: 'contemporary' },
+            { id: 3,  file: 'images/3.jpeg',  title: 'Residential Exterior Finishing',         category: 'Construction', style: 'modern' },
+            { id: 4,  file: 'images/4.jpeg',  title: 'Structural Slab & Scaffolding',          category: 'Construction', style: 'modern' },
+            { id: 5,  file: 'images/5.jpeg',  title: 'Decorative Wall Paneling & LED Ceiling', category: 'Interior',     style: 'luxury' },
+            { id: 6,  file: 'images/6.jpeg',  title: 'LED Strip Staircase Design',             category: 'Staircase',   style: 'modern' },
+            { id: 7,  file: 'images/7.jpeg',  title: 'Staircase Pendant Lighting',             category: 'Staircase',   style: 'contemporary' },
+            { id: 8,  file: 'images/8.jpeg',  title: 'Kitchen Renovation – Countertop & Hob', category: 'Kitchen',      style: 'modern' },
+            { id: 9,  file: 'images/9.jpeg',  title: 'Living Room Flooring Installation',      category: 'Living',       style: 'contemporary' },
+            { id: 10, file: 'images/10.jpeg', title: 'LED Ring Ceiling – Bedroom',             category: 'Bedroom',      style: 'modern' },
+            { id: 11, file: 'images/11.jpeg', title: 'Kitchen Countertop & Gas Hob Install',   category: 'Kitchen',      style: 'modern' },
+            { id: 12, file: 'images/12.jpeg', title: 'Living Room LED Ceiling Design',         category: 'Living',       style: 'contemporary' },
+            { id: 13, file: 'images/13.jpeg', title: 'Feature Ceiling & Chandelier Fitting',   category: 'Interior',     style: 'luxury' },
+            { id: 14, file: 'images/14.jpeg', title: 'Tray Ceiling Construction',              category: 'Interior',     style: 'modern' },
+            { id: 15, file: 'images/15.jpeg', title: 'Dining Room – Table & Chairs Setup',     category: 'Dining',       style: 'contemporary' },
+            { id: 16, file: 'images/16.jpeg', title: 'Living Room – Sofa Arrangement',         category: 'Living',       style: 'residential' },
+            { id: 17, file: 'images/17.jpeg', title: 'LED Strip Ceiling Renovation',           category: 'Interior',     style: 'contemporary' },
+            { id: 18, file: 'images/18.jpeg', title: 'Modern LED Ceiling Design',              category: 'Interior',     style: 'modern' },
+            { id: 19, file: 'images/19.jpeg', title: 'Gold Chandelier & Accent Lighting',      category: 'Interior',     style: 'luxury' },
+            { id: 20, file: 'images/20.jpeg', title: 'Linear LED Ceiling – Luxury Finish',     category: 'Interior',     style: 'luxury' },
+            { id: 21, file: 'images/21.jpeg', title: 'Green LED Accent Ceiling',               category: 'Interior',     style: 'contemporary' },
+            { id: 22, file: 'images/22.jpeg', title: 'Bedroom Tile Flooring – In Progress',    category: 'Bedroom',      style: 'modern' },
+            { id: 23, file: 'images/23.jpeg', title: 'Interior Room Renovation',               category: 'Interior',     style: 'contemporary' },
+            { id: 24, file: 'images/24.jpeg', title: 'Living Room – Red LED Ceiling',          category: 'Living',       style: 'contemporary' },
+            { id: 25, file: 'images/25.jpeg', title: 'Modern House Under Construction',        category: 'Construction', style: 'modern' },
+            { id: 26, file: 'images/26.jpeg', title: 'Open Plan Space Build',                  category: 'Construction', style: 'contemporary' },
+            { id: 27, file: 'images/27.jpeg', title: 'Arched Hallway & Ensuite Bathroom',      category: 'Hallway',      style: 'luxury' },
+            { id: 28, file: 'images/28.jpeg', title: 'Bedroom Window & Wall Finishing',        category: 'Bedroom',      style: 'modern' },
+            { id: 29, file: 'images/29.jpeg', title: 'Room Painting & Finishing Work',         category: 'Interior',     style: 'contemporary' },
+            { id: 30, file: 'images/30.jpeg', title: 'Bedroom – Wood-Look Tile Flooring',      category: 'Bedroom',      style: 'modern' },
+            { id: 31, file: 'images/31.jpeg', title: 'Exterior House Painting',                category: 'Construction', style: 'residential' },
+            { id: 32, file: 'images/32.jpeg', title: 'Ceiling Plastering & Painting',          category: 'Construction', style: 'modern' },
+            { id: 33, file: 'images/33.jpeg', title: 'Hardwood Floor Installation',            category: 'Interior',     style: 'contemporary' },
+            { id: 34, file: 'images/34.jpeg', title: 'Corridor with Arched Entry & LED',       category: 'Hallway',      style: 'luxury' },
+            { id: 35, file: 'images/35.jpeg', title: 'Interior Passage Renovation',            category: 'Hallway',      style: 'contemporary' },
+            { id: 36, file: 'images/36.jpeg', title: 'Luxury Arch Ceiling Architecture',       category: 'Interior',     style: 'luxury' },
+            { id: 37, file: 'images/37.jpeg', title: 'Parquet Hallway Renovation',             category: 'Hallway',      style: 'contemporary' },
+            { id: 38, file: 'images/38.jpeg', title: 'Living Room – Large Window & Ceiling',   category: 'Living',       style: 'modern' },
+            { id: 39, file: 'images/39.jpeg', title: 'Bedroom with Built-in Wardrobe',         category: 'Bedroom',      style: 'modern' }
         ];
 
         let filteredProjects = [...projects];

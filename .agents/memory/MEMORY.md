@@ -1,0 +1,1 @@
+- [GitHub push fallback](github-push-connector.md) — When the HTTPS remote rejects credentials, use the attached GitHub connector rather than requesting a token.

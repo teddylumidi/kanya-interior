@@ -3,7 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanya Interior - Premium Interior Design & Renovation Services</title>
+    <title>Kanya Interior – Premium Interior Design, Renovation & Construction in Nairobi, Kenya</title>
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Primary SEO -->
+    <meta name="description" content="Kanya Interior offers premium interior design, home renovation, and construction services across Nairobi and Kenya. Transform your space with expert craftsmanship and bespoke design.">
+    <meta name="keywords" content="interior design Nairobi, home renovation Kenya, construction Nairobi, interior designer Kenya, luxury interior design, kitchen renovation, bedroom design, Kanya Interior">
+    <meta name="author" content="Kanya Interior">
+    <link rel="canonical" href="__SITE_URL__/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="__SITE_URL__/">
+    <meta property="og:title" content="Kanya Interior – Premium Interior Design & Renovation in Nairobi">
+    <meta property="og:description" content="Transform your space with Kanya Interior's expert design, renovation and construction services across Nairobi and Kenya.">
+    <meta property="og:image" content="__SITE_URL__/images/20.jpeg">
+    <meta property="og:image:alt" content="Luxury interior design by Kanya Interior, Nairobi">
+    <meta property="og:locale" content="en_KE">
+    <meta property="og:site_name" content="Kanya Interior">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kanya Interior – Premium Interior Design & Renovation in Nairobi">
+    <meta name="twitter:description" content="Transform your space with Kanya Interior's expert design, renovation and construction services across Nairobi and Kenya.">
+    <meta name="twitter:image" content="__SITE_URL__/images/20.jpeg">
+    <meta name="twitter:image:alt" content="Luxury interior design by Kanya Interior, Nairobi">
+
+    <!-- LocalBusiness Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Kanya Interior",
+      "description": "Premium interior design, renovation and construction services in Nairobi, Kenya.",
+      "url": "__SITE_URL__",
+      "telephone": "+254757373025",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nairobi",
+        "addressCountry": "KE"
+      }
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -107,7 +150,9 @@
         .hero {
             margin-top: 80px;
             height: 100vh;
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(201, 169, 97, 0.1) 100%);
+            background:
+                linear-gradient(135deg, rgba(15, 15, 15, 0.82) 0%, rgba(26, 26, 26, 0.65) 60%, rgba(201, 169, 97, 0.15) 100%),
+                url('images/1.jpeg') center center / cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -324,6 +369,22 @@
             gap: 0.5rem;
         }
 
+        .project-description {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            margin-top: 0.5rem;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.3s ease, max-height 0.3s ease;
+        }
+
+        .project-card:hover .project-description {
+            opacity: 1;
+            max-height: 80px;
+        }
+
         /* Why Choose Us */
         .why-us {
             padding: 5rem 5%;
@@ -517,7 +578,8 @@
 
         .social-icons {
             display: flex;
-            gap: 1rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
             margin-top: 1rem;
         }
 
@@ -532,13 +594,18 @@
             color: var(--gold);
             text-decoration: none;
             transition: all 0.3s ease;
-            font-weight: bold;
-            font-size: 0.8rem;
+            font-size: 1rem;
         }
 
         .social-icon:hover {
             background-color: var(--gold);
             color: var(--dark-bg);
+            transform: translateY(-3px);
+        }
+
+        .feature-icon i {
+            font-size: 2rem;
+            color: var(--gold);
         }
 
         .footer-bottom {
@@ -731,16 +798,20 @@
                     </select>
                 </div>
                 <div class="search-field">
-                    <label>Room Type</label>
+                    <label>Category</label>
                     <select id="roomFilter">
-                        <option value="">All Rooms</option>
+                        <option value="">All Categories</option>
+                        <option value="construction">Construction</option>
+                        <option value="interior">Interior</option>
                         <option value="living">Living Room</option>
                         <option value="bedroom">Bedroom</option>
                         <option value="kitchen">Kitchen</option>
-                        <option value="bathroom">Bathroom</option>
+                        <option value="dining">Dining</option>
+                        <option value="hallway">Hallway</option>
+                        <option value="staircase">Staircase</option>
                     </select>
                 </div>
-                <button class="search-btn" onclick="filterProjects()">🔍 SEARCH</button>
+                <button class="search-btn" onclick="filterProjects()"><i class="fa-solid fa-magnifying-glass"></i> SEARCH</button>
             </div>
         </div>
     </section>
@@ -760,25 +831,25 @@
         
         <div class="features-grid">
             <div class="feature">
-                <div class="feature-icon">🏠</div>
+                <div class="feature-icon"><i class="fa-solid fa-couch"></i></div>
                 <h3>Premium Designs</h3>
                 <p>Curated exclusive interior designs and sophisticated spaces tailored to your unique aesthetic preferences and lifestyle needs.</p>
             </div>
 
             <div class="feature">
-                <div class="feature-icon">🤝</div>
+                <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
                 <h3>Expert Guidance</h3>
                 <p>Our design professionals bring extensive knowledge, local expertise, and personalized consultation for every project phase.</p>
             </div>
 
             <div class="feature">
-                <div class="feature-icon">🎨</div>
+                <div class="feature-icon"><i class="fa-solid fa-compass-drafting"></i></div>
                 <h3>Complete Service</h3>
                 <p>From initial concept through design, renovation, and construction - we handle everything with meticulous attention to detail.</p>
             </div>
 
             <div class="feature">
-                <div class="feature-icon">✓</div>
+                <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
                 <h3>Quality Assured</h3>
                 <p>We maintain the highest standards in materials, craftsmanship, and timely delivery for a worry-free experience.</p>
             </div>
@@ -850,9 +921,13 @@
                 <h4>Connect With Us</h4>
                 <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">Follow our latest projects and design inspiration.</p>
                 <div class="social-icons">
-                    <a href="https://facebook.com" class="social-icon" target="_blank">f</a>
-                    <a href="https://instagram.com" class="social-icon" target="_blank">📷</a>
-                    <a href="https://linkedin.com" class="social-icon" target="_blank">in</a>
+                    <a href="https://facebook.com" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/254757373025" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://tiktok.com" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://youtube.com" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://x.com" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://linkedin.com" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.85rem;">
                     <strong>Phone:</strong> +254 757 373 025
@@ -887,45 +962,45 @@
     <script>
         // Project Data - All 39 images
         const projects = [
-            { id: 1, file: 'images/1.jpeg', title: 'Modern Living Room', category: 'Residential', style: 'modern' },
-            { id: 2, file: 'images/2.jpeg', title: 'Contemporary Bedroom', category: 'Residential', style: 'contemporary' },
-            { id: 3, file: 'images/3.jpeg', title: 'Luxury Kitchen', category: 'Kitchen', style: 'luxury' },
-            { id: 4, file: 'images/4.jpeg', title: 'Elegant Bathroom', category: 'Bathroom', style: 'modern' },
-            { id: 5, file: 'images/5.jpeg', title: 'Home Office Design', category: 'Office', style: 'contemporary' },
-            { id: 6, file: 'images/6.jpeg', title: 'Master Bedroom Suite', category: 'Bedroom', style: 'luxury' },
-            { id: 7, file: 'images/7.jpeg', title: 'Open Plan Living', category: 'Living', style: 'modern' },
-            { id: 8, file: 'images/8.jpeg', title: 'Dining Space', category: 'Residential', style: 'contemporary' },
-            { id: 9, file: 'images/9.jpeg', title: 'Kitchen Renovation', category: 'Kitchen', style: 'modern' },
-            { id: 10, file: 'images/10.jpeg', title: 'Bedroom Interior', category: 'Bedroom', style: 'luxury' },
-            { id: 11, file: 'images/11.jpeg', title: 'Living Room Design', category: 'Living', style: 'contemporary' },
-            { id: 12, file: 'images/12.jpeg', title: 'Modern Bathroom', category: 'Bathroom', style: 'modern' },
-            { id: 13, file: 'images/13.jpeg', title: 'Office Space', category: 'Office', style: 'contemporary' },
-            { id: 14, file: 'images/14.jpeg', title: 'Luxury Bedroom', category: 'Bedroom', style: 'luxury' },
-            { id: 15, file: 'images/15.jpeg', title: 'Contemporary Kitchen', category: 'Kitchen', style: 'contemporary' },
-            { id: 16, file: 'images/16.jpeg', title: 'Residential Living', category: 'Living', style: 'modern' },
-            { id: 17, file: 'images/17.jpeg', title: 'Home Design', category: 'Residential', style: 'modern' },
-            { id: 18, file: 'images/18.jpeg', title: 'Luxury Interior', category: 'Residential', style: 'luxury' },
-            { id: 19, file: 'images/19.jpeg', title: 'Modern Kitchen', category: 'Kitchen', style: 'modern' },
-            { id: 20, file: 'images/20.jpeg', title: 'Bathroom Renovation', category: 'Bathroom', style: 'contemporary' },
-            { id: 21, file: 'images/21.jpeg', title: 'Bedroom Design', category: 'Bedroom', style: 'modern' },
-            { id: 22, file: 'images/22.jpeg', title: 'Living Space', category: 'Living', style: 'luxury' },
-            { id: 23, file: 'images/23.jpeg', title: 'Contemporary Living', category: 'Living', style: 'contemporary' },
-            { id: 24, file: 'images/24.jpeg', title: 'Kitchen Space', category: 'Kitchen', style: 'modern' },
-            { id: 25, file: 'images/25.jpeg', title: 'Residential Design', category: 'Residential', style: 'luxury' },
-            { id: 26, file: 'images/26.jpeg', title: 'Modern Bedroom', category: 'Bedroom', style: 'modern' },
-            { id: 27, file: 'images/27.jpeg', title: 'Office Interior', category: 'Office', style: 'contemporary' },
-            { id: 28, file: 'images/28.jpeg', title: 'Luxury Kitchen', category: 'Kitchen', style: 'luxury' },
-            { id: 29, file: 'images/29.jpeg', title: 'Home Interior', category: 'Residential', style: 'contemporary' },
-            { id: 30, file: 'images/30.jpeg', title: 'Bathroom Design', category: 'Bathroom', style: 'modern' },
-            { id: 31, file: 'images/31.jpeg', title: 'Contemporary Bedroom', category: 'Bedroom', style: 'contemporary' },
-            { id: 32, file: 'images/32.jpeg', title: 'Living Room Interior', category: 'Living', style: 'modern' },
-            { id: 33, file: 'images/33.jpeg', title: 'Modern Design', category: 'Residential', style: 'modern' },
-            { id: 34, file: 'images/34.jpeg', title: 'Luxury Living', category: 'Living', style: 'luxury' },
-            { id: 35, file: 'images/35.jpeg', title: 'Kitchen Design', category: 'Kitchen', style: 'contemporary' },
-            { id: 36, file: 'images/36.jpeg', title: 'Bedroom Suite', category: 'Bedroom', style: 'luxury' },
-            { id: 37, file: 'images/37.jpeg', title: 'Contemporary Space', category: 'Residential', style: 'contemporary' },
-            { id: 38, file: 'images/38.jpeg', title: 'Modern Bathroom', category: 'Bathroom', style: 'modern' },
-            { id: 39, file: 'images/39.jpeg', title: 'Luxury Interior', category: 'Residential', style: 'luxury' }
+            { id: 1,  file: 'images/1.jpeg',  title: 'House Exterior – Completed Build',       category: 'Construction', style: 'modern',       description: 'Full exterior build completion including facade finishing, render coat, and exterior paint on a modern residential property in Nairobi.' },
+            { id: 2,  file: 'images/2.jpeg',  title: 'Contemporary Home Exterior',             category: 'Construction', style: 'contemporary', description: 'Clean-lined contemporary exterior with smooth render finish and bold architectural proportions, delivered for a private residential client.' },
+            { id: 3,  file: 'images/3.jpeg',  title: 'Residential Exterior Finishing',         category: 'Construction', style: 'modern',       description: 'Final exterior finishing work covering plastering, paint application, and decorative trim to complete a family home to a high standard.' },
+            { id: 4,  file: 'images/4.jpeg',  title: 'Structural Slab & Scaffolding',          category: 'Construction', style: 'modern',       description: 'Ground-up construction phase showing structural slab casting and scaffolding erection for a multi-storey residential build in Nairobi.' },
+            { id: 5,  file: 'images/5.jpeg',  title: 'Decorative Wall Paneling & LED Ceiling', category: 'Interior',     style: 'luxury',       description: 'Custom wall paneling paired with multi-colour LED ceiling strips to create a dramatic accent feature in a high-end living space.' },
+            { id: 6,  file: 'images/6.jpeg',  title: 'LED Strip Staircase Design',             category: 'Staircase',   style: 'modern',       description: 'Staircase renovation featuring integrated LED strip lighting along each tread for a sleek, striking nighttime look.' },
+            { id: 7,  file: 'images/7.jpeg',  title: 'Staircase Pendant Lighting',             category: 'Staircase',   style: 'contemporary', description: 'Statement pendant light installation in a double-volume staircase void, adding warmth and vertical drama to the home entrance.' },
+            { id: 8,  file: 'images/8.jpeg',  title: 'Kitchen Renovation – Countertop & Hob', category: 'Kitchen',      style: 'modern',       description: 'Full kitchen counter replacement with engineered stone surface and a new built-in gas hob, upgrading both function and finish.' },
+            { id: 9,  file: 'images/9.jpeg',  title: 'Living Room Flooring Installation',      category: 'Living',       style: 'contemporary', description: 'Large-format tile flooring laid across an open-plan living room, delivering a seamless, easy-to-maintain surface throughout.' },
+            { id: 10, file: 'images/10.jpeg', title: 'LED Ring Ceiling – Bedroom',             category: 'Bedroom',      style: 'modern',       description: 'Circular LED ring ceiling fixture installed in a master bedroom, creating a soft ambient glow and a contemporary focal point overhead.' },
+            { id: 11, file: 'images/11.jpeg', title: 'Kitchen Countertop & Gas Hob Install',   category: 'Kitchen',      style: 'modern',       description: 'New countertop surface and integrated gas hob fitted in a compact kitchen, improving workflow and giving the space a polished finish.' },
+            { id: 12, file: 'images/12.jpeg', title: 'Living Room LED Ceiling Design',         category: 'Living',       style: 'contemporary', description: 'Layered LED ceiling combining recessed downlights with colour-changing strip lighting, giving the living room full mood control.' },
+            { id: 13, file: 'images/13.jpeg', title: 'Feature Ceiling & Chandelier Fitting',   category: 'Interior',     style: 'luxury',       description: 'Ornate chandelier installation paired with a feature plaster ceiling, elevating a formal reception or dining room to luxury standard.' },
+            { id: 14, file: 'images/14.jpeg', title: 'Tray Ceiling Construction',              category: 'Interior',     style: 'modern',       description: 'Tray ceiling structure built and plastered in a bedroom, creating depth overhead and a clean recess ready for integrated lighting.' },
+            { id: 15, file: 'images/15.jpeg', title: 'Dining Room – Table & Chairs Setup',     category: 'Dining',       style: 'contemporary', description: 'Complete dining room fit-out with furniture arrangement and styling, creating a comfortable and cohesive family dining environment.' },
+            { id: 16, file: 'images/16.jpeg', title: 'Living Room – Sofa Arrangement',         category: 'Living',       style: 'residential',  description: 'Living room styling with a coordinated sofa set arrangement, balancing comfort and flow in a spacious open residential interior.' },
+            { id: 17, file: 'images/17.jpeg', title: 'LED Strip Ceiling Renovation',           category: 'Interior',     style: 'contemporary', description: 'Ceiling renovation incorporating warm-white LED strip channels for a clean, linear light effect throughout a residential living area.' },
+            { id: 18, file: 'images/18.jpeg', title: 'Modern LED Ceiling Design',              category: 'Interior',     style: 'modern',       description: 'Geometric LED ceiling panel design installed in a sitting room, delivering even light distribution and a sharp, high-end finish.' },
+            { id: 19, file: 'images/19.jpeg', title: 'Gold Chandelier & Accent Lighting',      category: 'Interior',     style: 'luxury',       description: 'Gold-finish chandelier combined with wall accent lighting to create a rich, hotel-inspired atmosphere in a premium private residence.' },
+            { id: 20, file: 'images/20.jpeg', title: 'Linear LED Ceiling – Luxury Finish',     category: 'Interior',     style: 'luxury',       description: 'Linear LED ceiling feature with a high-gloss finish installed in a premium residential space, achieving a sophisticated five-star look.' },
+            { id: 21, file: 'images/21.jpeg', title: 'Green LED Accent Ceiling',               category: 'Interior',     style: 'contemporary', description: 'Green LED accent lighting recessed into ceiling panels, adding a bold colour pop and vibrant ambience to a lounge or entertainment area.' },
+            { id: 22, file: 'images/22.jpeg', title: 'Bedroom Tile Flooring – In Progress',    category: 'Bedroom',      style: 'modern',       description: 'Mid-installation view of wood-look ceramic tiles being precisely laid in a bedroom, showcasing the care taken with pattern alignment.' },
+            { id: 23, file: 'images/23.jpeg', title: 'Interior Room Renovation',               category: 'Interior',     style: 'contemporary', description: 'Comprehensive interior renovation covering wall preparation, plastering, and painting throughout a residential room from bare walls to finish.' },
+            { id: 24, file: 'images/24.jpeg', title: 'Living Room – Red LED Ceiling',          category: 'Living',       style: 'contemporary', description: 'Red LED ceiling lighting installed as a dramatic accent in a living room, creating a bold and highly personalised atmosphere.' },
+            { id: 25, file: 'images/25.jpeg', title: 'Modern House Under Construction',        category: 'Construction', style: 'modern',       description: 'Active construction site showing structural walls reaching roof-slab level for a modern multi-bedroom residential build in Nairobi.' },
+            { id: 26, file: 'images/26.jpeg', title: 'Open Plan Space Build',                  category: 'Construction', style: 'contemporary', description: 'Open-plan structural build in progress with wide-span columns designed to accommodate a future open kitchen and living layout.' },
+            { id: 27, file: 'images/27.jpeg', title: 'Arched Hallway & Ensuite Bathroom',      category: 'Hallway',      style: 'luxury',       description: 'Decorative arched hallway leading to an ensuite bathroom, blending classical arch details with sleek contemporary tile finishes.' },
+            { id: 28, file: 'images/28.jpeg', title: 'Bedroom Window & Wall Finishing',        category: 'Bedroom',      style: 'modern',       description: 'Window frame fitting and wall surface finishing work in a bedroom, sealing and preparing all surfaces for final paint and décor.' },
+            { id: 29, file: 'images/29.jpeg', title: 'Room Painting & Finishing Work',         category: 'Interior',     style: 'contemporary', description: 'Professional interior painting and surface finishing applied throughout a room, delivering crisp lines and a clean, long-lasting result.' },
+            { id: 30, file: 'images/30.jpeg', title: 'Bedroom – Wood-Look Tile Flooring',      category: 'Bedroom',      style: 'modern',       description: 'Wood-look porcelain tiles installed wall-to-wall in a bedroom, combining the warmth of timber aesthetics with the durability of tile.' },
+            { id: 31, file: 'images/31.jpeg', title: 'Exterior House Painting',                category: 'Construction', style: 'residential',  description: 'Full exterior repaint of a residential property using weather-resistant paint, delivering a fresh, long-lasting curb appeal upgrade.' },
+            { id: 32, file: 'images/32.jpeg', title: 'Ceiling Plastering & Painting',          category: 'Construction', style: 'modern',       description: 'Ceiling plastering and smooth-coat painting completed overhead, providing a flawless base ready for lighting fixtures and décor.' },
+            { id: 33, file: 'images/33.jpeg', title: 'Hardwood Floor Installation',            category: 'Interior',     style: 'contemporary', description: 'Solid hardwood flooring installed in a residential interior, adding natural warmth, character, and long-term value to the space.' },
+            { id: 34, file: 'images/34.jpeg', title: 'Corridor with Arched Entry & LED',       category: 'Hallway',      style: 'luxury',       description: 'Corridor renovation featuring a grand arched entry and integrated LED cove lighting, creating an elegant and welcoming transition space.' },
+            { id: 35, file: 'images/35.jpeg', title: 'Interior Passage Renovation',            category: 'Hallway',      style: 'contemporary', description: 'Full passage renovation including wall finishing, skirting installation, and lighting updates to produce a polished interior corridor.' },
+            { id: 36, file: 'images/36.jpeg', title: 'Luxury Arch Ceiling Architecture',       category: 'Interior',     style: 'luxury',       description: 'Architectural arch ceiling with ornate plasterwork, forming a commanding design statement in a high-end residential reception room.' },
+            { id: 37, file: 'images/37.jpeg', title: 'Parquet Hallway Renovation',             category: 'Hallway',      style: 'contemporary', description: 'Parquet-style hardwood floor laid in a hallway, combining classic craftsmanship with a warm, welcoming entrance aesthetic.' },
+            { id: 38, file: 'images/38.jpeg', title: 'Living Room – Large Window & Ceiling',   category: 'Living',       style: 'modern',       description: 'Living room transformation featuring oversized windows for natural light and a multi-level LED ceiling for striking visual impact.' },
+            { id: 39, file: 'images/39.jpeg', title: 'Bedroom with Built-in Wardrobe',         category: 'Bedroom',      style: 'modern',       description: 'Master bedroom fit-out with custom built-in wardrobe cabinetry, maximising storage while maintaining a seamless, clutter-free interior.' }
         ];
 
         let filteredProjects = [...projects];
@@ -944,6 +1019,7 @@
                         <span class="project-tag">${project.style.toUpperCase()}</span>
                         <h3 class="project-title">${project.title}</h3>
                         <p class="project-location">📍 Nairobi, Kenya</p>
+                        <p class="project-description">${project.description}</p>
                     </div>
                 `;
                 grid.appendChild(card);

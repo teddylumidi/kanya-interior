@@ -1,0 +1,33 @@
+Update the website’s social media icons to use **standard, recognizable social media icons** from a reputable icon library such as **Simple Icons, Font Awesome, or another established icon library**.
+
+Requirements:
+
+* Replace all custom, incorrect, generic, or AI-generated social media symbols with standard icons.
+* Use the correct official-style icons for:
+
+  * Facebook
+  * Instagram
+  * WhatsApp
+  * TikTok
+  * YouTube
+  * X (formerly Twitter)
+  * LinkedIn
+* Do not create your own versions of these icons.
+* Do not use emojis as social media icons.
+* Do not use Google's logo or Replit's logo in place of any social media icon.
+* Keep every icon visually consistent in size, alignment, spacing, and style.
+* Use the appropriate brand icon rather than a generic circle containing text.
+* Make the icons responsive and properly aligned on desktop, tablet, and mobile.
+* Add smooth hover effects without making the icons oversized or distracting.
+* Each icon must remain fully clickable and link to its correct social media URL.
+* Open external social media links in a new tab.
+* Add proper `aria-label` accessibility attributes.
+* Make sure icons load correctly in both development and production.
+* Ensure they continue working after deployment to Netlify or other hosting platforms.
+* Avoid external assets that may randomly fail to load. Prefer a properly installed and bundled icon library.
+* Do not change any existing website data, text, images, logo, branding, functionality, or layout unless necessary for the icon implementation.
+* Do not introduce unnecessary dependencies.
+* Check the browser console and remove any icon-related errors.
+* Test all icons on desktop and mobile before completing the change.
+
+**Important:** Inspect the existing code first. Identify how the current social media icons are implemented, then replace only the incorrect icon implementation with standard library icons while preserving the existing website design and functionality.

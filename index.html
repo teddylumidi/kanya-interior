@@ -911,6 +911,8 @@
                 <h4>Services</h4>
                 <ul>
                     <li><a href="#">Interior Design</a></li>
+                    <li><a href="#">Kitchen Cabinets</a></li>
+                    <li><a href="#">Wall Drops</a></li>
                     <li><a href="#">Home Renovation</a></li>
                     <li><a href="#">Construction</a></li>
                     <li><a href="#">Consultation</a></li>
@@ -1069,8 +1071,13 @@
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const targetSelector = this.getAttribute('href');
+                if (!targetSelector || targetSelector === '#') {
+                    e.preventDefault();
+                    return;
+                }
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(targetSelector);
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',

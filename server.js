@@ -39,6 +39,9 @@ app.get('/sitemap.xml', (req, res) => {
   res.send(xml);
 });
 
+// Serve images and other static project assets before the HTML fallback.
+app.use(express.static(__dirname));
+
 // Serve index.html with __SITE_URL__ replaced so meta tags use the real domain.
 app.use((req, res) => {
   const html = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');

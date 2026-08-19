@@ -910,12 +910,12 @@
             <div class="footer-section">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="#">Interior Design</a></li>
-                    <li><a href="#">Kitchen Cabinets</a></li>
-                    <li><a href="#">Wall Drops</a></li>
-                    <li><a href="#">Home Renovation</a></li>
-                    <li><a href="#">Construction</a></li>
-                    <li><a href="#">Consultation</a></li>
+                    <li><a href="#contact" data-service="Interior Design">Interior Design</a></li>
+                    <li><a href="#contact" data-service="Kitchen Cabinets">Kitchen Cabinets</a></li>
+                    <li><a href="#contact" data-service="Wall Drops">Wall Drops</a></li>
+                    <li><a href="#contact" data-service="Home Renovation">Home Renovation</a></li>
+                    <li><a href="#contact" data-service="Construction">Construction</a></li>
+                    <li><a href="#contact" data-service="Consultation">Consultation</a></li>
                 </ul>
             </div>
 
@@ -1083,6 +1083,12 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                }
+                const service = this.dataset.service;
+                if (service) {
+                    const message = document.getElementById('contactMsg');
+                    message.value = `I'm interested in ${service}. `;
+                    message.focus({ preventScroll: true });
                 }
             });
         });

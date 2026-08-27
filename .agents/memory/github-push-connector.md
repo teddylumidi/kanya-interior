@@ -10,3 +10,5 @@ When the configured GitHub HTTPS remote rejects credentials, an attached GitHub 
 **How to apply:** Build blobs and a tree from the local changed files, create one commit on the current remote branch tip, then update the branch ref without force-pushing. Verify the remote commit and compare content before considering any local history reset.
 
 If the connector's write requests return a Cloudflare HTML 403 while authenticated reads still work, treat it as a temporary proxy block rather than an OAuth failure. Do not reauthorize; wait and retry later, or use an already-authenticated Git/CLI path.
+
+For a personal access token fallback, require explicit repository Contents read/write access and verify it by creating a harmless Git blob. Repository metadata may report `push: true` from the user's role even when the token itself cannot write Git objects.

@@ -2,6 +2,9 @@
 
 A portfolio website for Kanya Interior — premium interior design, renovation & construction services in Nairobi, Kenya.
 
+## Repository
+- Canonical GitHub repository: https://github.com/teddylumidi/kanya-interior
+
 ## Stack
 - Static HTML (`index.html`) + images served by Express.js (`server.js`)
 - No build step required

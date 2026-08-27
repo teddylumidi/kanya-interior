@@ -806,6 +806,8 @@
                         <option value="living">Living Room</option>
                         <option value="bedroom">Bedroom</option>
                         <option value="kitchen">Kitchen</option>
+                        <option value="kitchen cabinets">Kitchen Cabinets</option>
+                        <option value="wardrobes">Wardrobes</option>
                         <option value="dining">Dining</option>
                         <option value="hallway">Hallway</option>
                         <option value="staircase">Staircase</option>
@@ -962,7 +964,7 @@
     </div>
 
     <script>
-        // Project Data - All 39 images
+        // Project Data - All 53 images
         const projects = [
             { id: 1,  file: 'images/1.jpeg',  title: 'House Exterior – Completed Build',       category: 'Construction', style: 'modern',       description: 'Full exterior build completion including facade finishing, render coat, and exterior paint on a modern residential property in Nairobi.' },
             { id: 2,  file: 'images/2.jpeg',  title: 'Contemporary Home Exterior',             category: 'Construction', style: 'contemporary', description: 'Clean-lined contemporary exterior with smooth render finish and bold architectural proportions, delivered for a private residential client.' },
@@ -1002,7 +1004,21 @@
             { id: 36, file: 'images/36.jpeg', title: 'Luxury Arch Ceiling Architecture',       category: 'Interior',     style: 'luxury',       description: 'Architectural arch ceiling with ornate plasterwork, forming a commanding design statement in a high-end residential reception room.' },
             { id: 37, file: 'images/37.jpeg', title: 'Parquet Hallway Renovation',             category: 'Hallway',      style: 'contemporary', description: 'Parquet-style hardwood floor laid in a hallway, combining classic craftsmanship with a warm, welcoming entrance aesthetic.' },
             { id: 38, file: 'images/38.jpeg', title: 'Living Room – Large Window & Ceiling',   category: 'Living',       style: 'modern',       description: 'Living room transformation featuring oversized windows for natural light and a multi-level LED ceiling for striking visual impact.' },
-            { id: 39, file: 'images/39.jpeg', title: 'Bedroom with Built-in Wardrobe',         category: 'Bedroom',      style: 'modern',       description: 'Master bedroom fit-out with custom built-in wardrobe cabinetry, maximising storage while maintaining a seamless, clutter-free interior.' }
+            { id: 39, file: 'images/39.jpeg', title: 'Bedroom with Built-in Wardrobe',         category: 'Bedroom',      style: 'modern',       description: 'Master bedroom fit-out with custom built-in wardrobe cabinetry, maximising storage while maintaining a seamless, clutter-free interior.' },
+            { id: 40, file: 'images/kitchen-cabinets/kitchen-cabinets-01.jpeg', title: 'Kitchen Island with Fluted Wall Drop', category: 'Kitchen Cabinets', style: 'contemporary', description: 'Completed kitchen featuring a fluted island wall drop, dark stone countertop, and coordinated overhead cabinetry.' },
+            { id: 41, file: 'images/kitchen-cabinets/kitchen-cabinets-02.jpeg', title: 'Fluted Kitchen Island Detail', category: 'Kitchen Cabinets', style: 'modern', description: 'Statement kitchen island finished with vertical fluted detailing and a durable dark countertop for a polished, practical centrepiece.' },
+            { id: 42, file: 'images/kitchen-cabinets/kitchen-cabinets-03.jpeg', title: 'Kitchen Wall Drop Installation', category: 'Kitchen Cabinets', style: 'contemporary', description: 'Installation in progress on a fluted kitchen wall drop, showing the craftsmanship behind this textured feature finish.' },
+            { id: 43, file: 'images/kitchen-cabinets/kitchen-cabinets-04.jpeg', title: 'White Kitchen Cabinet Installation', category: 'Kitchen Cabinets', style: 'modern', description: 'Upper and lower kitchen cabinets being fitted with a clean white finish, generous storage, and space prepared for the final countertop.' },
+            { id: 44, file: 'images/kitchen-cabinets/kitchen-cabinets-05.jpeg', title: 'L-shaped Kitchen Cabinet Fit-out', category: 'Kitchen Cabinets', style: 'modern', description: 'L-shaped kitchen cabinetry installation with upper storage, lower units, and integrated workspace designed around the room layout.' },
+            { id: 45, file: 'images/kitchen-cabinets/kitchen-cabinets-06.jpeg', title: 'Grey Kitchen Cabinetry', category: 'Kitchen Cabinets', style: 'contemporary', description: 'Contemporary grey kitchen cabinets installed beneath a dark countertop, bringing clean lines and practical storage to the kitchen.' },
+            { id: 46, file: 'images/kitchen-cabinets/kitchen-cabinets-07.jpeg', title: 'Full Kitchen Cabinetry – In Progress', category: 'Kitchen Cabinets', style: 'modern', description: 'Full kitchen cabinet installation in progress, including protective-wrapped fronts, granite worktops, drawers, and open shelving.' },
+            { id: 47, file: 'images/kitchen-cabinets/kitchen-cabinets-08.jpeg', title: 'Kitchen Cabinet and Countertop Finish', category: 'Kitchen Cabinets', style: 'modern', description: 'Detailed view of fitted kitchen cabinets and granite countertops, with the final hardware and finishing touches underway.' },
+            { id: 48, file: 'images/kitchen-cabinets/kitchen-cabinets-09.jpeg', title: 'Kitchen Cabinet Layout', category: 'Kitchen Cabinets', style: 'modern', description: 'Wide view of a newly fitted kitchen cabinet layout with coordinated wall units, base cabinets, worktops, and appliance spaces.' },
+            { id: 49, file: 'images/wardrobes/wardrobe-01.jpeg', title: 'Open Built-in Wardrobe', category: 'Wardrobes', style: 'modern', description: 'Custom built-in wardrobe with open shelving, hanging sections, and dark wood-effect drawers designed for organised bedroom storage.' },
+            { id: 50, file: 'images/wardrobes/wardrobe-02.jpeg', title: 'Full-height Wood-effect Wardrobe', category: 'Wardrobes', style: 'contemporary', description: 'Full-height wardrobe with tall doors and long handles, creating generous concealed storage in a refined wood-effect finish.' },
+            { id: 51, file: 'images/wardrobes/wardrobe-03.jpeg', title: 'Bedroom Wardrobe Installation', category: 'Wardrobes', style: 'modern', description: 'Bedroom fit-out with a full wall of wardrobe cabinetry, including upper cupboards, lower drawers, and a central open display section.' },
+            { id: 52, file: 'images/wardrobes/wardrobe-04.jpeg', title: 'Walk-in Wardrobe Storage', category: 'Wardrobes', style: 'modern', description: 'Walk-in wardrobe layout with open shelving, hanging bays, and built-in drawers planned for efficient everyday storage.' },
+            { id: 53, file: 'images/wardrobes/wardrobe-05.jpeg', title: 'Custom Wardrobe with Drawers', category: 'Wardrobes', style: 'contemporary', description: 'Custom wardrobe system combining open display shelving, hanging space, and wood-effect drawers for a balanced, functional bedroom fit-out.' }
         ];
 
         let filteredProjects = [...projects];

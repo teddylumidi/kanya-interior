@@ -34,7 +34,7 @@ server.js                local preview server
 - Portfolio cards are plain HTML in `site/index.html` (section `#work`). Each card has a category (`data-cat`) matching a filter button, a title, and alt text that describes the photo.
 - Add new photos as WebP: a full-size image (max 1600px) and a 640x480 thumbnail ending in `-sm.webp`.
 - Contact form opens WhatsApp (+254 757 373 025) with the visitor's details; nothing is stored.
-- Social media links were removed from the footer because they pointed to generic homepages. Add them back once the real profile URLs are known.
+- Footer social icons (Font Awesome brand SVGs, inline) currently link to the platforms' homepages; replace with Kanya's profile URLs when available.
 
 ## User preferences
 - Image labels must accurately describe what is actually visible in each photo.
